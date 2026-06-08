@@ -738,34 +738,114 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="container footer__inner">
-    <div class="footer__brand">
-      <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
-      <p class="footer__tagline">Tráfego pago para PMEs portuguesas.<br>Google Ads · Meta Ads · LinkedIn Ads</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+        <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+        <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+          <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+        </a>
+      </div>
+      <div class="footer__nav">
+        <p class="footer__nav-title">Serviços</p>
+        <ul>
+          <li><a href="../google-ads.html">Google Ads</a></li>
+          <li><a href="../meta-ads.html">Meta Ads</a></li>
+          <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+          <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+          <li><a href="../landing-pages.html">Landing Pages</a></li>
+          <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          <li><a href="../precos.html">Preços</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__nav-title">Contacto</p>
+        <ul>
+          <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+          <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+          <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+        </ul>
+      </div>
     </div>
-    <nav class="footer__links" aria-label="Links do rodapé">
-      <a href="../servicos.html">Serviços</a>
-      <a href="index.html">Blog</a>
-      <a href="../auditoria.html">Auditoria</a>
-      <a href="../precos.html">Preços</a>
-      <a href="../contatos.html">Contactos</a>
-      <a href="../privacidade.html">Privacidade</a>
-    </nav>
-    <p class="footer__copy">© 2026 Payoff Marketing · NIF 123 456 789 · <a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></p>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__privacy">Blog</a>
+      <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+    </div>
   </div>
 </footer>
 
-<!-- Cookie consent -->
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Consentimento de cookies" style="display:none">
-  <p class="cookie-banner__text">Usamos cookies de análise para melhorar o site. Podes aceitar ou recusar.</p>
-  <div class="cookie-banner__actions">
-    <button id="cookieAccept" class="btn btn--sm">Aceitar</button>
-    <button id="cookieDecline" class="btn btn--sm btn--outline">Recusar</button>
+<div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" style="
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#161b22;border-top:1px solid #30363d;font-family:inherit;">
+  <div id="pm-bar" style="display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;">
+    <p style="margin:0;max-width:65ch;line-height:1.5;color:#8b949e;">
+      <strong style="display:block;margin-bottom:.2rem;color:#e6edf3;">Este site usa cookies</strong>
+      Usamos cookies para análise de tráfego e melhoria da experiência. Pode aceitar todos ou
+      gerir as suas preferências.
+    </p>
+    <div id="pm-actions" style="display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;">
+      <button class="pm-btn pm-btn--ghost" onclick="document.getElementById('pm-panel').classList.toggle('open')">Gerir preferências</button>
+      <button class="pm-btn pm-btn--reject" onclick="pmConsent('deny')">Rejeitar</button>
+      <button class="pm-btn pm-btn--accept" onclick="pmConsent('allow')">Aceitar todos</button>
+    </div>
+  </div>
+  <div id="pm-panel" style="display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;">
+    <h3 style="font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;">Preferências de cookies</h3>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies essenciais</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Necessários para o funcionamento do site.</p></div>
+      <span style="font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;">Sempre ativos</span>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies analíticos</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google Analytics.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-analytics" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies de publicidade</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google e Meta Ads.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-ads" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div style="margin-top:1rem;text-align:right;">
+      <button class="pm-btn pm-btn--accept" onclick="pmConsentCustom()">Guardar preferências</button>
+    </div>
   </div>
 </div>
 
 <script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  (function(){ if(localStorage.getItem('pm_consent')) document.getElementById('pm-consent').style.display='none'; })();
+  function pmConsent(mode){
+    localStorage.setItem('pm_consent',mode);
+    document.getElementById('pm-consent').style.display='none';
+    var a=mode==='allow';
+    gtag('consent','update',{analytics_storage:a?'granted':'denied',ad_storage:a?'granted':'denied',ad_user_data:a?'granted':'denied',ad_personalization:a?'granted':'denied'});
+  }
+  function pmConsentCustom(){
+    var an=document.getElementById('pm-analytics').checked, ad=document.getElementById('pm-ads').checked;
+    localStorage.setItem('pm_consent','custom');
+    document.getElementById('pm-consent').style.display='none';
+    gtag('consent','update',{analytics_storage:an?'granted':'denied',ad_storage:ad?'granted':'denied',ad_user_data:ad?'granted':'denied',ad_personalization:ad?'granted':'denied'});
+  }
+  (function(){
+    var links=document.querySelectorAll('#tocList a');
+    var sections=Array.from(links).map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+    function onScroll(){
+      var scrollY=window.scrollY+120, current=sections[0];
+      sections.forEach(function(s){if(s&&s.offsetTop<=scrollY)current=s;});
+      links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+current.id);});
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+  })();
   function toggleMenu(btn){
     var menu=document.getElementById('main-menu');
     var expanded=btn.getAttribute('aria-expanded')==='true';
@@ -777,34 +857,11 @@
     btn.setAttribute('aria-expanded',String(!expanded));
     btn.nextElementSibling.classList.toggle('navbar__dropdown-menu--open');
   }
-
-  // Cookie consent
-  const banner  = document.getElementById('cookieBanner');
-  const consent = localStorage.getItem('cookieConsent');
-  if (!consent && banner) banner.style.display = 'flex';
-  document.getElementById('cookieAccept')?.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent','accepted');
-    banner.style.display = 'none';
-    gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
-  });
-  document.getElementById('cookieDecline')?.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent','declined');
-    banner.style.display = 'none';
-  });
-
-  // TOC scroll-spy
-  const headings = document.querySelectorAll('.article-body h2[id]');
-  const links    = document.querySelectorAll('.toc-list a');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '0px 0px -60% 0px' });
-  headings.forEach(h => obs.observe(h));
+  var panel=document.getElementById('pm-panel');
+  if(panel){ panel.style.display='none'; panel.classList.remove('open');
+    var obs=new MutationObserver(function(){panel.style.display=panel.classList.contains('open')?'block':'none';});
+    obs.observe(panel,{attributes:true,attributeFilter:['class']});
+  }
 </script>
 
 </body>
