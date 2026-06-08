@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Índice de Landing Pages — Payoff Marketing</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Navbar mínima ── */
+    .lp-navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .lp-navbar .navbar__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 64px;
+    }
+
+    /* ── Page header ── */
+    .index-header {
+      padding-block: 3rem 2.5rem;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .index-header h1 {
+      font-size: 1.75rem; margin-bottom: .35rem;
+    }
+    .index-header p {
+      color: var(--cor-texto-muted); font-size: .9375rem;
+    }
+    .index-meta {
+      display: flex; gap: 1.5rem; margin-top: .75rem;
+      flex-wrap: wrap;
+    }
+    .index-meta span {
+      font-size: .8125rem; color: var(--cor-texto-muted);
+    }
+    .index-meta strong { color: var(--cor-texto); }
+
+    /* ── Filters / legend ── */
+    .index-legend {
+      display: flex; gap: .6rem; flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+    .tag {
+      display: inline-flex; align-items: center;
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: .2rem .65rem; border-radius: 999px;
+    }
+    .tag--google  { background: rgba(59,130,246,.12); color: var(--cor-primaria); border: 1px solid rgba(59,130,246,.25); }
+    .tag--meta    { background: rgba(99,102,241,.12); color: #818cf8; border: 1px solid rgba(99,102,241,.25); }
+    .tag--lp      { background: rgba(34,197,94,.10); color: #22c55e; border: 1px solid rgba(34,197,94,.25); }
+
+    /* ── LP Cards ── */
+    .lp-grid {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .lp-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem 2rem;
+      align-items: center;
+      transition: border-color .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .lp-card:hover {
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 22px rgba(59,130,246,.14);
+    }
+    .lp-card__main {}
+    .lp-card__top {
+      display: flex; align-items: center; gap: .75rem;
+      margin-bottom: .45rem; flex-wrap: wrap;
+    }
+    .lp-card__name {
+      font-size: 1rem; font-weight: 700; color: var(--cor-texto);
+    }
+    .lp-card__file {
+      font-size: .8rem; color: var(--cor-texto-muted);
+      font-family: 'Courier New', monospace;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--cor-borda);
+      padding: .1rem .5rem; border-radius: 5px;
+    }
+    .lp-card__angle {
+      font-size: .875rem; color: var(--cor-texto-muted); line-height: 1.5;
+      margin-bottom: .4rem;
+    }
+    .lp-card__angle strong { color: var(--cor-texto); }
+    .lp-card__bottom {
+      display: flex; gap: .5rem; flex-wrap: wrap; align-items: center;
+    }
+    .lp-card__price {
+      font-size: .8125rem; font-weight: 700;
+      color: var(--cor-primaria);
+      background: rgba(59,130,246,.08);
+      border: 1px solid rgba(59,130,246,.2);
+      padding: .15rem .6rem; border-radius: 6px;
+    }
+    .lp-card__actions {
+      display: flex; gap: .6rem; flex-shrink: 0;
+      align-items: center;
+    }
+    .lp-card__link {
+      font-size: .8125rem; font-weight: 600;
+      color: var(--cor-primaria);
+      text-decoration: none;
+      display: flex; align-items: center; gap: .3rem;
+      padding: .45rem .9rem;
+      border: 1px solid rgba(59,130,246,.3);
+      border-radius: 8px;
+      transition: background .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .lp-card__link:hover {
+      background: rgba(59,130,246,.1);
+      border-color: var(--cor-primaria);
+    }
+    .lp-card__link--ghost {
+      color: var(--cor-texto-muted);
+      border-color: var(--cor-borda);
+    }
+    .lp-card__link--ghost:hover {
+      color: var(--cor-texto);
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.15);
+    }
+
+    /* ── Section dividers ── */
+    .index-group { margin-bottom: 3rem; }
+    .index-group__title {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .09em;
+      color: var(--cor-texto-muted);
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--cor-borda);
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .lp-card { grid-template-columns: 1fr; }
+      .lp-card__actions { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <header>
+    <nav class="navbar lp-navbar" aria-label="Navegação">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="Payoff Marketing — Página inicial">
+          <img src="../img/logo.webp" alt="Payoff Marketing" />
+        </a>
+        <span style="font-size:.8rem;color:var(--cor-texto-muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;">Índice LP</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container" style="max-width:900px;padding-block:0 5rem;">
+
+      <!-- Header -->
+      <div class="index-header">
+        <h1>Landing Pages</h1>
+        <p>Todas as landing pages criadas para campanhas de paid traffic.</p>
+        <div class="index-meta">
+          <span><strong id="total-count">7</strong> páginas criadas</span>
+          <span>·</span>
+          <span>Pasta: <code style="font-size:.8rem;color:var(--cor-primaria);">/lp/</code></span>
+          <span>·</span>
+          <span>Página interna — <strong>não indexada</strong></span>
+        </div>
+      </div>
+
+      <div style="padding-top:2.5rem;">
+
+        <!-- ── Google Ads ── -->
+        <div class="index-group">
+          <div class="index-group__title">Google Ads</div>
+          <div class="lp-grid">
+
+            <!-- lp-googleads-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Google Ads — Prova de Conceito</span>
+                  <span class="tag tag--google">Google Ads</span>
+                  <code class="lp-card__file">lp-googleads-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> "Prova de conceito" — 3 meses a €150 para provar valor, depois decides. Para PMEs céticas que nunca tiveram Google Ads gerido.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="lp-card__price">€150/mês</span>
+                  <span class="tag tag--google">5 vagas · Scarcity</span>
+                  <span class="tag tag--google">Starter scope</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-googleads-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Meta Ads ── -->
+        <div class="index-group">
+          <div class="index-group__title">Meta Ads</div>
+          <div class="lp-grid">
+
+            <!-- lp-metaads-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Meta Ads — Criativo + Gestão</span>
+                  <span class="tag tag--meta">Meta Ads</span>
+                  <code class="lp-card__file">lp-metaads-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> 80% dos resultados vêm do criativo, não da segmentação. Diferenciador: não vendemos só gestão, pensamos no anúncio em si.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="lp-card__price">€150/mês</span>
+                  <span class="tag tag--meta">Sem scarcity</span>
+                  <span class="tag tag--meta">Starter scope</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-metaads-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Landing Pages ── -->
+        <div class="index-group">
+          <div class="index-group__title">Landing Pages de Conversão</div>
+          <div class="lp-grid">
+
+            <!-- lp-landingpages-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Landing Pages — Convencional</span>
+                  <span class="tag tag--lp">Landing Pages</span>
+                  <code class="lp-card__file">lp-landingpages-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> Estrutura convencional de LP — trust-first. Hero, trust bar, dores, solução, processo, testemunho, FAQ, form. Não agressiva, gera confiança.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="tag tag--lp">Serviço: criação de LPs</span>
+                  <span class="tag tag--lp">Trust-first</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-landingpages-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+            <!-- lp-landingpages-2 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Landing Pages — Hormozi</span>
+                  <span class="tag tag--lp">Landing Pages</span>
+                  <code class="lp-card__file">lp-landingpages-2.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> Alex Hormozi LP Strategy — dream outcome headline, gap stats, Grand Slam Offer com valor stack, garantia 30 dias, filtro para/não para, FAQ de objeções.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="tag tag--lp">Serviço: criação de LPs</span>
+                  <span class="tag tag--lp">Hormozi framework</span>
+                  <span class="tag tag--lp">Bold/direto</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-landingpages-2.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── White-Label ── -->
+        <div class="index-group">
+          <div class="index-group__title">White-Label para Agências</div>
+          <div class="lp-grid">
+
+            <!-- lp-whitelabel-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Google Ads White-Label — Expertise &amp; Credibilidade</span>
+                  <span class="tag tag--google">White-Label</span>
+                  <code class="lp-card__file">lp-whitelabel-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> "A tua agência. A nossa expertise." — Adiciona paid traffic ao portfólio sem contratar equipa. Google Partner invisível. Inclui Google Ads + LP + Reporting white-label.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="lp-card__price">€197/mês por cliente</span>
+                  <span class="tag tag--google">Agências</span>
+                  <span class="tag tag--google">White-label flex</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-whitelabel-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Lead Magnets / Ferramentas ── -->
+        <div class="index-group">
+          <div class="index-group__title">Lead Magnets &amp; Ferramentas</div>
+          <div class="lp-grid">
+
+            <!-- lp-analise-concorrencia-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Análise de Concorrência PPC — Relatório Gratuito</span>
+                  <span class="tag tag--google">Lead Magnet</span>
+                  <code class="lp-card__file">lp-analise-concorrencia-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> "Descobre quem está a roubar os teus clientes no Google" — Relatório gratuito de concorrência PPC (via PPC Reveal) como primeiro contacto. Mostra anunciantes, copy, LPs e gráfico de visibilidade. Hook para leads Google Ads.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="lp-card__price">€0 — Lead magnet</span>
+                  <span class="tag tag--google">Google Ads</span>
+                  <span class="tag tag--google">PPC Reveal</span>
+                  <span class="tag tag--google">5/mês</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-analise-concorrencia-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Fraud / Anti-Fraude ── -->
+        <div class="index-group">
+          <div class="index-group__title">Proteção Anti-Fraude</div>
+          <div class="lp-grid">
+
+            <!-- lp-fraudblocker-1 -->
+            <div class="lp-card">
+              <div class="lp-card__main">
+                <div class="lp-card__top">
+                  <span class="lp-card__name">Proteção contra Click Fraud — Fraud Blocker</span>
+                  <span class="tag tag--google">Add-on</span>
+                  <code class="lp-card__file">lp-fraudblocker-1.html</code>
+                </div>
+                <p class="lp-card__angle">
+                  <strong>Ângulo:</strong> "22% do budget desperdiçado em cliques falsos" — bloqueia bots, concorrentes, VPNs e tráfego inválido em tempo real. Incluído nos planos Crescimento (2k cliques) e Escala (6k cliques). Add-on a €29/mês para Arranque. Powered by Fraud Blocker.
+                </p>
+                <div class="lp-card__bottom">
+                  <span class="lp-card__price">€29/mês (add-on) · Incluído em Crescimento e Escala</span>
+                  <span class="tag tag--google">Google Ads</span>
+                  <span class="tag tag--meta">Meta Ads</span>
+                  <span class="tag tag--google">Fraud Blocker</span>
+                </div>
+              </div>
+              <div class="lp-card__actions">
+                <a href="lp-fraudblocker-1.html" class="lp-card__link" target="_blank">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver página
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Ângulos futuros ── -->
+        <div class="index-group">
+          <div class="index-group__title">Ângulos futuros documentados</div>
+          <div style="background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:12px;padding:1.5rem 1.75rem;">
+            <div style="display:flex;flex-direction:column;gap:.75rem;">
+
+              <div style="display:flex;align-items:baseline;gap:.75rem;">
+                <code style="font-size:.8rem;color:var(--cor-texto-muted);flex-shrink:0;">lp-googleads-2</code>
+                <span style="font-size:.875rem;color:var(--cor-texto-muted);">Google Ads · <strong style="color:var(--cor-texto);">Ângulo DIY</strong> — "Já tentaste gerir tu? Aqui está o que normalmente falha."</span>
+              </div>
+
+              <div style="display:flex;align-items:baseline;gap:.75rem;">
+                <code style="font-size:.8rem;color:var(--cor-texto-muted);flex-shrink:0;">lp-googleads-3</code>
+                <span style="font-size:.875rem;color:var(--cor-texto-muted);">Google Ads · <strong style="color:var(--cor-texto);">Substituição de agência</strong> — "Caro demais, resultados fracos — troca sem dores."</span>
+              </div>
+
+              <div style="display:flex;align-items:baseline;gap:.75rem;">
+                <code style="font-size:.8rem;color:var(--cor-texto-muted);flex-shrink:0;">lp-googleads-4</code>
+                <span style="font-size:.875rem;color:var(--cor-texto-muted);">Google Ads · <strong style="color:var(--cor-texto);">Calculadora de ROI</strong> — LP com ferramenta interativa de estimativa de leads.</span>
+              </div>
+
+              <div style="display:flex;align-items:baseline;gap:.75rem;">
+                <code style="font-size:.8rem;color:var(--cor-texto-muted);flex-shrink:0;">lp-metaads-2</code>
+                <span style="font-size:.875rem;color:var(--cor-texto-muted);">Meta Ads · <strong style="color:var(--cor-texto);">Hormozi framework</strong> — versão bold/direta com value stack e garantia.</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('ano') && (document.getElementById('ano').textContent = new Date().getFullYear());
+  </script>
+
+</body>
+</html>

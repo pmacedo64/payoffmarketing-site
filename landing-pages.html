@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Landing Pages de Conversão — Payoff Marketing | Páginas que Convertem Tráfego em Leads</title>
+  <meta name="description" content="Landing pages otimizadas para converter o tráfego pago em leads. Design focado em CTA, copy persuasivo e testes A/B contínuos. Construídas para maximizar o retorno das suas campanhas." />
+  <meta name="keywords" content="landing page conversão, página de aterragem, CRO, otimização conversão, tráfego pago, agência Payoff Marketing" />
+  <link rel="canonical" href="https://payoffmarketing.pt/landing-pages" />
+  <meta property="og:title" content="Landing Pages de Conversão — Payoff Marketing" />
+  <meta property="og:description" content="Páginas que convertem o tráfego que já está a pagar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://payoffmarketing.pt/landing-pages" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .feature-list { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:2rem; }
+    .feature-list li { display:flex; align-items:flex-start; gap:.75rem; background:var(--cor-superficie); border:1px solid var(--cor-borda); border-radius:var(--raio); padding:1rem 1.125rem; font-size:.9375rem; color:var(--cor-texto-muted); }
+    .feature-list li::before { content:"✓"; color:var(--cor-primaria); font-weight:700; flex-shrink:0; }
+    /* ── Secção wireframe — gradiente azul subtil ── */
+    .section--wf-bg {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        160deg,
+        #0d1117 0%,
+        #0b1726 35%,
+        #091422 65%,
+        #0d1117 100%
+      );
+    }
+    .section--wf-bg .container { position: relative; z-index: 1; }
+    /* Texto da section header */
+    .section--wf-bg h2,
+    .section--wf-bg > .container > .section__header p { color: #ffffff; }
+    .section--wf-bg .section__header p { color: rgba(255,255,255,.7); }
+    /* Canvas do trail */
+    #wf-trail-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── Wireframe interativo ── */
+    .wf-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .wf-browser {
+      background: #0d1117; border: 1px solid #21262d; border-radius: 12px;
+      overflow: hidden; margin-top: 2.5rem; min-width: 520px; max-width: 680px;
+      margin-inline: auto; box-shadow: 0 8px 32px rgba(0,0,0,.5);
+    }
+    .wf-browser__bar {
+      background: #161b22; border-bottom: 1px solid #21262d;
+      padding: .55rem 1rem; display: flex; align-items: center; gap: .5rem;
+    }
+    .wf-dot { width: 10px; height: 10px; border-radius: 50%; background: #30363d; }
+    .wf-dot:nth-child(1){ background:#f85149; } .wf-dot:nth-child(2){ background:#e3b341; } .wf-dot:nth-child(3){ background:#3fb950; }
+    .wf-url { background:#0d1117; border:1px solid #21262d; border-radius:6px; padding:.2rem .75rem; font-size:.7rem; color:#8b949e; flex:1; text-align:center; max-width:260px; margin-inline:auto; font-family:monospace; }
+    .wf-page { padding: .75rem; display: flex; flex-direction: column; gap: .45rem; }
+
+    /* Bloco base */
+    .wf-el {
+      border: 1.5px dashed #30363d; border-radius: 6px; padding: .65rem .875rem;
+      cursor: default; transition: border-color .15s, background .15s; position: relative;
+    }
+    .wf-el:hover { border-color: #3b82f6; background: rgba(59,130,246,.06); }
+    .wf-el:hover::after {
+      content: attr(data-label); position: absolute; top: .35rem; right: .5rem;
+      background: #3b82f6; color: #fff; font-size: .625rem; font-weight: 700;
+      padding: .1rem .4rem; border-radius: 4px; pointer-events: none; white-space: nowrap;
+      letter-spacing: .03em; text-transform: uppercase;
+    }
+    /* Linhas de placeholder */
+    .wfl { height: 7px; background: #21262d; border-radius: 4px; }
+    .wfl-xxs{ width:50px; } .wfl-xs{ width:110px; } .wfl-sm{ width:180px; }
+    .wfl-md { width:250px; } .wfl-lg { width:320px; } .wfl-xl { width:100%; height:12px; }
+
+    /* Navbar */
+    .wf-nav { display:flex; align-items:center; gap:.5rem; padding:.5rem .875rem; }
+    .wf-nav__logo { width:44px; height:11px; background:#3b82f6; border-radius:3px; opacity:.5; }
+    .wf-nav__links { flex:1; display:flex; gap:.6rem; padding-left:.75rem; }
+    .wf-nav__links span { width:36px; height:7px; background:#21262d; border-radius:3px; }
+    .wf-nav__cta { width:66px; height:22px; background:rgba(59,130,246,.18); border:1px solid rgba(59,130,246,.35); border-radius:5px; }
+
+    /* Hero */
+    .wf-hero-wrap { background:rgba(59,130,246,.025); border:1.5px dashed #21262d; border-radius:6px; padding:1rem .875rem; display:flex; flex-direction:column; align-items:center; gap:.55rem; }
+    .wf-badge-el { border:1px dashed rgba(59,130,246,.4); background:rgba(59,130,246,.08); border-radius:999px; padding:.25rem .65rem; }
+    .wf-badge-el .wfl { background:rgba(59,130,246,.4); width:75px; height:7px; }
+    .wf-ctas-row { display:flex; gap:.65rem; flex-wrap:wrap; justify-content:center; }
+    .wf-btn-primary { width:120px; height:30px; background:#3b82f6; border-radius:5px; opacity:.65; }
+    .wf-btn-ghost   { width:100px; height:30px; background:transparent; border:1.5px solid #30363d; border-radius:5px; }
+
+    /* Trust */
+    .wf-trust-wrap { display:flex; flex-direction:column; align-items:center; gap:.45rem; padding:.65rem .875rem; }
+    .wf-trust-label { font-size:.6rem; color:#30363d; text-transform:uppercase; letter-spacing:.08em; }
+    .wf-logos-row { display:flex; gap:.65rem; flex-wrap:wrap; justify-content:center; }
+    .wf-logo-p { width:52px; height:16px; background:#21262d; border-radius:3px; }
+
+    /* Benefits */
+    .wf-ben-list { display:flex; flex-direction:column; gap:.4rem; }
+    .wf-ben-row { display:flex; align-items:center; gap:.5rem; }
+    .wf-check { color:#3b82f6; font-size:.75rem; font-weight:700; line-height:1; flex-shrink:0; }
+
+    /* Features / Cards */
+    .wf-cards-row { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; }
+    .wf-card { background:#161b22; border:1px solid #21262d; border-radius:5px; padding:.65rem .5rem; display:flex; flex-direction:column; align-items:center; gap:.3rem; }
+    .wf-icon-sq { width:26px; height:26px; background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2); border-radius:5px; }
+
+    /* Testemunho */
+    .wf-testi-body { margin-bottom:.55rem; }
+    .wf-author-row { display:flex; align-items:center; gap:.45rem; }
+    .wf-avatar { width:26px; height:26px; border-radius:50%; background:#21262d; flex-shrink:0; }
+
+    /* FAQ */
+    .wf-faq-list { display:flex; flex-direction:column; gap:0; }
+    .wf-faq-row { display:flex; align-items:center; justify-content:space-between; padding:.4rem 0; border-bottom:1px solid #21262d; }
+    .wf-faq-row:last-child { border-bottom:none; }
+    .wf-chev { color:#3b82f6; font-size:.7rem; }
+
+    /* CTA Final */
+    .wf-cta-final { text-align:center; padding:1rem .875rem; background:rgba(59,130,246,.03); }
+    .wf-cta-btn-lg { width:140px; height:32px; background:#3b82f6; border-radius:5px; opacity:.65; margin:.75rem auto 0; }
+
+    /* Footer bar */
+    .wf-footer-bar { background:#161b22; border:none !important; border-top:1px solid #21262d !important; padding:.55rem .875rem; text-align:center; border-radius:0 0 5px 5px; }
+
+    /* Tooltip flutuante */
+    .wf-tooltip {
+      display: none; position: fixed; z-index: 9999;
+      background: #161b22; border: 1px solid #3b82f6; border-radius: 10px;
+      padding: .875rem 1.125rem; max-width: 300px; width: max-content;
+      box-shadow: 0 8px 28px rgba(0,0,0,.65); pointer-events: none;
+    }
+    .wf-tooltip.vis { display: block; }
+    .wf-tooltip__title { font-size: .875rem; font-weight: 700; color: #3b82f6; margin-bottom: .4rem; }
+    .wf-tooltip__body  { font-size: .8125rem; color: #8b949e; line-height: 1.55; }
+    .wf-hint { text-align:center; margin-top:1rem; font-size:.8125rem; color:#8b949e; }
+    .wf-hint span { display:inline-block; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="container navbar__inner">
+        <a href="index.html" class="navbar__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></a>
+        <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menu" onclick="toggleMenu(this)">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle active" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="servicos.html">Todos os Serviços</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+              <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculadora.html">Calculadora ROI</a></li>
+          <li><a href="contatos.html" class="navbar__cta">Falar Connosco</a></li>
+        </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <a href="en/landing-pages.html" class="lang-switch__btn" lang="en">EN</a>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <span class="hero__badge">Serviço</span>
+        <h1 id="hero-titulo">Landing Pages de Conversão</h1>
+        <p>De nada serve trazer tráfego pago para uma página genérica. Uma landing page dedicada pode duplicar (ou triplicar) a sua taxa de conversão. Criamos landing pages para PMEs em Portugal, otimizadas para Google Ads e Meta Ads.</p>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section" aria-labelledby="problema-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="problema-titulo">O problema mais comum</h2>
+          <p>A maioria das empresas gasta dinheiro a trazer tráfego... para a página errada.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3>Homepage como destino</h3>
+            <p>A homepage serve múltiplos objetivos. Quem chega de um anúncio fica perdido, sai, e não converte.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3>Mensagem desconcertante</h3>
+            <p>O anúncio promete uma coisa, a página fala de outra. O utilizador não confia e abandona.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3>CTA fraco ou escondido</h3>
+            <p>O visitante não sabe o que fazer a seguir. Sem um CTA claro e visível, sai sem converter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WIREFRAME INTERATIVO -->
+    <section class="section section--wf-bg" aria-labelledby="wf-titulo">
+      <canvas id="wf-trail-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="section__header">
+          <h2 id="wf-titulo">Anatomia de uma landing page que converte</h2>
+          <p>Passe o rato por cima de cada elemento para perceber a sua função e impacto na conversão.</p>
+        </div>
+
+        <div class="wf-outer">
+          <div class="wf-browser" role="img" aria-label="Wireframe interativo de landing page">
+
+            <!-- Barra do browser -->
+            <div class="wf-browser__bar" aria-hidden="true">
+              <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+              <span class="wf-url">https://suaempresa.pt/oferta</span>
+            </div>
+
+            <div class="wf-page" aria-hidden="true">
+
+              <!-- 1. Navbar -->
+              <div class="wf-el wf-nav"
+                   data-label="Navbar"
+                   data-tip-title="Navbar"
+                   data-tip-body="Em LPs de alta conversão, a navbar é simplificada ou removida. Menos links = menos distrações = mais conversões. Se mantiver, deixe só o logo e um CTA — sem menu de navegação.">
+                <div class="wf-nav__logo"></div>
+                <div class="wf-nav__links"><span></span><span></span></div>
+                <div class="wf-nav__cta"></div>
+              </div>
+
+              <!-- 2. Hero (above the fold) -->
+              <div class="wf-hero-wrap">
+
+                <div class="wf-el wf-badge-el"
+                     data-label="Badge"
+                     data-tip-title="Badge / Categoria"
+                     data-tip-body="Etiqueta acima do headline. Confirma ao visitante que chegou ao lugar certo. Ex: 'Para PMEs' ou 'Gestão de Tráfego'. Aumenta a relevância imediata sem ocupar espaço.">
+                  <div class="wfl wfl-xs"></div>
+                </div>
+
+                <div class="wf-el"
+                     data-label="Headline ⭐"
+                     data-tip-title="Headline Principal ⭐"
+                     data-tip-body="A frase mais importante da página. Tem 5 segundos para convencer o visitante a ficar. Deve comunicar o benefício principal — não o produto. 'Mais leads ao mesmo custo' bate 'Agência de Google Ads'.">
+                  <div class="wfl wfl-xl" style="margin-bottom:.4rem;"></div>
+                  <div class="wfl wfl-lg" style="margin:0 auto;"></div>
+                </div>
+
+                <div class="wf-el"
+                     data-label="Subheadline"
+                     data-tip-title="Subheadline"
+                     data-tip-body="Expande o headline com contexto: como funciona, para quem é, o que acontece a seguir. Máximo 2 linhas. Deve suportar o headline — nunca repeti-lo.">
+                  <div class="wfl wfl-md" style="margin:0 auto .3rem;"></div>
+                  <div class="wfl wfl-sm" style="margin:0 auto;"></div>
+                </div>
+
+                <div class="wf-ctas-row">
+                  <div class="wf-el"
+                       data-label="CTA Primário ⭐"
+                       data-tip-title="CTA Primário ⭐"
+                       data-tip-body="O elemento mais importante da LP. Deve estar visível SEM scroll (above the fold). Texto específico converte muito mais: 'Quero Mais Leads →' bate 'Saiba Mais'. Cor contrastante obrigatória — nunca cinzento.">
+                    <div class="wf-btn-primary"></div>
+                  </div>
+                  <div class="wf-el"
+                       data-label="CTA Secundário"
+                       data-tip-title="CTA Secundário"
+                       data-tip-body="Opção para quem ainda não está pronto para converter. Ex: 'Ver como funciona ↓'. Deve ser visualmente muito mais discreto que o CTA primário — nunca compete com ele.">
+                    <div class="wf-btn-ghost"></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- 3. Prova Social / Logos -->
+              <div class="wf-el wf-trust-wrap"
+                   data-label="Prova Social"
+                   data-tip-title="Prova Social Imediata"
+                   data-tip-body="Logos de clientes, certificações ou métricas ('120+ empresas'). Posicionados logo abaixo do CTA primário reduzem a ansiedade de conversão significativamente. Quanto mais reconhecíveis, melhor.">
+                <div class="wf-trust-label">Confiam em nós</div>
+                <div class="wf-logos-row">
+                  <div class="wf-logo-p"></div><div class="wf-logo-p"></div>
+                  <div class="wf-logo-p"></div><div class="wf-logo-p"></div>
+                </div>
+              </div>
+
+              <!-- 4. Benefícios -->
+              <div class="wf-el"
+                   data-label="Benefícios"
+                   data-tip-title="Benefícios (não features)"
+                   data-tip-body="O visitante quer saber o que muda para ele — não o que o produto faz tecnicamente. 'Ganha 3× mais leads' bate 'Sistema de otimização avançado'. Máximo 3-5. Cada um deve ser específico e verificável.">
+                <div class="wf-ben-list">
+                  <div class="wf-ben-row"><span class="wf-check">✓</span><div class="wfl wfl-sm"></div></div>
+                  <div class="wf-ben-row"><span class="wf-check">✓</span><div class="wfl wfl-md"></div></div>
+                  <div class="wf-ben-row"><span class="wf-check">✓</span><div class="wfl wfl-sm"></div></div>
+                </div>
+              </div>
+
+              <!-- 5. Features / Cards -->
+              <div class="wf-el"
+                   data-label="Prova dos Benefícios"
+                   data-tip-title="Prova dos Benefícios"
+                   data-tip-body="Explica como entrega os benefícios prometidos. Ícone + título + 1-2 linhas. Não liste tudo — só o que diferencia da concorrência. 3 cards é o número ideal. Mais do que isso dispersa.">
+                <div class="wf-cards-row">
+                  <div class="wf-card"><div class="wf-icon-sq"></div><div class="wfl wfl-xs" style="margin:.35rem auto .2rem;"></div><div class="wfl wfl-xxs" style="margin:0 auto;"></div></div>
+                  <div class="wf-card"><div class="wf-icon-sq"></div><div class="wfl wfl-xs" style="margin:.35rem auto .2rem;"></div><div class="wfl wfl-xxs" style="margin:0 auto;"></div></div>
+                  <div class="wf-card"><div class="wf-icon-sq"></div><div class="wfl wfl-xs" style="margin:.35rem auto .2rem;"></div><div class="wfl wfl-xxs" style="margin:0 auto;"></div></div>
+                </div>
+              </div>
+
+              <!-- 6. Testemunho -->
+              <div class="wf-el"
+                   data-label="Testemunho"
+                   data-tip-title="Testemunho com Resultado Concreto"
+                   data-tip-body="Um testemunho específico com número concreto vale mais que dez genéricos. Inclua: nome, empresa, foto se possível. Ex: 'Passámos de 12 para 47 leads/mês em 60 dias — João Silva, CEO da Empresa X'.">
+                <div class="wf-testi-body">
+                  <div class="wfl wfl-lg" style="margin-bottom:.3rem;"></div>
+                  <div class="wfl wfl-md" style="margin-bottom:.3rem;"></div>
+                  <div class="wfl wfl-sm"></div>
+                </div>
+                <div class="wf-author-row">
+                  <div class="wf-avatar"></div>
+                  <div><div class="wfl wfl-xs" style="margin-bottom:.2rem;"></div><div class="wfl wfl-xxs"></div></div>
+                </div>
+              </div>
+
+              <!-- 7. FAQ / Objeções -->
+              <div class="wf-el"
+                   data-label="FAQ / Objeções"
+                   data-tip-title="FAQ / Resposta a Objeções"
+                   data-tip-body="Antecipa e responde às dúvidas que impedem a conversão. Cada pergunta deve ser uma objeção real: 'Qual o preço?', 'Quanto tempo leva?', 'E se não funcionar?'. Eliminar a dúvida = aumentar a conversão.">
+                <div class="wf-faq-list">
+                  <div class="wf-faq-row"><div class="wfl wfl-sm"></div><span class="wf-chev">▾</span></div>
+                  <div class="wf-faq-row"><div class="wfl wfl-md"></div><span class="wf-chev">▾</span></div>
+                  <div class="wf-faq-row"><div class="wfl wfl-sm"></div><span class="wf-chev">▾</span></div>
+                </div>
+              </div>
+
+              <!-- 8. CTA Final -->
+              <div class="wf-el wf-cta-final"
+                   data-label="CTA Final ⭐"
+                   data-tip-title="CTA Final ⭐"
+                   data-tip-body="Quem chegou aqui leu a página toda — está mais próximo de converter. Repita a proposta de valor principal e reforce com urgência ou garantia se possível. Mesmo destino que o CTA primário.">
+                <div class="wfl wfl-lg" style="margin:0 auto .4rem;"></div>
+                <div class="wfl wfl-sm" style="margin:0 auto;"></div>
+                <div class="wf-cta-btn-lg"></div>
+              </div>
+
+              <!-- 9. Footer -->
+              <div class="wf-el wf-footer-bar"
+                   data-label="Footer"
+                   data-tip-title="Footer Minimalista"
+                   data-tip-body="Em LPs, o footer deve ser mínimo: só legais obrigatórios (política de privacidade, termos). Sem links externos, sem menu completo — qualquer saída que não seja o CTA é uma conversão perdida.">
+                <div class="wfl wfl-xs" style="margin:0 auto .2rem;"></div>
+                <div class="wfl wfl-xxs" style="margin:0 auto;"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <p class="wf-hint"><span>● </span>Passe o cursor por cada secção para ver a explicação</p>
+        </div>
+
+        <!-- Tooltip global -->
+        <div class="wf-tooltip" id="wf-tooltip" role="tooltip">
+          <div class="wf-tooltip__title" id="wf-tip-title"></div>
+          <div class="wf-tooltip__body"  id="wf-tip-body"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O QUE ESTÁ INCLUÍDO -->
+    <section class="section" aria-labelledby="inclui-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="inclui-titulo">O que está incluído</h2>
+        </div>
+        <ul class="feature-list">
+          <li>Briefing e análise da oferta e público</li>
+          <li>Arquitetura de informação (wireframe)</li>
+          <li>Copy persuasivo orientado à conversão</li>
+          <li>Design responsivo (mobile-first)</li>
+          <li>Integração com formulário / CRM</li>
+          <li>Configuração de eventos de conversão</li>
+          <li>Testes A/B de headline e CTA</li>
+          <li>Otimização contínua com base em dados reais</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MÉTRICAS -->
+    <section class="section section--alt" aria-label="Impacto típico">
+      <div class="container">
+        <div class="stats-grid">
+          <div><div class="stat__num">+85%</div><div class="stat__label">Aumento médio na taxa de conversão</div></div>
+          <div><div class="stat__num">-40%</div><div class="stat__label">Redução no CPA ao melhorar a LP</div></div>
+          <div><div class="stat__num">10 dias</div><div class="stat__label">Da aprovação do wireframe ao live</div></div>
+          <div><div class="stat__num">A/B</div><div class="stat__label">Testes contínuos incluídos</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEIA TAMBÉM -->
+    <section class="section" aria-label="Artigos relacionados">
+      <div class="container" style="max-width:720px;">
+        <h2 style="margin-bottom:1.25rem;">Leia também</h2>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;">
+          <li>→ <a href="blog/landing-pages-campanhas-trafego-pago.html">Landing Pages em Campanhas de Tráfego Pago: porquê são essenciais para converter</a></li>
+          <li>→ <a href="blog/como-reduzir-cpa-google-ads.html">Como reduzir o CPA no Google Ads: 7 ajustes com impacto imediato</a></li>
+          <li>→ <a href="blog/linkedin-lead-gen-forms-vs-landing-page.html">LinkedIn Lead Gen Forms vs Landing Page: qual tem CPL mais baixo</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" aria-labelledby="cta-titulo">
+      <div class="container" style="text-align:center;">
+        <h2 id="cta-titulo">Está a pagar por tráfego que não converte?</h2>
+        <p style="max-width:50ch; margin-inline:auto; margin-top:.75rem; margin-bottom:2rem;">
+          Vamos ver a sua situação atual e mostrar o que se pode melhorar imediatamente.
+        </p>
+        <a href="contatos.html" class="btn btn--primary">Falar Connosco →</a>
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="google-ads.html">Google Ads</a></li>
+            <li><a href="meta-ads.html">Meta Ads</a></li>
+            <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="landing-pages.html">Landing Pages</a></li>
+            <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="calculadora.html">Calculadora ROI</a></li>
+            <li><a href="precos.html">Preços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="blog/index.html" class="footer__privacy">Blog</a>
+        <a href="privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    function toggleMenu(btn) {
+      var menu = document.getElementById('main-menu');
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    }
+  </script>
+
+  <script src="js/dropdown.js"></script>
+  <script>
+    /* ── Mouse trail ── */
+    (function () {
+      var canvas  = document.getElementById('wf-trail-canvas');
+      if (!canvas) return;
+      var ctx     = canvas.getContext('2d');
+      var section = canvas.closest('section');
+      var pts     = [];
+      var LIFE    = 650;   /* ms até desaparecer */
+      var MAX_R   = 5;     /* raio máximo da partícula */
+      var MAX_A   = 0.22;  /* opacidade máxima — muito subtil */
+      var raf     = null;
+
+      function resize() {
+        canvas.width  = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      section.addEventListener('mousemove', function (e) {
+        var r = section.getBoundingClientRect();
+        pts.push({
+          x: e.clientX - r.left,
+          y: e.clientY - r.top,
+          radius: 2 + Math.random() * (MAX_R - 2),
+          born: performance.now()
+        });
+        if (!raf) tick();
+      });
+
+      function tick() {
+        var now = performance.now();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pts = pts.filter(function (p) { return now - p.born < LIFE; });
+        pts.forEach(function (p) {
+          var progress = (now - p.born) / LIFE;   /* 0 → 1 */
+          var alpha    = MAX_A * (1 - progress);
+          var radius   = p.radius * (1 - progress * 0.5);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+          ctx.fill();
+        });
+        raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+      }
+    })();
+
+    /* ── Wireframe tooltip ── */
+    (function () {
+      var tooltip  = document.getElementById('wf-tooltip');
+      var tipTitle = document.getElementById('wf-tip-title');
+      var tipBody  = document.getElementById('wf-tip-body');
+      if (!tooltip) return;
+
+      var OFFSET = 18;
+
+      document.querySelectorAll('.wf-el').forEach(function (el) {
+        el.addEventListener('mouseenter', function (e) {
+          var title = el.getAttribute('data-tip-title');
+          var body  = el.getAttribute('data-tip-body');
+          if (!title) return;
+          tipTitle.textContent = title;
+          tipBody.textContent  = body;
+          tooltip.classList.add('vis');
+          position(e);
+        });
+        el.addEventListener('mousemove', position);
+        el.addEventListener('mouseleave', function () {
+          tooltip.classList.remove('vis');
+        });
+      });
+
+      function position(e) {
+        /* Força reflow para obter dimensões reais */
+        var tw = tooltip.offsetWidth  || 300;
+        var th = tooltip.offsetHeight || 120;
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+        var x  = e.clientX + OFFSET;
+        var y  = e.clientY - 12;
+
+        /* Não sair pela direita */
+        if (x + tw > vw - 12) x = e.clientX - tw - OFFSET;
+        /* Não sair por cima */
+        if (y < 8) y = 8;
+        /* Não sair por baixo */
+        if (y + th > vh - 8) y = vh - th - 8;
+
+        tooltip.style.left = x + 'px';
+        tooltip.style.top  = y + 'px';
+      }
+    })();
+  </script>
+  <!-- trail inline -->
+  <script>/* trail.js — mouse trail for .hero and .page-hero sections */
+(function () {
+  var LIFE  = 650;
+  var MAX_R = 5;
+  var MAX_A = 0.22;
+
+  function initTrail(section) {
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    section.insertBefore(canvas, section.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var pts = [];
+    var raf = null;
+
+    function resize() {
+      canvas.width  = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    section.addEventListener('mousemove', function (e) {
+      var r = section.getBoundingClientRect();
+      pts.push({
+        x: e.clientX - r.left,
+        y: e.clientY - r.top,
+        radius: 2 + Math.random() * (MAX_R - 2),
+        born: performance.now()
+      });
+      if (!raf) tick();
+    });
+
+    function tick() {
+      var now = performance.now();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts = pts.filter(function (p) { return now - p.born < LIFE; });
+      pts.forEach(function (p) {
+        var progress = (now - p.born) / LIFE;
+        var alpha    = MAX_A * (1 - progress);
+        var radius   = p.radius * (1 - progress * 0.5);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      });
+      raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+    }
+  }
+
+  document.querySelectorAll('.hero, .page-hero').forEach(initTrail);
+})();</script>
+</body>
+</html>

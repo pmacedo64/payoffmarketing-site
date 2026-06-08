@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WSST');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO On-Page ── -->
+  <title>Performance Max: o que mudou em 2026 e como tirar partido | Payoff Marketing</title>
+  <meta name="description" content="Guia prático sobre Performance Max em 2026 — o que o Google mudou, como configurar asset groups e sinais de audiência, quando usar PMax e o que esperar nos primeiros 30 dias." />
+  <meta name="keywords" content="performance max 2026, performance max google ads, pmax guia, como usar performance max, performance max asset groups, performance max sinais audiência, performance max portugal" />
+  <meta name="author" content="Payoff Marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Performance Max: o que mudou em 2026 e como tirar partido" />
+  <meta property="og:description" content="Guia prático sobre Performance Max — o que mudou, como configurar, quando usar e o que esperar nos primeiros 30 dias." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico" />
+  <meta property="og:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="article:published_time" content="2026-05-17T11:00:00+01:00" />
+  <meta property="article:author" content="Payoff Marketing" />
+  <meta property="article:section" content="Google Ads" />
+  <meta property="article:tag" content="Google Ads" />
+  <meta property="article:tag" content="Performance Max" />
+  <meta property="article:tag" content="Otimização" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Performance Max: o que mudou em 2026 e como tirar partido" />
+  <meta name="twitter:description" content="Guia prático sobre PMax — o que mudou, como configurar e o que esperar nos primeiros 30 dias." />
+  <meta name="twitter:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+
+  <!-- Structured Data: Article + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico#article",
+        "headline": "Performance Max: o que mudou em 2026 e como tirar partido",
+        "description": "Guia prático sobre Performance Max — o que o Google mudou em 2026, como configurar asset groups e sinais de audiência, quando usar e o que esperar nos primeiros 30 dias.",
+        "image": "https://payoffmarketing.pt/blog/img/hero-lp.webp",
+        "datePublished": "2026-05-17T11:00:00+01:00",
+        "dateModified": "2026-05-17T11:00:00+01:00",
+        "author": {
+          "@type": "Organization",
+          "name": "Payoff Marketing",
+          "url": "https://payoffmarketing.pt"
+        },
+        "publisher": {
+          "@id": "https://payoffmarketing.pt/#organization"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico"
+        },
+        "keywords": ["Performance Max", "Google Ads", "PMax", "asset groups", "sinais de audiência", "2026"],
+        "articleSection": "Google Ads",
+        "inLanguage": "pt-PT",
+        "wordCount": "2300"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://payoffmarketing.pt/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://payoffmarketing.pt/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Performance Max: o que mudou em 2026", "item": "https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Blog Article Layout ── */
+    .article-hero {
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, #0f1923 100%);
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 3rem 0 0;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--cor-primaria); }
+    .breadcrumb__sep { color: var(--cor-borda); }
+
+    .article-hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .article-tag {
+      display: inline-block;
+      background: rgba(59,130,246,.15);
+      color: var(--cor-primaria);
+      border: 1px solid rgba(59,130,246,.3);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 99px;
+    }
+    .article-hero__date,
+    .article-hero__read {
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+    }
+    .article-hero__date::before { content: "📅 "; }
+    .article-hero__read::before { content: "⏱ "; }
+
+    .article-hero h1 {
+      font-size: clamp(1.5rem, 3.4vw, 2.35rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 820px;
+    }
+
+    .article-hero__intro {
+      font-size: 1.125rem;
+      color: var(--cor-texto-muted);
+      max-width: 720px;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    /* Hero image */
+    .article-hero__img-wrap {
+      margin-top: 2.5rem;
+      border-radius: var(--raio) var(--raio) 0 0;
+      overflow: hidden;
+      max-height: 480px;
+    }
+    .article-hero__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Article body layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0 4rem;
+    }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar {
+        /* sidebar aparece abaixo do artigo em mobile — não usar order: -1 */
+        position: static;
+        top: auto;
+      }
+    }
+
+    /* Article prose */
+    .article-body h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      margin: 2.5rem 0 1rem;
+      padding-top: .5rem;
+      border-top: 1px solid var(--cor-borda);
+      color: var(--cor-texto);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; }
+
+    .article-body h3 {
+      font-size: 1.125rem;
+      color: var(--cor-acento);
+      margin: 1.75rem 0 .5rem;
+    }
+
+    .article-body p {
+      color: var(--cor-texto-muted);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+
+    .article-body strong { color: var(--cor-texto); }
+
+    .article-body ul, .article-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-body li {
+      color: var(--cor-texto-muted);
+      margin-bottom: .5rem;
+      line-height: 1.7;
+    }
+    .article-body li strong { color: var(--cor-texto); }
+
+    /* Inline images */
+    .article-img {
+      width: 100%;
+      border-radius: var(--raio);
+      margin: 1.75rem 0;
+      border: 1px solid var(--cor-borda);
+      overflow: hidden;
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      font-size: .8rem;
+      color: var(--cor-texto-muted);
+      padding: .6rem 1rem;
+      background: var(--cor-superficie);
+      text-align: center;
+      border-top: 1px solid var(--cor-borda);
+      font-style: italic;
+    }
+
+    /* Stat highlight blocks */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .stat-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-card__value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--cor-primaria);
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .stat-card__label {
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+      line-height: 1.4;
+    }
+
+    /* Table overflow em mobile */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.75rem 0;
+    }
+    .table-wrap .comparison-table { margin: 0; }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: .9rem;
+    }
+    .comparison-table th {
+      background: var(--cor-superficie);
+      color: var(--cor-texto);
+      font-weight: 700;
+      padding: .85rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--cor-primaria);
+    }
+    .comparison-table th:first-child { border-radius: var(--raio) 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 var(--raio) 0 0; }
+    .comparison-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--cor-borda);
+      color: var(--cor-texto-muted);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table .check { color: #3fb950; font-weight: 700; }
+    .comparison-table .cross { color: #f85149; font-weight: 700; }
+
+    /* Tip / callout box */
+    .callout {
+      background: rgba(59,130,246,.08);
+      border-left: 3px solid var(--cor-primaria);
+      border-radius: 0 var(--raio) var(--raio) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .callout__label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-primaria);
+      margin-bottom: .35rem;
+    }
+    .callout p { margin-bottom: 0; font-size: .95rem; }
+
+    .callout--warn {
+      background: rgba(248,81,73,.08);
+      border-left-color: var(--cor-erro);
+    }
+    .callout--warn .callout__label { color: var(--cor-erro); }
+
+    .callout--success {
+      background: rgba(63,185,80,.08);
+      border-left-color: #3fb950;
+    }
+    .callout--success .callout__label { color: #3fb950; }
+
+    /* Numbered checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0;
+    }
+    .checklist li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+      color: var(--cor-texto-muted);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist__num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cor-primaria);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .1rem;
+    }
+
+    /* Inline CTA */
+    .article-cta {
+      background: linear-gradient(135deg, var(--cor-superficie), #0f1923);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 2rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    .article-cta h3 { color: var(--cor-texto); margin-bottom: .5rem; }
+    .article-cta p  { margin-bottom: 1.25rem; }
+    .article-cta .btn { display: inline-block; }
+
+    /* Sidebar */
+    .article-sidebar { position: sticky; top: 5rem; }
+
+    .toc-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .toc-card__title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-texto-muted);
+      margin-bottom: 1rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li { margin-bottom: .5rem; }
+    .toc-list a {
+      font-size: .875rem;
+      color: var(--cor-texto-muted);
+      transition: color var(--transicao);
+      line-height: 1.4;
+      display: block;
+    }
+    .toc-list a:hover { color: var(--cor-primaria); }
+    .toc-list a.active { color: var(--cor-primaria); font-weight: 600; }
+
+    .sidebar-service-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .sidebar-service-card h4 {
+      font-size: .95rem;
+      margin-bottom: .5rem;
+      color: var(--cor-texto);
+    }
+    .sidebar-service-card p {
+      font-size: .85rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .sidebar-service-card .btn {
+      display: block;
+      text-align: center;
+      font-size: .85rem;
+      padding: .6rem 1rem;
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-top: 3rem;
+    }
+    .author-box__avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--cor-borda);
+    }
+    .author-box__name { font-weight: 700; color: var(--cor-texto); font-size: .95rem; }
+    .author-box__bio  { font-size: .85rem; color: var(--cor-texto-muted); margin-top: .25rem; }
+
+    /* Related articles */
+    .related-section { padding: 3rem 0; border-top: 1px solid var(--cor-borda); }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .related-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      overflow: hidden;
+      transition: border-color var(--transicao);
+    }
+    .related-card:hover { border-color: var(--cor-primaria); }
+    .related-card__img { width: 100%; height: 160px; object-fit: cover; }
+    .related-card__body { padding: 1rem; }
+    .related-card__tag  { font-size: .75rem; color: var(--cor-primaria); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .related-card__title { font-size: 1rem; font-weight: 700; color: var(--cor-texto); margin: .4rem 0 .5rem; line-height: 1.3; }
+    .related-card__excerpt { font-size: .85rem; color: var(--cor-texto-muted); line-height: 1.5; }
+
+    /* Verdict box */
+    .verdict {
+      background: linear-gradient(135deg, rgba(59,130,246,.10), rgba(168,85,247,.10));
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .verdict__label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-primaria);
+      margin-bottom: .5rem;
+    }
+    .verdict p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: var(--cor-texto); }
+    .verdict p strong { color: var(--cor-acento); }
+
+    /* Timeline de novidades */
+    .timeline {
+      margin: 1.75rem 0;
+      padding: 0;
+      list-style: none;
+      border-left: 2px solid var(--cor-borda);
+    }
+    .timeline li {
+      position: relative;
+      padding: 0 0 1.5rem 1.5rem;
+      color: var(--cor-texto-muted);
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cor-primaria);
+    }
+    .timeline__tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cor-primaria);
+      background: rgba(59,130,246,.12);
+      border: 1px solid rgba(59,130,246,.25);
+      border-radius: 99px;
+      padding: .15rem .6rem;
+      margin-bottom: .4rem;
+    }
+
+    /* Asset group card */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .asset-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.1rem;
+    }
+    .asset-card__label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cor-texto-muted);
+      margin-bottom: .5rem;
+    }
+    .asset-card__title {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--cor-texto);
+      margin-bottom: .4rem;
+    }
+    .asset-card p {
+      font-size: .85rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+      <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="main-menu" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li class="navbar__dropdown">
+          <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+          <ul class="navbar__dropdown-menu" role="list">
+            <li><a href="../servicos.html">Todos os Serviços</a></li>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../calculadora.html">Calculadora ROI</a></li>
+        <li><a href="../contatos.html" class="navbar__cta">Falar Connosco</a></li>
+      </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="lang-switch__btn" lang="en">EN</span>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── ARTICLE HERO ─────────────────────────────────────────────────────── -->
+  <section class="article-hero">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="index.html">Blog</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Performance Max 2026: guia prático</span>
+      </nav>
+
+      <div class="article-hero__meta">
+        <span class="article-tag">Google Ads</span>
+        <span class="article-tag">Performance Max</span>
+        <span class="article-hero__date">17 de Maio de 2026</span>
+        <span class="article-hero__read">10 min de leitura</span>
+      </div>
+
+      <h1>Performance Max: o que mudou em 2026 e como tirar partido</h1>
+
+      <p class="article-hero__intro">
+        O Performance Max chegou em 2021 prometendo automatizar tudo. Em 2026, ainda divide opiniões —
+        há contas onde bate o Search clássico, e há contas onde queima budget sem resultado.
+        A diferença está em como é configurado. Este guia explica o que o Google mudou, o que funciona,
+        e o que evitar.
+      </p>
+
+      <div class="article-hero__img-wrap">
+        <img
+          src="img/hero-lp.webp"
+          alt="Performance Max Google Ads 2026 — guia prático de configuração e otimização"
+          width="1200" height="480"
+          loading="eager"
+        />
+        <!-- STOCK IMAGE: Substituir por imagem sobre Performance Max / automação Google Ads. Dimensões: 1200×480px. -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ARTICLE BODY + SIDEBAR ────────────────────────────────────────────── -->
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- ── ARTICLE BODY ──────────────────────────────────────────────────── -->
+      <article class="article-body">
+
+        <!-- RESPOSTA DIRETA -->
+        <h2 id="resposta">A resposta direta</h2>
+
+        <div class="verdict">
+          <p class="verdict__label">Em 30 segundos</p>
+          <p>
+            PMax funciona bem quando tem <strong>dados de conversão suficientes</strong> (30+ por mês),
+            <strong>assets de qualidade</strong> (vídeo, imagens, textos variados) e
+            <strong>sinais de audiência bem definidos</strong>. Sem estas três condições, está a dar o
+            controlo ao algoritmo sem lhe dar matéria-prima — e o resultado é budget desperdiçado.
+            Em 2026, o Google deu mais transparência e controlo: exclusões de marca, insights de canal,
+            e melhor separação entre Search e PMax. <strong>Comece por Search, valide, e só depois migre para PMax.</strong>
+          </p>
+        </div>
+
+        <!-- O QUE É -->
+        <h2 id="o-que-e">O que é o Performance Max — e o que não é</h2>
+
+        <p>
+          Performance Max é um tipo de campanha do Google Ads que corre em simultâneo em todos os
+          canais do Google: Search, Shopping, Display, YouTube, Discover, Gmail e Maps. Um único
+          conjunto de assets (textos, imagens, vídeos) é distribuído automaticamente pelo algoritmo
+          nos canais e formatos onde prevê melhor desempenho.
+        </p>
+        <p>
+          O que o PMax <em>não</em> é: uma campanha mágica que funciona sozinha. É uma campanha
+          que depende inteiramente da qualidade do input que lhe dá — assets, sinais de audiência,
+          dados de conversão, e exclusões. Configurar mal é configurar para desperdiçar.
+        </p>
+
+        <div class="callout">
+          <p class="callout__label">A metáfora certa</p>
+          <p>O PMax é como contratar um gestor de media muito eficiente — mas que só é bom
+          se lhe der um bom briefing. Sem contexto, vai tomar decisões razoáveis com o que tem.
+          Com um bom briefing (sinais, assets, dados), toma decisões excelentes.</p>
+        </div>
+
+        <!-- O QUE MUDOU EM 2026 -->
+        <h2 id="o-que-mudou">O que mudou em 2026</h2>
+
+        <p>
+          O Google fez atualizações relevantes ao PMax ao longo de 2025 e início de 2026.
+          As mais importantes para o dia-a-dia de gestão:
+        </p>
+
+        <ul class="timeline">
+          <li>
+            <span class="timeline__tag">Transparência</span>
+            <strong>Insights de canal desagregados.</strong> Já é possível ver quanto do budget está
+            a ir para Search, Shopping, YouTube, Display e Discover separadamente — algo que não existia
+            no lançamento. Essencial para perceber onde o algoritmo está a apostar e se faz sentido.
+          </li>
+          <li>
+            <span class="timeline__tag">Controlo</span>
+            <strong>Exclusões de marca nativas.</strong> Antes era necessário pedir ao Google Account
+            Manager. Agora faz-se diretamente na interface — qualquer anunciante pode excluir os
+            próprios termos de marca do PMax para evitar canibalização com campanhas Search de marca.
+          </li>
+          <li>
+            <span class="timeline__tag">Controlo</span>
+            <strong>Exclusões de URL por grupo de assets.</strong> Pode excluir páginas específicas
+            do site (ex: carreiras, imprensa, login) para que o algoritmo não as use como destino.
+            Reduz tráfego irrelevante e melhora a conversão média.
+          </li>
+          <li>
+            <span class="timeline__tag">Otimização</span>
+            <strong>Sinais de audiência com dados de CRM.</strong> A integração de Customer Match
+            (listas de clientes por email) como sinal de audiência ficou mais robusta e passou a estar
+            disponível mesmo em contas sem histórico de conversões Google Ads.
+          </li>
+          <li>
+            <span class="timeline__tag">Relatórios</span>
+            <strong>Relatório de termos de pesquisa mais detalhado.</strong> O PMax mostra agora
+            mais termos do que em versões anteriores — ainda não tão completo quanto o Search clássico,
+            mas suficiente para adicionar negativos relevantes e controlar o tráfego.
+          </li>
+          <li>
+            <span class="timeline__tag">Automação</span>
+            <strong>Lances de valor de conversão com metas de ROAS mais granulares.</strong>
+            É possível definir valores de conversão diferentes por tipo de ação — o algoritmo passa
+            a otimizar pelo valor real, não pelo volume. Crítico para e-commerce com margens variáveis.
+          </li>
+        </ul>
+
+        <!-- QUANDO USAR -->
+        <h2 id="quando-usar">Quando usar PMax — e quando não usar</h2>
+
+        <p>
+          Esta é a decisão mais importante. PMax não é para todas as contas nem para todas as fases.
+        </p>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Contexto</th>
+              <th>PMax faz sentido?</th>
+              <th>Porquê</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Conta com 30+ conversões/mês</strong></td>
+              <td class="check">✓ Sim</td>
+              <td>O algoritmo tem dados suficientes para aprender e otimizar</td>
+            </tr>
+            <tr>
+              <td><strong>E-commerce com catálogo de produtos</strong></td>
+              <td class="check">✓ Sim</td>
+              <td>Shopping dentro do PMax substitui Smart Shopping com mais alcance</td>
+            </tr>
+            <tr>
+              <td><strong>Conta nova, sem histórico</strong></td>
+              <td class="cross">✗ Não</td>
+              <td>Sem dados de conversão, o algoritmo gasta budget a aprender às suas custas</td>
+            </tr>
+            <tr>
+              <td><strong>Serviços locais com budget &lt;€500/mês</strong></td>
+              <td class="cross">✗ Não</td>
+              <td>Search clássico dá mais controlo e eficiência com orçamentos pequenos</td>
+            </tr>
+            <tr>
+              <td><strong>B2B com ciclo de venda longo</strong></td>
+              <td class="cross">✗ Raramente</td>
+              <td>O algoritmo otimiza por conversões próximas — leads de topo não refletem valor real</td>
+            </tr>
+            <tr>
+              <td><strong>Marca com forte procura por nome</strong></td>
+              <td class="check">✓ Com cuidado</td>
+              <td>Funciona bem com exclusão de marca ativa para não canibalizar Search de marca</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="callout callout--warn">
+          <p class="callout__label">⚠ O erro mais caro</p>
+          <p>Lançar PMax antes de ter 30 conversões/mês rastreadas no Google Ads. O algoritmo vai
+          distribuir o budget de forma aleatória durante semanas — e vai reportar "resultados" que
+          na maioria das vezes não refletem valor real. Comece por Search, valide o rastreamento,
+          acumule dados, e só depois migre.</p>
+        </div>
+
+        <!-- CONFIGURAÇÃO -->
+        <h2 id="como-configurar">Como configurar bem — o que define o sucesso</h2>
+
+        <p>
+          A maioria das contas PMax com mau desempenho tem o mesmo problema: foram criadas em
+          10 minutos com assets mínimos e sem sinais de audiência. A configuração inicial é
+          o que determina 80% do resultado.
+        </p>
+
+        <h3>Asset groups: a estrutura certa</h3>
+
+        <p>
+          Um asset group é o equivalente a um grupo de anúncios no Search — mas para PMax.
+          Agrupa os assets (imagens, vídeos, textos) com um conjunto de sinais de audiência e
+          um tema de produto ou serviço. A estrutura correta é ter asset groups separados por tema,
+          não um único asset group para tudo.
+        </p>
+
+        <div class="asset-grid">
+          <div class="asset-card">
+            <p class="asset-card__label">Errado</p>
+            <p class="asset-card__title">1 asset group genérico</p>
+            <p>Todos os produtos, todos os serviços, todas as audiências num só grupo. O algoritmo
+            não consegue personalizar a mensagem e tende a servir o conteúdo mais genérico.</p>
+          </div>
+          <div class="asset-card">
+            <p class="asset-card__label">Correto</p>
+            <p class="asset-card__title">Asset groups por tema</p>
+            <p>Ex: um grupo para "Google Ads", outro para "Meta Ads", outro para "Auditoria".
+            Cada um com textos, imagens e audiências relevantes para aquele tema específico.</p>
+          </div>
+        </div>
+
+        <h3>O que incluir em cada asset group</h3>
+
+        <ul>
+          <li><strong>Textos:</strong> use o máximo permitido — 15 títulos e 5 descrições. Variedade real, não variações mínimas. O algoritmo precisa de combinações para testar.</li>
+          <li><strong>Imagens:</strong> pelo menos 3 horizontais, 3 verticais (para Stories/Reels), 1 quadrada. Fundo simples bate fundo complexo em CTR na maioria das contas.</li>
+          <li><strong>Vídeo:</strong> se não tiver vídeo próprio, o Google gera automaticamente a partir das imagens — o que costuma ser mau. Vale a pena fazer um vídeo simples de 15–30 segundos, mesmo gravado num telemóvel, para ter controlo sobre o formato.</li>
+          <li><strong>URL final:</strong> landing page dedicada ao tema do asset group, não a homepage.</li>
+        </ul>
+
+        <figure class="article-img">
+          <img
+            src="img/hero-lp.webp"
+            alt="Estrutura de asset groups no Performance Max — organização por tema"
+            width="800" height="450"
+            loading="lazy"
+          />
+          <figcaption>Estrutura recomendada: um asset group por tema ou categoria de produto, com sinais de audiência distintos em cada um. — STOCK IMAGE: Substituir por diagrama real.</figcaption>
+        </figure>
+
+        <!-- SINAIS DE AUDIÊNCIA -->
+        <h2 id="sinais-audiencia">Sinais de audiência: o que são e como usá-los</h2>
+
+        <p>
+          Os sinais de audiência são sugestões que dá ao algoritmo sobre quem deve procurar — não
+          restrições. O PMax pode ir além dos sinais se encontrar conversões fora deles. Mas sem
+          sinais, começa do zero, o que aumenta o tempo e custo de aprendizagem.
+        </p>
+
+        <p>Os sinais mais eficazes, por ordem de impacto:</p>
+
+        <ol class="checklist">
+          <li>
+            <span class="checklist__num">1</span>
+            <div>
+              <strong>Customer Match (lista de clientes).</strong> Upload de emails de clientes existentes.
+              É o sinal mais forte — o algoritmo procura perfis semelhantes a quem já comprou.
+              Precisa de pelo menos 1 000 emails para funcionar bem.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">2</span>
+            <div>
+              <strong>Remarketing do site (via tag Google).</strong> Visitantes do site, especialmente
+              quem chegou a páginas de produto ou serviço sem converter. Excelente ponto de partida.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">3</span>
+            <div>
+              <strong>Segmentos de interesse relevantes.</strong> Use os segmentos de mercado do Google
+              que se alinham com o perfil do cliente ideal — ex: "Serviços empresariais B2B",
+              "Pequenas empresas em crescimento". Não use demasiados, fica genérico.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">4</span>
+            <div>
+              <strong>Pesquisas relevantes (custom segments).</strong> Defina os termos de pesquisa
+              que o seu cliente ideal usa — similar às keywords do Search, mas como sinal de contexto
+              para os outros canais.
+            </div>
+          </li>
+        </ol>
+
+        <!-- CTA INLINE -->
+        <div class="article-cta">
+          <h3>Tem PMax a correr mas não sabe o que está a funcionar?</h3>
+          <p>Fazemos uma auditoria completa à estrutura, assets e sinais — e dizemos exatamente o que mudar.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria Gratuita →</a>
+        </div>
+
+        <!-- PRIMEIROS 30 DIAS -->
+        <h2 id="primeiros-30-dias">O que esperar nos primeiros 30 dias</h2>
+
+        <p>
+          O PMax tem uma fase de aprendizagem mais longa do que o Search clássico. É normal — e
+          esperada — uma fase inicial de performance instável. Saber o que é normal evita tomar
+          decisões erradas por impaciência.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <p class="stat-card__value">1–2 sem</p>
+            <p class="stat-card__label">Fase de aprendizagem intensa — resultados instáveis, CPAs altos</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__value">3–4 sem</p>
+            <p class="stat-card__label">Algoritmo começa a otimizar — CPAs estabilizam, volume sobe</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__value">6–8 sem</p>
+            <p class="stat-card__label">Performance madura — altura certa para avaliar e fazer ajustes</p>
+          </div>
+        </div>
+
+        <p>
+          Durante as primeiras 4 semanas, evite fazer alterações significativas — mudar o budget,
+          os lances ou os assets reinicia parcialmente a aprendizagem. Pequenos ajustes (adicionar
+          keywords negativas, corrigir URLs) são aceitáveis.
+        </p>
+
+        <div class="callout callout--success">
+          <p class="callout__label">Regra prática</p>
+          <p>Se ao fim de 4 semanas o CPA ainda está mais de 50% acima do objetivo, o problema é
+          provavelmente de configuração — sinais fracos, assets genéricos, ou rastreamento de
+          conversões incorreto. Não aumente o budget antes de diagnosticar.</p>
+        </div>
+
+        <!-- ERROS MAIS COMUNS -->
+        <h2 id="erros">Os erros mais comuns em PMax</h2>
+
+        <ul>
+          <li>
+            <strong>Não excluir termos de marca.</strong> Sem exclusão, o PMax captura pesquisas
+            pelo nome da empresa — tráfego que já ia converter de qualquer forma, agora mais caro.
+            Configure sempre as exclusões de marca antes de lançar.
+          </li>
+          <li>
+            <strong>Um único asset group para toda a conta.</strong> Perde a capacidade de personalizar
+            a mensagem por tema e o algoritmo serve conteúdo genérico em todos os canais.
+          </li>
+          <li>
+            <strong>Deixar o Google gerar vídeos automáticos.</strong> Os vídeos auto-gerados são
+            frequentemente de baixa qualidade e podem surgir em placements que não controla.
+            Faça o upload de um vídeo próprio, mesmo que simples.
+          </li>
+          <li>
+            <strong>Não configurar rastreamento de conversões antes de lançar.</strong> Sem dados
+            de conversão fiáveis, o algoritmo otimiza para o que consegue medir — que pode não ser
+            o que interessa. Verifique sempre o rastreamento antes de atribuir budget.
+          </li>
+          <li>
+            <strong>Comparar diretamente com Search clássico pelo CPC.</strong> PMax distribui por
+            canais diferentes com custos muito distintos. A métrica de comparação correta é o CPA
+            ou ROAS final — não o CPC médio, que vai ser inevitavelmente diferente.
+          </li>
+          <li>
+            <strong>Não usar keywords negativas ao nível de campanha.</strong> O PMax aceita listas
+            de keywords negativas partilhadas. Sem elas, pode surgir em pesquisas completamente
+            irrelevantes que degradam o sinal de conversão ao longo do tempo.
+          </li>
+        </ul>
+
+        <!-- PMax vs Search -->
+        <h2 id="pmax-vs-search">PMax ou Search? A relação certa entre os dois</h2>
+
+        <p>
+          PMax e Search não são mutuamente exclusivos. Nas contas mais maduras, coexistem com papéis
+          diferentes — e o Google tem regras de prioridade quando ambos concorrem para o mesmo leilão.
+        </p>
+
+        <p>
+          A regra do Google: <strong>uma campanha Search com a mesma keyword em correspondência exata
+          tem prioridade sobre o PMax</strong> nesse leilão específico. Isso significa que pode
+          proteger os seus termos mais importantes no Search clássico e deixar o PMax explorar o
+          resto do inventário.
+        </p>
+
+        <p>
+          A estrutura que funciona melhor para a maioria das contas com budget suficiente:
+        </p>
+
+        <ul>
+          <li><strong>Search Brand:</strong> campanha dedicada com correspondência exata nos termos de marca. Prioridade máxima, CPC baixo, conversões de alta qualidade.</li>
+          <li><strong>Search Non-Brand:</strong> termos transacionais principais em correspondência de frase ou exata. Onde ainda quer controlo total sobre keywords e lances.</li>
+          <li><strong>PMax:</strong> captura todo o restante inventário — Display, YouTube, Discover, Maps, e Search long-tail que o Search clássico não cobre bem.</li>
+        </ul>
+
+        <!-- CONCLUSÃO -->
+        <h2 id="conclusao">Conclusão: o PMax é uma ferramenta, não uma solução</h2>
+
+        <p>
+          Em 2026, o Performance Max está mais maduro e mais controlável do que quando foi lançado.
+          As novas funcionalidades de transparência e exclusão fazem uma diferença real na gestão diária.
+          Mas continua a ser uma campanha que exige um bom setup inicial — não uma que funciona
+          por defeito com configuração mínima.
+        </p>
+        <p>
+          A decisão de usar PMax deve ser baseada em dados, não em tendências. Se tem conversões
+          suficientes, assets de qualidade e uma estrutura de sinais bem definida, é uma das formas
+          mais eficientes de escalar uma conta Google Ads. Se não tem nenhuma dessas condições,
+          Search clássico continua a ser a escolha mais inteligente.
+        </p>
+        <p>
+          Se quer saber se o PMax faz sentido para a sua conta — ou se a configuração atual tem
+          problemas — fazemos uma <a href="../auditoria.html">auditoria completa</a> em 5 dias úteis.
+        </p>
+
+        <!-- Author box -->
+        <div class="author-box">
+          <img
+            class="author-box__avatar"
+            src="../img/logo.webp"
+            alt="Payoff Marketing"
+            width="56"
+            height="56"
+          />
+          <!-- STOCK IMAGE: Substituir por foto real do autor. Dimensões: 56×56px (circular). -->
+          <div>
+            <p class="author-box__name">Payoff Marketing</p>
+            <p class="author-box__bio">Agência especializada em gestão de tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para PMEs com foco em leads qualificados ao menor CPA.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="article-sidebar" aria-label="Sidebar do artigo">
+
+        <div class="toc-card">
+          <p class="toc-card__title">Neste artigo</p>
+          <ul class="toc-list" id="toc">
+            <li><a href="#resposta">A resposta direta</a></li>
+            <li><a href="#o-que-e">O que é o PMax</a></li>
+            <li><a href="#o-que-mudou">O que mudou em 2026</a></li>
+            <li><a href="#quando-usar">Quando usar</a></li>
+            <li><a href="#como-configurar">Como configurar</a></li>
+            <li><a href="#sinais-audiencia">Sinais de audiência</a></li>
+            <li><a href="#primeiros-30-dias">Primeiros 30 dias</a></li>
+            <li><a href="#erros">Erros mais comuns</a></li>
+            <li><a href="#pmax-vs-search">PMax vs Search</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Auditoria de Campanhas</h4>
+          <p>Verificamos a configuração do seu PMax, estrutura de assets e sinais — em 5 dias úteis.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Gestão de Google Ads</h4>
+          <p>Campanhas Search, Performance Max e Shopping geridas por especialistas Google Partner.</p>
+          <a href="../google-ads.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Estratégia de Tráfego</h4>
+          <p>Definimos que campanha, canal e estrutura fazem sentido para o seu negócio e budget.</p>
+          <a href="../estrategia.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+      </aside>
+
+    </div><!-- /.article-layout -->
+  </div><!-- /.container -->
+
+  <!-- ── RELATED ARTICLES ─────────────────────────────────────────────────── -->
+  <section class="related-section">
+    <div class="container">
+      <h2>Artigos relacionados</h2>
+      <div class="related-grid">
+
+        <a href="google-ads-vs-meta-ads-qual-escolher-2026.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Google Ads vs Meta Ads: qual escolher para o seu negócio em 2026"
+               width="400" height="160" loading="lazy"
+          />
+          <div class="related-card__body">
+            <span class="related-card__tag">Estratégia</span>
+            <p class="related-card__title">Google Ads vs Meta Ads: Qual Escolher para o Seu Negócio em 2026</p>
+            <p class="related-card__excerpt">Intenção de compra, CPL real por setor e quando usar cada canal — ou os dois.</p>
+          </div>
+        </a>
+
+        <a href="quality-score-google-ads-o-que-e-como-melhorar.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Quality Score Google Ads — o que é e como melhorar"
+               width="400" height="160" loading="lazy"
+          />
+          <div class="related-card__body">
+            <span class="related-card__tag">Otimização</span>
+            <p class="related-card__title">O que é o Quality Score do Google Ads e porque afeta o que paga por clique</p>
+            <p class="related-card__excerpt">A métrica que determina se paga €0,80 ou €2,40 pelo mesmo clique — e como melhorá-la.</p>
+          </div>
+        </a>
+
+        <a href="landing-pages-campanhas-trafego-pago.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Landing Pages em Campanhas de Tráfego Pago"
+               width="400" height="160" loading="lazy"
+          />
+          <div class="related-card__body">
+            <span class="related-card__tag">Conversão</span>
+            <p class="related-card__title">Landing Pages em Campanhas de Tráfego Pago: Porquê São Essenciais</p>
+            <p class="related-card__excerpt">Porque uma landing page dedicada pode duplicar os leads das suas campanhas.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+        <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+      </div>
+
+      <div class="footer__nav">
+        <p class="footer__nav-title">Serviços</p>
+        <ul>
+          <li><a href="../google-ads.html">Google Ads</a></li>
+          <li><a href="../meta-ads.html">Meta Ads</a></li>
+          <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+          <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+          <li><a href="../landing-pages.html">Landing Pages</a></li>
+          <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          <li><a href="../precos.html">Preços</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <p class="footer__nav-title">Contacto</p>
+        <ul>
+          <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+          <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+          <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__privacy">Blog</a>
+      <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Cookie Banner ─────────────────────────────────────────────────────── -->
+<div id="pm-consent" role="region" aria-label="Preferências de cookies" style="display:none;">
+  <div id="pm-bar">
+    <p>
+      <strong>Utilizamos cookies</strong>
+      Usamos cookies analíticos para perceber como os visitantes interagem com o site. Pode aceitar, recusar ou personalizar as suas preferências.
+    </p>
+    <div id="pm-actions">
+      <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+      <button class="pm-btn pm-btn--reject" onclick="pmSetConsent(false)">Recusar</button>
+      <button class="pm-btn pm-btn--accept" onclick="pmSetConsent(true)">Aceitar tudo</button>
+    </div>
+  </div>
+  <div id="pm-panel">
+    <h3>Preferências de privacidade</h3>
+    <div class="pm-pref">
+      <div><strong>Cookies essenciais</strong><p>Necessários para o funcionamento do site. Não podem ser desativados.</p></div>
+      <span class="pm-always">Sempre ativo</span>
+    </div>
+    <div class="pm-pref">
+      <div><strong>Cookies analíticos</strong><p>Ajudam-nos a perceber como usa o site (Google Analytics via GTM).</p></div>
+      <label class="pm-switch" aria-label="Ativar cookies analíticos">
+        <input type="checkbox" id="pm-analytics-toggle">
+        <span class="pm-slider"></span>
+      </label>
+    </div>
+    <div id="pm-panel-actions">
+      <button class="pm-btn pm-btn--accept" onclick="pmSavePrefs()">Guardar preferências</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  function toggleMenu(btn) {
+    var menu = document.getElementById('main-menu');
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+
+  // TOC highlight active section
+  (function() {
+    var headings = document.querySelectorAll('.article-body h2[id]');
+    var tocLinks = document.querySelectorAll('#toc a');
+    function onScroll() {
+      var scrollY = window.scrollY + 120;
+      var active = null;
+      headings.forEach(function(h) {
+        if (h.offsetTop <= scrollY) active = h.id;
+      });
+      tocLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Cookie consent
+  (function() {
+    var KEY = 'pm_consent_v1';
+    var stored = localStorage.getItem(KEY);
+    if (stored !== null) { applyConsent(stored === 'full'); return; }
+    document.getElementById('pm-consent').style.display = 'block';
+  })();
+  function pmSetConsent(full) {
+    localStorage.setItem('pm_consent_v1', full ? 'full' : 'none');
+    applyConsent(full);
+    document.getElementById('pm-consent').style.display = 'none';
+  }
+  function pmTogglePanel() {
+    document.getElementById('pm-panel').classList.toggle('open');
+  }
+  function pmSavePrefs() {
+    var analytics = document.getElementById('pm-analytics-toggle').checked;
+    pmSetConsent(analytics);
+  }
+  function applyConsent(full) {
+    if (full) {
+      gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+    }
+  }
+</script>
+
+<script src="../js/dropdown.js"></script>
+</body>
+</html>

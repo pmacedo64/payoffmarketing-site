@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora ROI — Payoff Marketing | Quanto pode ganhar com Tráfego Pago?</title>
+  <meta name="description" content="Calcule o retorno do seu investimento em Google Ads e Meta Ads. Veja quantos leads e receita pode gerar com o seu orçamento de tráfego pago." />
+  <link rel="canonical" href="https://payoffmarketing.pt/calculadora" />
+
+  <meta property="og:title" content="Calculadora ROI — Payoff Marketing" />
+  <meta property="og:description" content="Quanto pode gerar com tráfego pago? Calcule agora em segundos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://payoffmarketing.pt/calculadora" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Platform toggle ── */
+    .platform-toggle {
+      display: flex;
+      gap: .375rem;
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 999px;
+      padding: .25rem;
+      width: fit-content;
+      margin: 0 auto 2.5rem;
+    }
+    .platform-toggle button {
+      background: none;
+      border: none;
+      font-family: var(--fonte-base);
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--cor-texto-muted);
+      padding: .45rem 1.375rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background var(--transicao), color var(--transicao);
+    }
+    .platform-toggle button.active {
+      background: var(--cor-primaria);
+      color: #fff;
+    }
+
+    /* ── Period toggle ── */
+    .period-toggle {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      font-size: .875rem;
+      color: var(--cor-texto-muted);
+      cursor: default;
+      user-select: none;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 40px;
+      height: 22px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-switch__track {
+      position: absolute;
+      inset: 0;
+      background: var(--cor-borda);
+      border-radius: 999px;
+      transition: background var(--transicao);
+    }
+    .toggle-switch input:checked + .toggle-switch__track { background: var(--cor-primaria); }
+    .toggle-switch__thumb {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 16px; height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform var(--transicao);
+      pointer-events: none;
+    }
+    .toggle-switch input:checked ~ .toggle-switch__thumb { transform: translateX(18px); }
+
+    /* ── Calc layout ── */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    /* ── Input panel ── */
+    .calc-inputs {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 2rem;
+    }
+    .calc-inputs__heading {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--cor-texto-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Slider fields ── */
+    .slider-field { margin-bottom: 1.75rem; }
+    .slider-field:last-child { margin-bottom: 0; }
+    .slider-field__label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: .55rem;
+    }
+    .slider-field__label span:first-child {
+      font-size: .9375rem;
+      font-weight: 500;
+      color: var(--cor-texto);
+    }
+    .slider-field__val {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cor-primaria);
+      min-width: 90px;
+      text-align: right;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 999px;
+      outline: none;
+      cursor: pointer;
+      background: linear-gradient(
+        to right,
+        var(--cor-primaria) var(--sp, 50%),
+        var(--cor-borda)    var(--sp, 50%)
+      );
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--cor-primaria);
+      border: 2px solid var(--cor-fundo);
+      box-shadow: 0 0 0 1px var(--cor-primaria);
+      transition: transform .15s;
+    }
+    input[type="range"]:hover::-webkit-slider-thumb,
+    input[type="range"]:focus::-webkit-slider-thumb { transform: scale(1.25); }
+    input[type="range"]::-moz-range-thumb {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--cor-primaria);
+      border: 2px solid var(--cor-fundo);
+    }
+
+    /* ── Results panel ── */
+    .calc-results { display: flex; flex-direction: column; gap: 1rem; }
+    .result-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.375rem 1.5rem;
+    }
+    .result-card--accent {
+      border-color: var(--cor-primaria);
+      background: rgba(59,130,246,.06);
+    }
+    .result-card__lbl {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cor-texto-muted);
+      margin-bottom: .35rem;
+    }
+    .result-card__val {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--cor-texto);
+      transition: color .3s;
+    }
+    .result-card--accent .result-card__val { color: var(--cor-primaria); }
+    .result-card__sub { font-size: .8125rem; color: var(--cor-texto-muted); margin-top: .3rem; }
+    .results-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* ── ROI health ── */
+    .roi-health {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.375rem 1.5rem;
+    }
+    .roi-health__lbl {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cor-texto-muted);
+      margin-bottom: .75rem;
+    }
+    .roi-track {
+      height: 6px;
+      background: var(--cor-borda);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: .6rem;
+    }
+    .roi-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width .55s ease, background .55s ease;
+      max-width: 100%;
+    }
+    .roi-status { font-size: .9rem; font-weight: 600; transition: color .4s; }
+
+    /* ── Comparison table ── */
+    .comparison-wrap { overflow-x: auto; margin-top: 1rem; }
+    .cmp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9375rem;
+    }
+    .cmp-table th {
+      padding: .875rem 1.25rem;
+      text-align: right;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--cor-texto-muted);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .cmp-table th:first-child { text-align: left; }
+    .cmp-table th.th-elo { color: var(--cor-primaria); }
+    .cmp-table td {
+      padding: .875rem 1.25rem;
+      border-bottom: 1px solid var(--cor-borda);
+      text-align: right;
+      font-weight: 600;
+      color: var(--cor-texto);
+    }
+    .cmp-table td:first-child {
+      text-align: left;
+      font-weight: 400;
+      color: var(--cor-texto-muted);
+      font-size: .875rem;
+    }
+    .cmp-table td.td-elo { color: var(--cor-primaria); }
+    .cmp-table td.td-up  { color: #22c55e; font-size: .8125rem; }
+    .cmp-table td.td-down { color: #22c55e; font-size: .8125rem; }
+    .cmp-note {
+      font-size: .8rem;
+      color: var(--cor-texto-muted);
+      margin-top: .75rem;
+      font-style: italic;
+    }
+
+    /* ── CTA banner ── */
+    .calc-cta {
+      background: linear-gradient(135deg, rgba(59,130,246,.1) 0%, rgba(59,130,246,.03) 100%);
+      border: 1px solid rgba(59,130,246,.25);
+      border-radius: var(--raio);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .calc-cta h3 { font-size: 1.375rem; margin-bottom: .5rem; }
+    .calc-cta p  { color: var(--cor-texto-muted); max-width: 52ch; margin: 0 auto 1.5rem; }
+
+    /* ── Why-traffic cards ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.25rem;
+    }
+    .why-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.5rem 1.625rem;
+      transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+    }
+    .why-card:hover {
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 28px rgba(59,130,246,.15);
+      transform: translateY(-4px);
+    }
+    .why-card__icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(59,130,246,.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--cor-primaria);
+    }
+    .why-card__icon svg { width: 24px; height: 24px; stroke: currentColor; }
+    .why-card h3 { font-size: 1rem; margin-bottom: .4rem; }
+    .why-card p  { font-size: .875rem; color: var(--cor-texto-muted); margin: 0; line-height: 1.65; }
+
+    /* ── Section header tweak ── */
+    .calc-sub-header { margin-bottom: 1.5rem; }
+    .calc-sub-header h2 { font-size: 1.375rem; margin-bottom: .35rem; }
+    .calc-sub-header p  { font-size: .875rem; color: var(--cor-texto-muted); }
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="container navbar__inner">
+        <a href="index.html" class="navbar__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></a>
+        <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false"
+          aria-label="Abrir menu" onclick="toggleMenu(this)">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true"
+              onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="servicos.html">Todos os Serviços</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+              <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculadora.html" class="active">Calculadora ROI</a></li>
+          <li><a href="contatos.html" class="navbar__cta">Falar Connosco</a></li>
+        </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <a href="en/calculator.html" class="lang-switch__btn" lang="en">EN</a>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="page-hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <span class="hero__badge">Ferramenta Gratuita</span>
+        <h1 id="hero-titulo">Calculadora de ROI</h1>
+        <p>Quanto pode gerar com tráfego pago? Ajuste os valores ao seu negócio e veja o potencial em tempo real.</p>
+      </div>
+    </section>
+
+    <!-- ── PORQUE TRÁFEGO PAGO ── -->
+    <section class="section" aria-labelledby="porque-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="porque-titulo">Porquê investir em tráfego pago?</h2>
+          <p>A forma mais rápida e previsível de adquirir novos clientes — com controlo total sobre o orçamento e os resultados.</p>
+        </div>
+
+        <p style="color:var(--cor-texto-muted);max-width:72ch;margin:0 auto 2.25rem;text-align:center;font-size:.9375rem;line-height:1.8;">
+          SEO leva meses a dar frutos. Alcance orgânico nas redes sociais tem caído sistematicamente. Tráfego pago é diferente: no dia em que a campanha entra no ar, o negócio começa a receber visitantes qualificados. Cada euro tem rastreabilidade total — sabe exatamente de onde vem cada lead, quanto custou e quanto gerou. E ao contrário de outros canais, quando algo funciona, basta escalar o orçamento.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3>Resultados imediatos</h3>
+            <p>Campanhas no ar em 7 dias. Primeiros leads nas primeiras 48 horas. Sem esperar meses por resultados.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3>Segmentação precisa</h3>
+            <p>Mostre os seus anúncios apenas a quem está ativamente à procura do que vende — por localização, intenção de compra ou comportamento.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6"  y1="20" x2="6"  y2="14"/>
+              </svg>
+            </div>
+            <h3>Tudo é mensurável</h3>
+            <p>Custo por clique, custo por lead, ROAS, retorno por campanha. Nenhum outro canal tem este nível de transparência e atribuição.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <h3>Escala controlada</h3>
+            <p>Encontrou uma campanha lucrativa? Aumente o orçamento e os resultados escalam. O crescimento segue a sua decisão.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+              </svg>
+            </div>
+            <h3>Otimização contínua</h3>
+            <p>Cada clique gera dados. Com o tempo, as campanhas ficam mais eficientes — CPC menor, CPA melhor, ROI mais alto.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Risco controlado</h3>
+            <p>Começa com o orçamento que tem. Pausa quando quiser, aumenta quando os números confirmam. Nunca gasta mais do que planeou.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CALCULATOR ── -->
+    <section class="section section--alt" aria-labelledby="calc-titulo">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="calc-titulo">Simule o seu retorno</h2>
+          <p>Valores estimados com base em benchmarks do mercado português. Ajuste ao seu setor.</p>
+        </div>
+
+        <!-- Platform toggle -->
+        <div class="platform-toggle" role="group" aria-label="Plataforma de anúncios">
+          <button id="btn-google" class="active" onclick="setPlatform('google')">
+            Google Ads
+          </button>
+          <button id="btn-meta" onclick="setPlatform('meta')">
+            Meta Ads
+          </button>
+        </div>
+
+        <!-- Period toggle -->
+        <div style="display:flex;justify-content:flex-end;margin-bottom:1.5rem;">
+          <label class="period-toggle" for="toggle-annual">
+            <span>Mensal</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggle-annual" onchange="updateCalc()" />
+              <span class="toggle-switch__track"></span>
+              <span class="toggle-switch__thumb"></span>
+            </label>
+            <span>Anual (×12)</span>
+          </label>
+        </div>
+
+        <!-- Grid: inputs + results -->
+        <div class="calc-grid">
+
+          <!-- Inputs -->
+          <div class="calc-inputs">
+            <p class="calc-inputs__heading">Os seus números</p>
+
+            <div class="slider-field">
+              <div class="slider-field__label">
+                <span>Orçamento em anúncios</span>
+                <span class="slider-field__val" id="val-budget">€ 1 000</span>
+              </div>
+              <input type="range" id="sl-budget" min="100" max="10000" step="100" value="1000"
+                oninput="syncSlider('budget',this)" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-field__label">
+                <span>CPC médio estimado</span>
+                <span class="slider-field__val" id="val-cpc">€ 0,80</span>
+              </div>
+              <input type="range" id="sl-cpc" min="0.10" max="5.00" step="0.05" value="0.80"
+                oninput="syncSlider('cpc',this)" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-field__label">
+                <span>Taxa de conversão do site</span>
+                <span class="slider-field__val" id="val-cvr">2,0%</span>
+              </div>
+              <input type="range" id="sl-cvr" min="0.5" max="10" step="0.1" value="2.0"
+                oninput="syncSlider('cvr',this)" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-field__label">
+                <span>Valor médio de um cliente</span>
+                <span class="slider-field__val" id="val-ltv">€ 500</span>
+              </div>
+              <input type="range" id="sl-ltv" min="50" max="5000" step="50" value="500"
+                oninput="syncSlider('ltv',this)" />
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-field__label">
+                <span>Margem bruta</span>
+                <span class="slider-field__val" id="val-margin">50%</span>
+              </div>
+              <input type="range" id="sl-margin" min="5" max="95" step="1" value="50"
+                oninput="syncSlider('margin',this)" />
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="calc-results">
+            <div class="results-row">
+              <div class="result-card">
+                <div class="result-card__lbl">Cliques</div>
+                <div class="result-card__val" id="res-clicks">1 250</div>
+                <div class="result-card__sub" id="res-clicks-sub">por mês</div>
+              </div>
+              <div class="result-card">
+                <div class="result-card__lbl">Leads</div>
+                <div class="result-card__val" id="res-leads">25</div>
+                <div class="result-card__sub" id="res-leads-sub">por mês</div>
+              </div>
+            </div>
+
+            <div class="results-row">
+              <div class="result-card">
+                <div class="result-card__lbl">Custo por lead</div>
+                <div class="result-card__val" id="res-cpl">€ 40</div>
+              </div>
+              <div class="result-card">
+                <div class="result-card__lbl">ROAS</div>
+                <div class="result-card__val" id="res-roas">12,5×</div>
+              </div>
+            </div>
+
+            <div class="result-card result-card--accent">
+              <div class="result-card__lbl">Receita gerada</div>
+              <div class="result-card__val" id="res-revenue">€ 12 500</div>
+              <div class="result-card__sub" id="res-sub">
+                Lucro bruto: € 6 250 &nbsp;·&nbsp; ROI: 525%
+              </div>
+            </div>
+
+            <!-- ROI health bar -->
+            <div class="roi-health">
+              <div class="roi-health__lbl">Saúde do ROI</div>
+              <div class="roi-track">
+                <div class="roi-fill" id="roi-fill" style="width:50%;background:#22c55e;"></div>
+              </div>
+              <div class="roi-status" id="roi-status">ROI: 525% — Excelente, escalar o orçamento</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div style="margin-top:3.5rem;">
+          <div class="calc-sub-header">
+            <h2>Gestão própria vs. com Payoff Marketing</h2>
+            <p>O que acontece quando as campanhas são geridas por especialistas. Baseado na média dos nossos clientes.</p>
+          </div>
+          <div class="comparison-wrap">
+            <table class="cmp-table" aria-label="Comparação de resultados com e sem Payoff Marketing">
+              <thead>
+                <tr>
+                  <th>Métrica</th>
+                  <th>Sem gestão profissional</th>
+                  <th class="th-elo">Com Payoff Marketing ✦</th>
+                  <th>Diferença</th>
+                </tr>
+              </thead>
+              <tbody id="cmp-body">
+                <!-- preenchido por JS -->
+              </tbody>
+            </table>
+          </div>
+          <p class="cmp-note">
+            ✦ Baseado na média dos clientes Payoff Marketing: CPC 25% menor e +35% na taxa de conversão após os primeiros 90 dias de otimização. Resultados reais podem variar consoante o setor e o histórico da conta.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="calc-cta">
+          <h3>Com este orçamento podemos gerar <span id="cta-leads" style="color:var(--cor-primaria);">34+</span> leads/mês</h3>
+          <p>Estes são valores estimados. Numa consulta gratuita, analisamos o seu setor e damos-lhe projeções reais para o seu negócio.</p>
+          <a href="contatos.html" class="btn btn--primary">Quero uma análise gratuita →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="google-ads.html">Google Ads</a></li>
+            <li><a href="meta-ads.html">Meta Ads</a></li>
+            <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="landing-pages.html">Landing Pages</a></li>
+            <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="calculadora.html">Calculadora ROI</a></li>
+            <li><a href="precos.html">Preços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="blog/index.html" class="footer__privacy">Blog</a>
+        <a href="privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    function toggleMenu(btn) {
+      var menu = document.getElementById('main-menu');
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    }
+
+    /* ── Platform defaults ── */
+    var PLAT = {
+      google: { cpc: 0.80, cpcMin: 0.20, cpcMax: 5.00, cvr: 2.0 },
+      meta:   { cpc: 0.35, cpcMin: 0.10, cpcMax: 3.00, cvr: 1.5 }
+    };
+    var platform = 'google';
+
+    function setPlatform(p) {
+      platform = p;
+      document.getElementById('btn-google').classList.toggle('active', p === 'google');
+      document.getElementById('btn-meta').classList.toggle('active', p === 'meta');
+      var d = PLAT[p];
+      var slCpc = document.getElementById('sl-cpc');
+      slCpc.min   = d.cpcMin;
+      slCpc.max   = d.cpcMax;
+      slCpc.value = d.cpc;
+      document.getElementById('sl-cvr').value = d.cvr;
+      syncSlider('cpc', slCpc);
+      syncSlider('cvr', document.getElementById('sl-cvr'));
+    }
+
+    /* ── Slider fill ── */
+    function fillSlider(el) {
+      var min = parseFloat(el.min), max = parseFloat(el.max), v = parseFloat(el.value);
+      el.style.setProperty('--sp', ((v - min) / (max - min) * 100).toFixed(1) + '%');
+    }
+
+    /* ── Format helpers ── */
+    function eur(n, d) {
+      d = d === undefined ? 0 : d;
+      return '€ ' + n.toLocaleString('pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d });
+    }
+    function num(n) { return n.toLocaleString('pt-PT', { maximumFractionDigits: 0 }); }
+    function pct(n, d) { return (d ? n.toFixed(d) : Math.round(n)).toString().replace('.', ',') + '%'; }
+    function xfmt(n) { return n.toFixed(1).replace('.', ',') + '×'; }
+
+    /* ── Sync slider label + recalc ── */
+    function syncSlider(field, el) {
+      fillSlider(el);
+      var v = parseFloat(el.value);
+      var labels = {
+        budget: function() { return eur(v); },
+        cpc:    function() { return '€ ' + v.toFixed(2).replace('.', ','); },
+        cvr:    function() { return v.toFixed(1).replace('.', ',') + '%'; },
+        ltv:    function() { return eur(v); },
+        margin: function() { return Math.round(v) + '%'; }
+      };
+      document.getElementById('val-' + field).textContent = labels[field]();
+      updateCalc();
+    }
+
+    /* ── Core calculation ── */
+    function updateCalc() {
+      var budget = parseFloat(document.getElementById('sl-budget').value);
+      var cpc    = parseFloat(document.getElementById('sl-cpc').value);
+      var cvr    = parseFloat(document.getElementById('sl-cvr').value) / 100;
+      var ltv    = parseFloat(document.getElementById('sl-ltv').value);
+      var margin = parseFloat(document.getElementById('sl-margin').value) / 100;
+      var annual = document.getElementById('toggle-annual').checked;
+      var mult   = annual ? 12 : 1;
+      var period = annual ? '/ano' : '/mês';
+
+      /* Base */
+      var clicks  = (budget / cpc) * mult;
+      var leads   = clicks * cvr;
+      var cpl     = leads > 0 ? (budget * mult) / leads : 0;
+      var rev     = leads * ltv;
+      var gross   = rev * margin;
+      var net     = gross - budget * mult;
+      var roi     = budget > 0 ? (net / (budget * mult)) * 100 : 0;
+      var roas    = budget > 0 ? rev / (budget * mult) : 0;
+
+      /* Payoff Marketing: CPC -25%, CVR +35% */
+      var eCpc   = cpc * 0.75;
+      var eCvr   = cvr * 1.35;
+      var eClicks = (budget / eCpc) * mult;
+      var eLeads  = eClicks * eCvr;
+      var eCpl    = eLeads > 0 ? (budget * mult) / eLeads : 0;
+      var eRev    = eLeads * ltv;
+      var eGross  = eRev * margin;
+      var eNet    = eGross - budget * mult;
+      var eRoi    = budget > 0 ? (eNet / (budget * mult)) * 100 : 0;
+      var eRoas   = budget > 0 ? eRev / (budget * mult) : 0;
+
+      /* Update cards */
+      document.getElementById('res-clicks').textContent     = num(Math.round(clicks));
+      document.getElementById('res-leads').textContent      = num(Math.round(leads));
+      document.getElementById('res-clicks-sub').textContent = period;
+      document.getElementById('res-leads-sub').textContent  = period;
+      document.getElementById('res-cpl').textContent        = eur(cpl, 0);
+      document.getElementById('res-roas').textContent       = xfmt(roas);
+      document.getElementById('res-revenue').textContent    = eur(rev, 0);
+      document.getElementById('res-sub').innerHTML =
+        'Lucro bruto: ' + eur(gross, 0) + '&nbsp;&middot;&nbsp;ROI: ' + Math.round(roi) + '%';
+
+      /* ROI bar */
+      var barPct   = Math.min(Math.max(roi / 1000 * 100, 0), 100);
+      var roiColor, roiTxt;
+      if      (roi < 0)   { roiColor = '#ef4444'; roiTxt = 'Negativo — rever orçamento e targeting'; }
+      else if (roi < 50)  { roiColor = '#f97316'; roiTxt = 'Fraco — há margem de melhoria significativa'; }
+      else if (roi < 150) { roiColor = '#eab308'; roiTxt = 'Positivo — campanhas a rentabilizar'; }
+      else if (roi < 500) { roiColor = '#22c55e'; roiTxt = 'Bom — ROI sólido e sustentável'; }
+      else                { roiColor = '#3b82f6'; roiTxt = 'Excelente — altura de escalar o orçamento'; }
+      document.getElementById('roi-fill').style.cssText  = 'width:' + barPct + '%;background:' + roiColor;
+      document.getElementById('roi-status').textContent  = 'ROI: ' + Math.round(roi) + '% — ' + roiTxt;
+      document.getElementById('roi-status').style.color  = roiColor;
+
+      /* Comparison table */
+      function delta(base, elo, mode) {
+        if (mode === 'pct-up')  return '<span class="td-up">+' + Math.round((elo/base - 1)*100) + '%</span>';
+        if (mode === 'pct-dn')  return '<span class="td-down">-' + Math.round((1 - elo/base)*100) + '%</span>';
+        if (mode === 'pp')      return '<span class="td-up">+' + Math.round(elo - base) + 'pp</span>';
+        if (mode === 'eur')     return '<span class="td-up">+' + eur(elo - base, 0) + '</span>';
+        if (mode === 'x')       return '<span class="td-up">+' + (elo - base).toFixed(1).replace('.', ',') + '×</span>';
+        return '';
+      }
+      var rows = [
+        ['Cliques' + period,      num(Math.round(clicks)),  num(Math.round(eClicks)),          delta(clicks, eClicks, 'pct-up')],
+        ['Leads' + period,        num(Math.round(leads)),   num(Math.round(eLeads)),            delta(leads, eLeads, 'pct-up')],
+        ['Custo por lead',        eur(cpl, 0),              eur(eCpl, 0),                       delta(cpl, eCpl, 'pct-dn')],
+        ['Receita' + period,      eur(rev, 0),              eur(eRev, 0),                       delta(rev, eRev, 'pct-up')],
+        ['Lucro bruto' + period,  eur(gross, 0),            eur(eGross, 0),                     delta(gross, eGross, 'eur')],
+        ['ROI',                   Math.round(roi) + '%',    Math.round(eRoi) + '%',             delta(roi, eRoi, 'pp')],
+        ['ROAS',                  xfmt(roas),               xfmt(eRoas),                        delta(roas, eRoas, 'x')],
+      ];
+      document.getElementById('cmp-body').innerHTML = rows.map(function(r) {
+        return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td class="td-elo">' + r[2] + '</td><td>' + r[3] + '</td></tr>';
+      }).join('');
+
+      /* CTA headline */
+      document.getElementById('cta-leads').textContent = Math.round(eLeads) + '+';
+    }
+
+    /* ── Init ── */
+    document.querySelectorAll('input[type="range"]').forEach(fillSlider);
+    updateCalc();
+  </script>
+
+
+  <!-- ── dropdown inline ── -->
+  <script>/* ============================================================
+   Elo — dropdown.js
+   Controla o dropdown de Serviços na navbar
+   ============================================================ */
+
+(function () {
+  /* Abre / fecha o dropdown clicado */
+  window.toggleDropdown = function (btn) {
+    var dropdown = btn.closest('.navbar__dropdown');
+    var isOpen   = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    /* Fecha outros dropdowns eventualmente abertos */
+    document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+      if (d !== dropdown) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
+  /* Fecha ao clicar fora */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar__dropdown')) {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  /* Fecha com a tecla Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();</script>
+  <!-- ── trail inline ── -->
+  <script>/* trail.js — mouse trail for .hero and .page-hero sections */
+(function () {
+  var LIFE  = 650;
+  var MAX_R = 5;
+  var MAX_A = 0.22;
+
+  function initTrail(section) {
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    section.insertBefore(canvas, section.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var pts = [];
+    var raf = null;
+
+    function resize() {
+      canvas.width  = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    section.addEventListener('mousemove', function (e) {
+      var r = section.getBoundingClientRect();
+      pts.push({
+        x: e.clientX - r.left,
+        y: e.clientY - r.top,
+        radius: 2 + Math.random() * (MAX_R - 2),
+        born: performance.now()
+      });
+      if (!raf) tick();
+    });
+
+    function tick() {
+      var now = performance.now();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts = pts.filter(function (p) { return now - p.born < LIFE; });
+      pts.forEach(function (p) {
+        var progress = (now - p.born) / LIFE;
+        var alpha    = MAX_A * (1 - progress);
+        var radius   = p.radius * (1 - progress * 0.5);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      });
+      raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+    }
+  }
+
+  document.querySelectorAll('.hero, .page-hero').forEach(initTrail);
+})();</script>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" hidden>
+    <div id="pm-bar">
+      <div>
+        <strong>Usamos cookies</strong>
+        <p>Utilizamos cookies para analisar tráfego e personalizar anúncios. Pode aceitar, rejeitar ou gerir as preferências.</p>
+      </div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Rejeitar tudo</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Aceitar tudo</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Personalizar cookies">
+      <h3>Gerir preferências</h3>
+      <div class="pm-pref">
+        <div><strong>Cookies necessários</strong><p>Essenciais para o funcionamento do site. Não podem ser desativados.</p></div>
+        <span class="pm-always">Sempre ativo</span>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies analíticos</strong><p>Permitem medir o tráfego e melhorar o desempenho do site (Google Analytics).</p></div>
+        <label class="pm-switch" aria-label="Cookies analíticos"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies de marketing</strong><p>Usados para apresentar anúncios relevantes (Google Ads, Meta Pixel).</p></div>
+        <label class="pm-switch" aria-label="Cookies de marketing"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label>
+      </div>
+      <div id="pm-panel-actions">
+        <button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Guardar preferências</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){
+      gtag('consent','update',{
+        analytics_storage:a?'granted':'denied',
+        ad_storage:m?'granted':'denied',
+        ad_user_data:m?'granted':'denied',
+        ad_personalization:m?'granted':'denied'
+      });
+    }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){
+      localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));
+      applyConsent(a,m);
+      banner.setAttribute('hidden','');
+    };
+    window.pmSavePanel=function(){
+      pmSave(document.getElementById('pm-analytics').checked,
+             document.getElementById('pm-marketing').checked);
+    };
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta Ads — Payoff Marketing | Facebook & Instagram Ads</title>
+  <meta name="description" content="Meta Ads management (Facebook and Instagram) with full funnels, tested creatives and data-driven targeting. Qualified lead generation for SMBs." />
+  <link rel="canonical" href="https://payoffmarketing.pt/en/meta-ads.html" />
+  <link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/meta-ads.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .feature-list { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:2rem; }
+    .feature-list li { display:flex; align-items:flex-start; gap:.75rem; background:var(--cor-superficie); border:1px solid var(--cor-borda); border-radius:var(--raio); padding:1rem 1.125rem; font-size:.9375rem; color:var(--cor-texto-muted); }
+    .feature-list li::before { content:"✓"; color:var(--cor-primaria); font-weight:700; flex-shrink:0; margin-top:.05rem; }
+    .faq { margin-top:2rem; }
+    .faq__item { border-bottom:1px solid var(--cor-borda); padding-block:1.25rem; }
+    .faq__item:first-child { border-top:1px solid var(--cor-borda); }
+    .faq__q { font-weight:600; color:var(--cor-texto); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; background:none; border:none; width:100%; text-align:left; font-size:.9375rem; font-family:var(--fonte-base); }
+    .faq__q span { color:var(--cor-primaria); font-size:1.25rem; line-height:1; }
+    .faq__a { color:var(--cor-texto-muted); font-size:.9375rem; margin-top:.75rem; display:none; }
+    .faq__item.open .faq__a { display:block; }
+    .faq__item.open .faq__q span { transform:rotate(45deg); display:inline-block; }
+  </style>
+  <style>
+    .funnel { display:flex; flex-direction:column; align-items:center; gap:0; margin-top:2.5rem; }
+    .funnel__step { background:var(--cor-superficie); border:1px solid var(--cor-borda); border-radius:var(--raio); padding:1.125rem 1.5rem; text-align:center; transition:border-color var(--transicao); }
+    .funnel__step:hover { border-color:var(--cor-primaria); }
+    .funnel__step h3 { font-size:1rem; margin-bottom:.25rem; }
+    .funnel__step p { font-size:.875rem; }
+    .funnel__arrow { color:var(--cor-primaria); font-size:1.25rem; line-height:1.5; user-select:none; }
+    .funnel--wide .funnel__step:nth-child(1) { width:min(100%,520px); }
+    .funnel--wide .funnel__step:nth-child(3) { width:min(100%,420px); }
+    .funnel--wide .funnel__step:nth-child(5) { width:min(100%,320px); }
+    .funnel--wide .funnel__step:nth-child(7) { width:min(100%,220px); }
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+        <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle active" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Services <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="audit.html">Campaign Audit</a></li>
+              <li><a href="strategy.html">Traffic Strategy</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="reports.html">Reports &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculator.html">ROI Calculator</a></li>
+          <li><a href="contact.html" class="navbar__cta">Contact Us</a></li>
+        </ul>
+        <div class="lang-switch" aria-label="Language switcher">
+          <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">EN</span>
+          <span class="lang-switch__sep">|</span>
+          <a href="../meta-ads.html" class="lang-switch__btn" lang="pt">PT</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__badge">Service</span>
+        <h1 id="hero-title">Meta Ads</h1>
+        <p>Facebook and Instagram with funnels that turn strangers into customers — even if they've never heard of you.</p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="includes-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="includes-title">What's included</h2>
+          <p>From strategy to creative — you don't need a marketing team. We handle everything.</p>
+        </div>
+        <ul class="feature-list">
+          <li>Business Manager and Pixel setup</li>
+          <li>Audience definition (cold, warm, retargeting)</li>
+          <li>Creative production: ad images and copy</li>
+          <li>Continuous A/B testing of creatives and copy</li>
+          <li>Conversion, lead and traffic campaigns</li>
+          <li>Retargeting of website visitors and customer lists</li>
+          <li>Lookalike Audiences from your best customers</li>
+          <li>Weekly budget and bid optimisation</li>
+          <li>Monthly report with CPL, ROAS and trends</li>
+          <li>Direct support via email/WhatsApp</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section--alt" aria-labelledby="funnel-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="funnel-title">The funnel we use</h2>
+          <p>We don't just boost posts. We build funnels that warm up cold audiences and convert them systematically.</p>
+        </div>
+        <div class="funnel funnel--wide" role="list">
+          <div class="funnel__step" role="listitem"><h3>Top of Funnel — Awareness</h3><p>Videos and creatives for cold audiences (interests, behaviours, lookalikes). Goal: visibility at low cost per impression.</p></div>
+          <div class="funnel__arrow" aria-hidden="true">↓</div>
+          <div class="funnel__step" role="listitem"><h3>Mid Funnel — Consideration</h3><p>Retargeting of people who engaged with ads or visited your site. Creatives with social proof and concrete benefits.</p></div>
+          <div class="funnel__arrow" aria-hidden="true">↓</div>
+          <div class="funnel__step" role="listitem"><h3>Bottom of Funnel — Conversion</h3><p>Direct ads for people already familiar with your brand. Clear offer, strong CTA, optimised landing page.</p></div>
+          <div class="funnel__arrow" aria-hidden="true">↓</div>
+          <div class="funnel__step" role="listitem"><h3>Retention — Existing Customers</h3><p>Upsell and cross-sell to your customer base via Customer Lists and ad sequences.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-label="Typical results">
+      <div class="container">
+        <div class="section__header"><h2>Typical results</h2><p>Averages from the last 12 months, on accounts with budget ≥ €800/month.</p></div>
+        <div class="stats-grid">
+          <div><div class="stat__num">€4–12</div><div class="stat__label">Cost per lead (B2C sector)</div></div>
+          <div><div class="stat__num">2.8×</div><div class="stat__label">Average ROAS in e-commerce</div></div>
+          <div><div class="stat__num">+3×</div><div class="stat__label">Lead volume vs. previous management</div></div>
+          <div><div class="stat__num">14 days</div><div class="stat__label">To full funnel live</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="container" style="max-width:720px;">
+        <div class="section__header"><h2 id="faq-title">Frequently asked questions</h2></div>
+        <div class="faq" role="list">
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Does Meta Ads still work in 2025? <span aria-hidden="true">+</span></button><p class="faq__a">Yes — with the right approach. The problem isn't the platform, it's running boosted posts without a strategy. With well-built funnels and tested creatives, Meta remains one of the best channels for cost per lead in B2C.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Do you need access to my Facebook page? <span aria-hidden="true">+</span></button><p class="faq__a">Yes, via Business Manager with manager access. The page and ad account remain yours — we never retain those assets even if you end the contract.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Do you create the creatives (images/videos)? <span aria-hidden="true">+</span></button><p class="faq__a">We create the copy and graphic elements of static ads. For videos, we can work with material you provide or suggest production partners.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">What is the minimum recommended budget? <span aria-hidden="true">+</span></button><p class="faq__a">€500/month in ad spend to start generating data. For full funnels (top + retargeting), €1,000–1,500/month gives much more room to test and scale.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" style="text-align:center;">
+        <h2 id="cta-title">Ready for a funnel that works while you sleep?</h2>
+        <p style="max-width:48ch; margin-inline:auto; margin-top:.75rem; margin-bottom:2rem;">Talk to us. We'll analyse your business and show you what type of funnel makes the most sense for you.</p>
+        <a href="contact.html" class="btn btn--primary">Contact Us →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Specialised paid traffic agency. We manage Google Ads and Meta Ads campaigns to generate qualified leads at the lowest cost per acquisition.</p>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Services</p>
+          <ul>
+            <li><a href="google-ads.html">Google Ads</a></li>
+            <li><a href="meta-ads.html">Meta Ads</a></li>
+            <li><a href="audit.html">Campaign Audit</a></li>
+            <li><a href="strategy.html">Traffic Strategy</a></li>
+            <li><a href="landing-pages.html">Landing Pages</a></li>
+            <li><a href="reports.html">Reports &amp; Dashboard</a></li>
+            <li><a href="calculator.html">ROI Calculator</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contact</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril, Portugal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. All rights reserved.</p>
+        <a href="privacy.html" class="footer__privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    function toggleMenu(btn) { var menu=document.getElementById('main-menu'); var open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded',open); btn.setAttribute('aria-label',open?'Close menu':'Open menu'); }
+    function toggleFaq(btn) { var item=btn.closest('.faq__item'); var isOpen=item.classList.toggle('open'); btn.setAttribute('aria-expanded',isOpen); }
+  </script>
+
+  <!-- ── dropdown inline ── -->
+  <script>/* ============================================================
+   Elo — dropdown.js
+   Controla o dropdown de Serviços na navbar
+   ============================================================ */
+
+(function () {
+  /* Abre / fecha o dropdown clicado */
+  window.toggleDropdown = function (btn) {
+    var dropdown = btn.closest('.navbar__dropdown');
+    var isOpen   = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    /* Fecha outros dropdowns eventualmente abertos */
+    document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+      if (d !== dropdown) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
+  /* Fecha ao clicar fora */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar__dropdown')) {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  /* Fecha com a tecla Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();</script>
+  <!-- ── trail inline ── -->
+  <script>/* trail.js — mouse trail for .hero and .page-hero sections */
+(function () {
+  var LIFE  = 650;
+  var MAX_R = 5;
+  var MAX_A = 0.22;
+
+  function initTrail(section) {
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    section.insertBefore(canvas, section.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var pts = [];
+    var raf = null;
+
+    function resize() {
+      canvas.width  = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    section.addEventListener('mousemove', function (e) {
+      var r = section.getBoundingClientRect();
+      pts.push({
+        x: e.clientX - r.left,
+        y: e.clientY - r.top,
+        radius: 2 + Math.random() * (MAX_R - 2),
+        born: performance.now()
+      });
+      if (!raf) tick();
+    });
+
+    function tick() {
+      var now = performance.now();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts = pts.filter(function (p) { return now - p.born < LIFE; });
+      pts.forEach(function (p) {
+        var progress = (now - p.born) / LIFE;
+        var alpha    = MAX_A * (1 - progress);
+        var radius   = p.radius * (1 - progress * 0.5);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      });
+      raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+    }
+  }
+
+  document.querySelectorAll('.hero, .page-hero').forEach(initTrail);
+})();</script>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Cookie preferences" hidden>
+    <div id="pm-bar">
+      <div>
+        <strong>We use cookies</strong>
+        <p>We use cookies to analyse traffic and personalise ads. You can accept, reject or manage your preferences.</p>
+      </div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Customise</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Reject all</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Accept all</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Customise cookies">
+      <h3>Manage preferences</h3>
+      <div class="pm-pref">
+        <div><strong>Necessary cookies</strong><p>Essential for the site to function. Cannot be disabled.</p></div>
+        <span class="pm-always">Always active</span>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Analytics cookies</strong><p>Allow us to measure traffic and improve the site (Google Analytics).</p></div>
+        <label class="pm-switch" aria-label="Analytics cookies"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Marketing cookies</strong><p>Used to show relevant ads (Google Ads, Meta Pixel).</p></div>
+        <label class="pm-switch" aria-label="Marketing cookies"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label>
+      </div>
+      <div id="pm-panel-actions">
+        <button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Save preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){
+      gtag('consent','update',{
+        analytics_storage:a?'granted':'denied',
+        ad_storage:m?'granted':'denied',
+        ad_user_data:m?'granted':'denied',
+        ad_personalization:m?'granted':'denied'
+      });
+    }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){
+      localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));
+      applyConsent(a,m);
+      banner.setAttribute('hidden','');
+    };
+    window.pmSavePanel=function(){
+      pmSave(document.getElementById('pm-analytics').checked,
+             document.getElementById('pm-marketing').checked);
+    };
+  })();
+  </script>
+</body>
+</html>

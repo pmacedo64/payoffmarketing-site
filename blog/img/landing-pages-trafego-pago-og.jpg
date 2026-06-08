@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#161b22"/>
+  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="600" y="301" font-family="Inter,system-ui,sans-serif" font-size="28" fill="#3b82f6" text-anchor="middle" font-weight="700">📷 SUBSTITUIR IMAGEM</text>
+  <text x="600" y="333" font-family="Inter,system-ui,sans-serif" font-size="18" fill="#8b949e" text-anchor="middle">OG IMAGE: Partilha Social | 1200×630px</text>
+</svg>

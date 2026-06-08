@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:300});
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WSST');</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análise gratuita de concorrência Google Ads — Payoff Marketing</title>
+  <meta name="description" content="Descobre quem anuncia no teu nicho no Google Ads, o que dizem, e quem domina a visibilidade. Relatório gratuito, sem compromisso. Apenas 5 por mês." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/lp/lp-analise-concorrencia-1.html" />
+  <meta property="og:title" content="Análise gratuita de concorrência Google Ads | Payoff Marketing" />
+  <meta property="og:description" content="Descobre quem anuncia no teu nicho, o que dizem, e quem domina a visibilidade. Relatório gratuito, sem compromisso." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://payoffmarketing.pt/img/logo.webp" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- ── Cookie Banner ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#161b22;border-top:1px solid #30363d;font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;font-weight:600;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+
+  <style>
+    /* ── Scarcity bar ── */
+    .scarcity-bar {
+      background: linear-gradient(90deg, #1e3a5f, #1a3352);
+      border-bottom: 1px solid rgba(59,130,246,.3);
+      text-align: center;
+      padding: .625rem 1rem;
+      font-size: .8125rem;
+      color: #93c5fd;
+      position: relative; z-index: 101;
+    }
+    .scarcity-bar strong { color: #fff; font-weight: 700; }
+    .scarcity-bar .scarcity-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: .4rem;
+      vertical-align: middle;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+
+    /* ── Navbar mínima ── */
+    .lp-navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .lp-navbar .navbar__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 64px;
+    }
+
+    /* ── Hero ── */
+    .lp-hero {
+      position: relative;
+      padding-block: 5.5rem 4.5rem;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -5%, rgba(59,130,246,.2) 0%, transparent 65%),
+        var(--cor-fundo);
+    }
+    .lp-hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('../blog/img/hero-lp.webp');
+      background-size: cover; background-position: center 35%;
+      filter: saturate(.3) brightness(.22);
+      mix-blend-mode: screen; pointer-events: none;
+    }
+    .lp-hero .container { position: relative; z-index: 2; }
+    .lp-hero h1 {
+      max-width: 24ch; margin-inline: auto; margin-bottom: 1rem;
+      text-shadow: 0 2px 18px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.5);
+    }
+    .lp-hero h1 span { color: var(--cor-primaria); }
+    .lp-hero__sub {
+      max-width: 54ch; margin-inline: auto; margin-bottom: 2rem;
+      font-size: 1.0625rem; color: var(--cor-texto);
+      line-height: 1.7;
+    }
+    .lp-hero__ctas {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .hero-note { font-size: .8125rem; color: var(--cor-texto-muted); }
+    .hero-note strong { color: var(--cor-texto); }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--cor-borda);
+      border-top: 1px solid var(--cor-borda);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .trust-item {
+      background: var(--cor-superficie);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .trust-item__num {
+      font-size: 1.75rem; font-weight: 800;
+      color: var(--cor-primaria); line-height: 1;
+      display: block; margin-bottom: .3rem;
+    }
+    .trust-item__label {
+      font-size: .8rem; color: var(--cor-texto-muted);
+      line-height: 1.4;
+    }
+    @media (max-width: 640px) {
+      .trust-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Report cards (o que vais receber) ── */
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 900px) { .report-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .report-grid { grid-template-columns: 1fr; } }
+
+    /* ── Report mock (visual preview) ── */
+    .report-mock {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 720px; margin-inline: auto;
+    }
+    .report-mock__header {
+      background: rgba(59,130,246,.06);
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .report-mock__title {
+      font-size: .875rem; font-weight: 700; color: var(--cor-texto);
+    }
+    .report-mock__badge {
+      font-size: .75rem; font-weight: 600;
+      background: rgba(59,130,246,.12);
+      border: 1px solid rgba(59,130,246,.25);
+      color: var(--cor-primaria);
+      padding: .2rem .7rem; border-radius: 999px;
+    }
+    .report-mock__body { padding: 1.25rem 1.5rem; }
+    .report-mock__kw-label {
+      font-size: .75rem; color: var(--cor-texto-muted);
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: .85rem; font-weight: 600;
+    }
+    .report-mock__row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: .5rem 1rem;
+      align-items: center;
+      padding: .55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      font-size: .8375rem;
+    }
+    .report-mock__row--head {
+      color: var(--cor-texto-muted);
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase; letter-spacing: .05em;
+      border-bottom: 1px solid var(--cor-borda);
+      padding-bottom: .6rem; margin-bottom: .1rem;
+    }
+    .report-mock__company { font-weight: 600; color: var(--cor-texto); }
+    .report-mock__vis-wrap { display: flex; align-items: center; gap: .5rem; }
+    .report-mock__vis-bar {
+      flex: 1; height: 6px; border-radius: 999px;
+      background: rgba(255,255,255,.07); overflow: hidden;
+    }
+    .report-mock__vis-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--cor-primaria), rgba(96,165,250,.6));
+    }
+    .report-mock__vis-pct { font-size: .75rem; color: var(--cor-texto-muted); min-width: 2.5rem; text-align: right; }
+    .report-mock__ads { color: var(--cor-texto-muted); text-align: center; }
+    .report-mock__footer {
+      padding: .85rem 1.5rem;
+      border-top: 1px solid var(--cor-borda);
+      font-size: .75rem; color: var(--cor-texto-muted);
+      display: flex; gap: 1.5rem;
+    }
+    .report-mock__footer span strong { color: var(--cor-primaria); }
+
+    /* ── Steps (como funciona) ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 860px; margin-inline: auto;
+    }
+    .step-card {
+      text-align: center;
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(59,130,246,.1);
+      border: 2px solid rgba(59,130,246,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 800; color: var(--cor-primaria);
+      margin: 0 auto 1.25rem;
+    }
+    .step-card h3 {
+      font-size: 1.0625rem; margin-bottom: .5rem;
+    }
+    .step-card p {
+      font-size: .9rem; color: var(--cor-texto-muted); line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .steps-grid { grid-template-columns: 1fr; max-width: 400px; }
+    }
+
+    /* ── Qualifier section ── */
+    .qualifier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .qualifier-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .qualifier-card h3 { font-size: 1rem; margin-bottom: .5rem; }
+    .qualifier-card p { font-size: .875rem; color: var(--cor-texto-muted); line-height: 1.6; margin: 0; }
+    @media (max-width: 700px) {
+      .qualifier-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Offer box ── */
+    .offer-box {
+      background: linear-gradient(135deg, rgba(59,130,246,.08) 0%, rgba(59,130,246,.03) 100%);
+      border: 1px solid rgba(59,130,246,.22);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 680px; margin-inline: auto;
+      text-align: center;
+    }
+    .offer-box__price {
+      font-size: 4rem; font-weight: 800;
+      color: var(--cor-primaria); line-height: 1;
+      margin-bottom: .3rem;
+    }
+    .offer-box__price-note {
+      font-size: .9375rem; color: var(--cor-texto-muted);
+      margin-bottom: 2rem;
+    }
+    .offer-box__features {
+      list-style: none; padding: 0; margin: 0 auto 2rem;
+      max-width: 420px; text-align: left;
+      display: flex; flex-direction: column; gap: .65rem;
+    }
+    .offer-box__features li {
+      display: flex; align-items: flex-start; gap: .65rem;
+      font-size: .9375rem; color: var(--cor-texto);
+      line-height: 1.5;
+    }
+    .offer-box__features li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      margin-top: .15rem;
+      background: rgba(34,197,94,.12);
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .offer-scarcity {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(251,146,60,.08);
+      border: 1px solid rgba(251,146,60,.25);
+      color: #fb923c;
+      font-size: .8125rem; font-weight: 600;
+      padding: .4rem 1rem; border-radius: 999px;
+      margin-bottom: 1.75rem;
+    }
+    .offer-scarcity svg { flex-shrink: 0; }
+
+    /* ── Form section ── */
+    .lp-form-section {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 640px; margin-inline: auto;
+    }
+    .lp-form-section h2 { font-size: 1.75rem; margin-bottom: .5rem; }
+    .lp-form-section > p { color: var(--cor-texto-muted); font-size: .9375rem; margin-bottom: 2rem; line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 720px; margin-inline: auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .faq-item__q {
+      width: 100%; background: none; border: none;
+      color: var(--cor-texto); font-family: inherit;
+      font-size: 1rem; font-weight: 600;
+      text-align: left; cursor: pointer;
+      padding: 1.25rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem;
+    }
+    .faq-item__icon {
+      flex-shrink: 0; color: var(--cor-texto-muted);
+      transition: transform .25s;
+    }
+    .faq-item.open .faq-item__icon { transform: rotate(45deg); }
+    .faq-item__a {
+      overflow: hidden; max-height: 0;
+      transition: max-height .35s ease, padding .25s ease;
+    }
+    .faq-item.open .faq-item__a { max-height: 400px; }
+    .faq-item__a p {
+      color: var(--cor-texto-muted); font-size: .9375rem;
+      line-height: 1.7; padding-bottom: 1.25rem; margin: 0;
+    }
+
+    /* ── Responsive geral ── */
+    @media (max-width: 900px) {
+      .qualifier-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .offer-box, .lp-form-section { padding: 2rem 1.5rem; }
+      .qualifier-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ── Scarcity bar ── -->
+  <div class="scarcity-bar" role="banner" aria-label="Disponibilidade limitada">
+    <span class="scarcity-dot" aria-hidden="true"></span>
+    <strong>Apenas 5 análises gratuitas por mês</strong> — ficam <strong>2 vagas disponíveis em <span class="mes-atual"></span></strong>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <header>
+    <nav class="navbar lp-navbar" aria-label="Navegação">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="Payoff Marketing — Página inicial">
+          <img src="../img/logo.webp" alt="Payoff Marketing" />
+        </a>
+        <a href="#pedir" class="btn btn--primary" style="font-size:.875rem;padding:.55rem 1.25rem;">Pedir a minha análise →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="lp-hero" aria-labelledby="hero-titulo">
+      <div class="lp-hero__bg" aria-hidden="true"></div>
+      <div class="container" style="max-width:780px;">
+
+        <span class="hero__badge" style="margin-bottom:1.25rem;">
+          Análise gratuita · sem compromisso · entregue em 48h
+        </span>
+
+        <h1 id="hero-titulo">
+          Descobre quem está a <span>roubar os teus clientes</span> no Google
+        </h1>
+
+        <p class="lp-hero__sub">
+          Enviamos-te um relatório completo com todos os anunciantes do teu nicho —
+          o que anunciam, quantas vezes aparecem, e quem domina a visibilidade.
+          Tudo gratuito. Sem truques.
+        </p>
+
+        <div class="lp-hero__ctas">
+          <a href="#pedir" class="btn btn--primary btn--lg">Quero a minha análise →</a>
+          <a href="#como-funciona" class="btn btn--ghost btn--lg">Ver como funciona</a>
+        </div>
+
+        <p class="hero-note">
+          <strong>€0</strong> · Sem cartão de crédito · Relatório PDF com a marca Payoff
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TRUST BAR
+    ══════════════════════════════════════ -->
+    <div class="trust-bar" aria-label="Estatísticas">
+      <div class="trust-item">
+        <span class="trust-item__num">48h</span>
+        <span class="trust-item__label">Entrega máxima do relatório</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">€0</span>
+        <span class="trust-item__label">Custo total, sem compromisso</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">5</span>
+        <span class="trust-item__label">Análises disponíveis por mês</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">100%</span>
+        <span class="trust-item__label">Dados reais do Google Ads</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         O QUE VAIS RECEBER
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="receber-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="receber-titulo">O que inclui a análise</h2>
+          <p>Um relatório com dados reais — não estimativas, não benchmarks genéricos. O que está a acontecer no teu nicho, agora.</p>
+        </div>
+
+        <div class="report-grid">
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Quem anuncia no teu nicho</h3>
+            <p class="card__text">Lista completa de todos os anunciantes que aparecem para as tuas keywords na tua área geográfica — e quantas vezes cada um surge.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Copy dos anúncios dos concorrentes</h3>
+            <p class="card__text">Os títulos e descrições exatos que estão a usar. Vês o que prometem, como se diferenciam, e onde podes ganhar terreno.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Landing pages da concorrência</h3>
+            <p class="card__text">As páginas para onde os concorrentes estão a enviar o tráfego. Estrutura, oferta, CTA — tudo visível.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Gráfico de visibilidade do nicho</h3>
+            <p class="card__text">Visualização clara de quem domina o espaço publicitário vs. quem tem presença residual. Identifica os líderes e os que estão a desperdiçar budget.</p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Horários de maior atividade</h3>
+            <p class="card__text">As horas e dias em que mais anunciantes estão a licitar. Informação direta para otimizar o ad schedule e reduzir custos fora de pico.</p>
+          </div>
+
+          <div class="card" style="border-color: rgba(59,130,246,.25); background: rgba(59,130,246,.04);">
+            <div class="card__icon" aria-hidden="true" style="background: rgba(59,130,246,.15);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Relatório com a tua marca</h3>
+            <p class="card__text">O relatório é gerado com a marca Payoff Marketing, formatado em PDF. Podes partilhar com a tua equipa ou usar como base para decisões de campanha.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CASO REAL — ANÁLISE DE CONCORRÊNCIA
+    ══════════════════════════════════════ -->
+    <section class="osteo-case" aria-labelledby="oc-titulo">
+      <style>
+        .osteo-case{
+          --oc-bg:#161b22; --oc-surface:#1c2230; --oc-surface-2:#1c2230;
+          --oc-border:#21262d; --oc-primary:#3b82f6; --oc-accent:#60a5fa;
+          --oc-text:#e6edf3; --oc-muted:#8b949e; --oc-success:#3fb950; --oc-warn:#fb923c;
+          background:
+            radial-gradient(ellipse 70% 45% at 50% -2%, rgba(59,130,246,.14) 0%, transparent 60%),
+            var(--oc-bg);
+          color:var(--oc-text);
+          font-family:'Inter',system-ui,-apple-system,sans-serif;
+          line-height:1.7;
+          padding:5rem 1.25rem;
+        }
+        .osteo-case *{box-sizing:border-box;}
+        .oc-container{max-width:1080px;margin-inline:auto;}
+
+        /* ── Cabeçalho ── */
+        .oc-head{text-align:center;margin-bottom:3rem;}
+        .oc-eyebrow{
+          display:inline-block;
+          font-size:.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+          color:var(--oc-accent);
+          background:rgba(59,130,246,.1);
+          border:1px solid rgba(59,130,246,.25);
+          padding:.4rem .9rem;border-radius:999px;margin-bottom:1.25rem;
+        }
+        .oc-head h2{
+          font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800;
+          line-height:1.2;margin:0 auto 1rem;max-width:20ch;
+        }
+        .oc-head h2 span{color:var(--oc-primary);}
+        .oc-intro{
+          max-width:58ch;margin:0 auto;
+          font-size:1.0625rem;color:var(--oc-muted);
+        }
+
+        /* ── Snapshot stats ── */
+        .oc-stats{
+          display:grid;grid-template-columns:repeat(4,1fr);
+          gap:1px;background:var(--oc-border);
+          border:1px solid var(--oc-border);border-radius:14px;overflow:hidden;
+          margin-bottom:3.5rem;
+        }
+        .oc-stats div{background:var(--oc-surface);padding:1.5rem 1rem;text-align:center;}
+        .oc-stats strong{
+          display:block;font-size:1.9rem;font-weight:800;
+          color:var(--oc-primary);line-height:1;margin-bottom:.4rem;
+        }
+        .oc-stats span{font-size:.8rem;color:var(--oc-muted);line-height:1.4;}
+
+        /* ── Painéis de vantagem ── */
+        .oc-panel{
+          display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+          align-items:center;
+          padding:2.5rem 0;
+          border-top:1px solid var(--oc-border);
+        }
+        .oc-panel:nth-child(even) .oc-panel__visual{order:-1;}
+        .oc-num{
+          display:inline-flex;align-items:center;justify-content:center;
+          width:38px;height:38px;border-radius:10px;
+          background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.28);
+          color:var(--oc-primary);font-weight:800;font-size:.95rem;
+          margin-bottom:1rem;
+        }
+        .oc-panel__text h3{
+          font-size:1.35rem;font-weight:700;line-height:1.3;margin:0 0 .65rem;
+        }
+        .oc-panel__text p{font-size:.975rem;color:var(--oc-muted);margin:0;}
+        .oc-panel__text p strong{color:var(--oc-text);font-weight:600;}
+
+        /* ── Bloco visual genérico ── */
+        .oc-card{
+          background:var(--oc-surface);border:1px solid var(--oc-border);
+          border-radius:14px;padding:1.4rem 1.5rem;
+        }
+        .oc-card__title{
+          font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+          color:var(--oc-muted);margin-bottom:1.1rem;
+        }
+
+        /* ── Gráfico de barras (visibilidade) ── */
+        .oc-bar{
+          display:grid;grid-template-columns:9.5rem 1fr 3rem;
+          gap:.65rem;align-items:center;
+          padding:.42rem 0;font-size:.83rem;
+        }
+        .oc-bar__name{color:var(--oc-text);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .oc-bar__track{height:9px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;}
+        .oc-bar__fill{
+          height:100%;border-radius:999px;
+          background:linear-gradient(90deg,var(--oc-primary),var(--oc-accent));
+          width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1);
+        }
+        .oc-bar__pct{text-align:right;color:var(--oc-muted);font-variant-numeric:tabular-nums;}
+        .oc-bar--lead .oc-bar__name{color:var(--oc-accent);}
+        .oc-bar--residual .oc-bar__name,
+        .oc-bar--residual .oc-bar__pct{color:#5b6573;}
+        .oc-bar--residual .oc-bar__fill{background:#3a4452;}
+
+        /* ── Comparação head-to-head ── */
+        .oc-versus{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+        .oc-vs-card{
+          background:var(--oc-surface);border:1px solid var(--oc-border);
+          border-radius:12px;padding:1.25rem;text-align:center;
+        }
+        .oc-vs-card--win{border-color:rgba(63,185,80,.4);background:rgba(63,185,80,.05);}
+        .oc-vs-card--loss{border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.04);}
+        .oc-vs-card__name{font-weight:700;font-size:.95rem;margin-bottom:.15rem;}
+        .oc-vs-card__tag{
+          font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+          display:block;margin-bottom:1rem;
+        }
+        .oc-vs-card--win .oc-vs-card__tag{color:var(--oc-success);}
+        .oc-vs-card--loss .oc-vs-card__tag{color:var(--oc-warn);}
+        .oc-vs-metric{padding:.5rem 0;border-top:1px solid var(--oc-border);}
+        .oc-vs-metric b{display:block;font-size:1.5rem;font-weight:800;line-height:1.1;}
+        .oc-vs-metric span{font-size:.72rem;color:var(--oc-muted);}
+        .oc-vs-card--win .oc-vs-metric b{color:var(--oc-success);}
+        .oc-vs-card--loss .oc-vs-metric b{color:var(--oc-text);}
+
+        /* ── Cartões de copy ── */
+        .oc-copy-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+        .oc-copy{
+          background:var(--oc-surface);border:1px solid var(--oc-border);
+          border-radius:11px;padding:.9rem 1rem;
+        }
+        .oc-copy__angle{
+          font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+          color:var(--oc-accent);margin-bottom:.35rem;
+        }
+        .oc-copy__text{font-size:.86rem;color:var(--oc-text);font-weight:600;line-height:1.4;}
+        .oc-copy__src{font-size:.72rem;color:var(--oc-muted);margin-top:.3rem;}
+
+        /* ── Calendário / schedule ── */
+        .oc-week{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;}
+        .oc-day{text-align:center;}
+        .oc-day__label{font-size:.7rem;font-weight:700;color:var(--oc-muted);margin-bottom:.45rem;}
+        .oc-day__col{display:flex;flex-direction:column;gap:3px;}
+        .oc-slot{
+          height:16px;border-radius:4px;
+          background:linear-gradient(135deg,var(--oc-primary),rgba(59,130,246,.55));
+        }
+        .oc-day--we .oc-slot{background:linear-gradient(135deg,var(--oc-accent),rgba(96,165,250,.5));}
+        .oc-week-legend{
+          display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;
+          margin-top:1rem;font-size:.72rem;color:var(--oc-muted);
+        }
+        .oc-week-legend span{display:flex;align-items:center;gap:.35rem;}
+        .oc-week-legend i{width:9px;height:9px;border-radius:3px;display:inline-block;}
+
+        /* ── Keywords ── */
+        .oc-kw{margin:.55rem 0;}
+        .oc-kw__top{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:.35rem;}
+        .oc-kw__term{font-weight:600;color:var(--oc-text);}
+        .oc-kw__count{color:var(--oc-accent);font-weight:700;}
+        .oc-kw__track{height:11px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;}
+        .oc-kw__fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--oc-primary),var(--oc-accent));width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1);}
+
+        /* ── Recap / CTA ── */
+        .oc-recap{
+          margin-top:3.5rem;
+          background:linear-gradient(135deg,rgba(59,130,246,.1) 0%,rgba(59,130,246,.03) 100%);
+          border:1px solid rgba(59,130,246,.25);
+          border-radius:20px;padding:2.75rem;text-align:center;
+        }
+        .oc-recap h3{font-size:1.45rem;font-weight:800;margin:0 0 .6rem;}
+        .oc-recap p{max-width:56ch;margin:0 auto 1.75rem;color:var(--oc-muted);font-size:.99rem;}
+        .oc-recap__list{
+          display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+          max-width:760px;margin:0 auto 2rem;text-align:left;
+        }
+        .oc-recap__item{
+          display:flex;gap:.6rem;font-size:.875rem;color:var(--oc-text);line-height:1.45;
+        }
+        .oc-recap__item svg{flex-shrink:0;margin-top:2px;}
+        .oc-cta{
+          display:inline-block;background:var(--oc-primary);color:#fff;
+          font-weight:700;font-size:1rem;text-decoration:none;
+          padding:.9rem 2rem;border-radius:9px;
+          transition:background .2s,box-shadow .2s,transform .1s;
+        }
+        .oc-cta:hover{background:#2563eb;box-shadow:0 0 22px rgba(59,130,246,.45);}
+        .oc-cta:active{transform:scale(.98);}
+        .oc-source{
+          text-align:center;font-size:.74rem;color:#5b6573;
+          margin-top:2rem;
+        }
+
+        /* ── Responsivo ── */
+        @media (max-width:760px){
+          .osteo-case{padding:3.5rem 1.1rem;}
+          .oc-stats{grid-template-columns:1fr 1fr;}
+          .oc-panel{grid-template-columns:1fr;gap:1.5rem;padding:2rem 0;}
+          .oc-panel:nth-child(even) .oc-panel__visual{order:0;}
+          .oc-copy-grid{grid-template-columns:1fr;}
+          .oc-recap__list{grid-template-columns:1fr;max-width:340px;}
+          .oc-recap{padding:2rem 1.4rem;}
+          .oc-bar{grid-template-columns:7.5rem 1fr 2.7rem;}
+        }
+      </style>
+
+      <div class="oc-container">
+
+        <!-- ── Cabeçalho ── -->
+        <div class="oc-head">
+          <span class="oc-eyebrow">Caso real · Osteopatia · Lisboa</span>
+          <h2 id="oc-titulo">O que uma análise de concorrência <span>te mostra de verdade</span></h2>
+          <p class="oc-intro">
+            Monitorizámos o Google Ads no nicho de osteopatia em Lisboa durante 7 dias.
+            Não são estimativas — é o que estava mesmo no leilão. Eis o tipo de informação
+            que recebes, e o que podes fazer com ela.
+          </p>
+        </div>
+
+        <!-- ── Snapshot ── -->
+        <div class="oc-stats">
+          <div><strong>22</strong><span>anunciantes a competir</span></div>
+          <div><strong>139</strong><span>anúncios diferentes</span></div>
+          <div><strong>2</strong><span>keywords analisadas</span></div>
+          <div><strong>7 dias</strong><span>monitorização contínua</span></div>
+        </div>
+
+        <!-- ══ 01 · Mapa de visibilidade ══ -->
+        <div class="oc-panel">
+          <div class="oc-panel__text">
+            <span class="oc-num">01</span>
+            <h3>Vês quem domina o leilão — e quem é invisível</h3>
+            <p>
+              Ficas com a lista completa de quem anuncia no teu nicho e a percentagem de
+              vezes que cada um aparece. Na osteopatia em Lisboa, <strong>três clínicas
+              apanham a maior parte da atenção</strong>. As outras 19 dividem o que sobra.
+              Antes de gastar um euro, sabes contra quem estás a competir.
+            </p>
+          </div>
+          <div class="oc-panel__visual">
+            <div class="oc-card">
+              <div class="oc-card__title">Visibilidade no leilão · top anunciantes</div>
+              <div class="oc-bar oc-bar--lead">
+                <span class="oc-bar__name">equilibryou.pt</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="100"></span></span>
+                <span class="oc-bar__pct">55,4%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">osteobalance.pt</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="79"></span></span>
+                <span class="oc-bar__pct">44,0%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">calamaro-practice</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="73"></span></span>
+                <span class="oc-bar__pct">40,5%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">clinicashelderflor</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="58"></span></span>
+                <span class="oc-bar__pct">32,1%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">mahealthcare.pt</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="46"></span></span>
+                <span class="oc-bar__pct">25,6%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">physiohub.pt</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="27"></span></span>
+                <span class="oc-bar__pct">14,9%</span>
+              </div>
+              <div class="oc-bar">
+                <span class="oc-bar__name">naturalyrio.com</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="26"></span></span>
+                <span class="oc-bar__pct">14,3%</span>
+              </div>
+              <div class="oc-bar oc-bar--residual">
+                <span class="oc-bar__name">+15 anunciantes</span>
+                <span class="oc-bar__track"><span class="oc-bar__fill" data-w="12"></span></span>
+                <span class="oc-bar__pct">&lt;8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ 02 · Volume não é vitória ══ -->
+        <div class="oc-panel">
+          <div class="oc-panel__text">
+            <span class="oc-num">02</span>
+            <h3>Descobres quem está a queimar orçamento</h3>
+            <p>
+              Mais anúncios não é igual a mais resultados. A <strong>Calamaro tinha 24
+              criativos no ar</strong> — o maior número de todo o nicho — e mesmo assim
+              ficou em 3.º na visibilidade. A <strong>Equilibryou liderou com quase metade
+              dos criativos</strong> e ainda assim a melhor posição média. Isto diz-te onde
+              vale a pena investir esforço — e onde é desperdício.
+            </p>
+          </div>
+          <div class="oc-panel__visual">
+            <div class="oc-versus">
+              <div class="oc-vs-card oc-vs-card--win">
+                <div class="oc-vs-card__name">Equilibryou</div>
+                <span class="oc-vs-card__tag">Mais eficiente</span>
+                <div class="oc-vs-metric"><b>13</b><span>criativos no ar</span></div>
+                <div class="oc-vs-metric"><b>55,4%</b><span>visibilidade</span></div>
+                <div class="oc-vs-metric"><b>2,3</b><span>posição média</span></div>
+              </div>
+              <div class="oc-vs-card oc-vs-card--loss">
+                <div class="oc-vs-card__name">Calamaro</div>
+                <span class="oc-vs-card__tag">Mais esforço, menos retorno</span>
+                <div class="oc-vs-metric"><b>24</b><span>criativos no ar</span></div>
+                <div class="oc-vs-metric"><b>40,5%</b><span>visibilidade</span></div>
+                <div class="oc-vs-metric"><b>2,5</b><span>posição média</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ 03 · Ângulos de copy ══ -->
+        <div class="oc-panel">
+          <div class="oc-panel__text">
+            <span class="oc-num">03</span>
+            <h3>Copias os ângulos que já estão a converter</h3>
+            <p>
+              O relatório mostra-te o <strong>texto exato dos anúncios da concorrência</strong>.
+              Vês que promessas usam, como se diferenciam e onde há espaço por ocupar. Em vez
+              de adivinhar a tua mensagem, partes do que o mercado já validou.
+            </p>
+          </div>
+          <div class="oc-panel__visual">
+            <div class="oc-copy-grid">
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Alívio da dor</div>
+                <div class="oc-copy__text">"Livre-se da Dor Crónica"</div>
+                <div class="oc-copy__src">Equilibryou</div>
+              </div>
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Prova social</div>
+                <div class="oc-copy__text">"16 Anos de Experiência · +15.000 pacientes"</div>
+                <div class="oc-copy__src">Osteobalance</div>
+              </div>
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Sem espera</div>
+                <div class="oc-copy__text">"Consultas sem espera. Agende"</div>
+                <div class="oc-copy__src">Mahealthcare</div>
+              </div>
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Urgência</div>
+                <div class="oc-copy__text">"Urgências Semana | Sábados"</div>
+                <div class="oc-copy__src">Naturalyrio</div>
+              </div>
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Hiperlocal</div>
+                <div class="oc-copy__text">"Osteopata Amoreiras Lisboa"</div>
+                <div class="oc-copy__src">Calamaro Practice</div>
+              </div>
+              <div class="oc-copy">
+                <div class="oc-copy__angle">Patologia específica</div>
+                <div class="oc-copy__text">"Tratamento Ciática e Lombalgia"</div>
+                <div class="oc-copy__src">Osteobalance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ 04 · Calendário de anúncios ══ -->
+        <div class="oc-panel">
+          <div class="oc-panel__text">
+            <span class="oc-num">04</span>
+            <h3>Sabes quando o leilão está aceso</h3>
+            <p>
+              Os anúncios da concorrência foram detetados <strong>a todas as horas, nos 7
+              dias, fim de semana incluído</strong>. Saber isto ajuda-te a decidir o teu ad
+              schedule — onde competir a sério e onde aliviar o lance para não pagar de mais.
+            </p>
+          </div>
+          <div class="oc-panel__visual">
+            <div class="oc-card">
+              <div class="oc-card__title">Atividade detetada · 25 Mar – 1 Abr</div>
+              <div class="oc-week">
+                <div class="oc-day"><div class="oc-day__label">Seg</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day"><div class="oc-day__label">Ter</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day"><div class="oc-day__label">Qua</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day"><div class="oc-day__label">Qui</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day"><div class="oc-day__label">Sex</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day oc-day--we"><div class="oc-day__label">Sáb</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+                <div class="oc-day oc-day--we"><div class="oc-day__label">Dom</div><div class="oc-day__col"><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span><span class="oc-slot"></span></div></div>
+              </div>
+              <div class="oc-week-legend">
+                <span><i style="background:#3b82f6"></i> Dia útil</span>
+                <span><i style="background:#60a5fa"></i> Fim de semana</span>
+                <span>Madrugada · Manhã · Tarde · Noite</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ 05 · Keywords disputadas ══ -->
+        <div class="oc-panel">
+          <div class="oc-panel__text">
+            <span class="oc-num">05</span>
+            <h3>Vês onde está a guerra de lances</h3>
+            <p>
+              Para <strong>"osteopata perto de mim" competiam 16 anunciantes</strong>. Para
+              "osteopata lisboa", 15. Saber quão disputada está cada keyword evita-te entrar
+              numa guerra de preços às cegas — e mostra-te onde podes encontrar termos mais
+              baratos para o mesmo cliente.
+            </p>
+          </div>
+          <div class="oc-panel__visual">
+            <div class="oc-card">
+              <div class="oc-card__title">Anunciantes por keyword</div>
+              <div class="oc-kw">
+                <div class="oc-kw__top">
+                  <span class="oc-kw__term">osteopata perto de mim</span>
+                  <span class="oc-kw__count">16 anunciantes</span>
+                </div>
+                <div class="oc-kw__track"><span class="oc-kw__fill" data-w="100"></span></div>
+              </div>
+              <div class="oc-kw">
+                <div class="oc-kw__top">
+                  <span class="oc-kw__term">osteopata lisboa</span>
+                  <span class="oc-kw__count">15 anunciantes</span>
+                </div>
+                <div class="oc-kw__track"><span class="oc-kw__fill" data-w="94"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Recap + CTA ── -->
+        <div class="oc-recap">
+          <h3>A vantagem, em resumo</h3>
+          <p>
+            Em vez de entrar no Google Ads no escuro, entras a saber contra quem competes,
+            o que funciona e onde está o dinheiro mal gasto. É a diferença entre adivinhar
+            e decidir com dados.
+          </p>
+          <div class="oc-recap__list">
+            <div class="oc-recap__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Sabes contra quem competes antes de gastar.</span>
+            </div>
+            <div class="oc-recap__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Partes de ângulos de copy já validados.</span>
+            </div>
+            <div class="oc-recap__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Evitas keywords e horários caros de mais.</span>
+            </div>
+          </div>
+          <a href="#pedir" class="oc-cta">Pedir a minha análise gratuita →</a>
+        </div>
+
+        <p class="oc-source">
+          Dados: relatório PPC Payoff Marketing · keywords "osteopata perto de mim" e
+          "osteopata lisboa" · localização Lisboa · desktop e mobile · 25 Mar – 1 Abr 2026.
+        </p>
+
+      </div>
+
+      <script>
+        /* Anima as barras quando entram no ecrã. Sem JS, as barras
+           ficam à largura final (fallback aplicado abaixo). */
+        (function(){
+          var sec = document.currentScript.closest('.osteo-case');
+          var bars = sec.querySelectorAll('[data-w]');
+          function fill(){ bars.forEach(function(b){ b.style.width = b.getAttribute('data-w') + '%'; }); }
+          if (!('IntersectionObserver' in window)) { fill(); return; }
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if(e.isIntersecting){ fill(); io.disconnect(); } });
+          }, { threshold: .25 });
+          io.observe(sec);
+        })();
+      </script>
+
+    </section>
+
+    <!-- ══════════════════════════════════════
+         COMO FUNCIONA
+    ══════════════════════════════════════ -->
+    <section class="section" id="como-funciona" aria-labelledby="como-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="como-titulo">Como funciona</h2>
+          <p>Três passos. O único esforço da tua parte é preencher o formulário.</p>
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Preenches o formulário</h3>
+            <p>Nome, empresa, email e telefone. Não precisas de saber nada sobre Google Ads — nós tratamos de descobrir o teu nicho e keywords relevantes.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Nós corremos a análise</h3>
+            <p>Identificamos as keywords do teu setor, definimos a localização e executamos a análise durante vários dias para capturar dados representativos.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Recebes o relatório em 48h</h3>
+            <p>PDF completo com tudo o que acontece no teu nicho. Podes usar o relatório como quiseres — sem obrigações de continuar connosco.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PARA QUEM É
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="quem-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="quem-titulo">Para quem faz sentido</h2>
+          <p>A análise é útil em três situações concretas.</p>
+        </div>
+
+        <div class="qualifier-grid">
+
+          <div class="qualifier-card">
+            <div class="card__icon" aria-hidden="true" style="margin-bottom:1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3>Já tens Google Ads a correr</h3>
+            <p>Mas não sabes o que a concorrência está a fazer — copy, offers, landing pages, budget. A análise coloca-te a par do mercado real.</p>
+          </div>
+
+          <div class="qualifier-card">
+            <div class="card__icon" aria-hidden="true" style="margin-bottom:1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3>Estás a considerar entrar no Google Ads</h3>
+            <p>Antes de investir, faz sentido perceber quem já está no espaço e o nível de competição. A análise mostra-te o que vais encontrar.</p>
+          </div>
+
+          <div class="qualifier-card">
+            <div class="card__icon" aria-hidden="true" style="margin-bottom:1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <h3>Queres benchmark do teu mercado</h3>
+            <p>Gestores de marketing que precisam de dados concretos sobre o panorama competitivo para apresentar à direcção ou informar a estratégia.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         OFERTA / PRICING
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="oferta-titulo">
+      <div class="container">
+
+        <div class="offer-box">
+
+          <h2 id="oferta-titulo" style="margin-bottom:.5rem;">O que inclui a análise gratuita</h2>
+          <p style="color:var(--cor-texto-muted);font-size:.9375rem;margin-bottom:2rem;line-height:1.6;">Sem custos escondidos. Sem subscriptions. Uma análise completa do teu nicho, entregue em PDF.</p>
+
+          <div class="offer-box__price">€0</div>
+          <div class="offer-box__price-note">Análise gratuita — por tempo limitado</div>
+
+          <ul class="offer-box__features">
+            <li>Lista completa de anunciantes no teu nicho e localização</li>
+            <li>Copy dos anúncios de cada concorrente</li>
+            <li>Landing pages usadas em cada campanha</li>
+            <li>Gráfico de visibilidade — quem domina vs. quem está residual</li>
+            <li>Horários de maior atividade publicitária</li>
+            <li>Relatório em PDF, entregue em até 48 horas úteis</li>
+          </ul>
+
+          <div class="offer-scarcity" aria-live="polite">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Apenas 5 análises por mês — ficam 2 vagas em <span class="mes-atual"></span>
+          </div>
+
+          <a href="#pedir" class="btn btn--primary btn--lg">Pedir a minha análise gratuita →</a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FORMULÁRIO
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" id="pedir" aria-labelledby="form-titulo">
+      <div class="container">
+
+        <div class="lp-form-section">
+
+          <h2 id="form-titulo">Pede a tua análise gratuita</h2>
+          <p>Preenche o formulário e entregamos o relatório em até 48 horas úteis. Sem compromisso — podes usar os dados como quiseres.</p>
+
+          <form id="form-analise" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="db14e7ac-debe-4950-b076-73a3d2d0b20a" />
+            <input type="hidden" name="subject" value="Novo lead — LP Análise Concorrência PPC" />
+            <input type="hidden" name="redirect" value="false" />
+
+            <div class="form__group">
+              <label class="form__label" for="nome">Nome *</label>
+              <input class="form__input" type="text" id="nome" name="name" placeholder="O teu nome" required autocomplete="name" />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="empresa">Empresa / Website *</label>
+              <input class="form__input" type="text" id="empresa" name="empresa" placeholder="ex: Clínica Lisboa ou clinicalisboa.pt" required />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="email">Email *</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="o.teu@email.com" required autocomplete="email" />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="telefone">Telefone</label>
+              <input class="form__input" type="tel" id="telefone" name="telefone" placeholder="+351 9XX XXX XXX" autocomplete="tel" />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="nicho">Nicho / principais concorrentes <span style="color:var(--cor-texto-muted);font-weight:400;">(opcional)</span></label>
+              <textarea class="form__input form__textarea" id="nicho" name="mensagem" placeholder="ex: Somos uma clínica de estética em Lisboa. Principais concorrentes: X, Y, Z." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg" id="btn-submit" style="width:100%;">
+              Enviar pedido →
+            </button>
+
+            <p style="font-size:.8rem;color:var(--cor-texto-muted);text-align:center;margin-top:1rem;line-height:1.5;">
+              Ao submeter, aceitas a nossa <a href="../privacidade.html" style="color:var(--cor-primaria);">política de privacidade</a>.
+              Não partilhamos os teus dados com terceiros.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="faq-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="faq-titulo">Perguntas frequentes</h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              É mesmo gratuito? Há algum compromisso?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>Sim, é completamente gratuito. Não há custos escondidos, trials, nem subscriptions. Enviamos o relatório e o que fazeres com ele é problema teu. Obviamente ficamos contentes se depois quiseres falar sobre gestão de campanhas, mas não há qualquer pressão ou obrigação.</p></div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              Como é que sabes quais keywords analisar se não te digo nada?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>A partir do nome da empresa e do website conseguimos identificar o setor de atividade e as keywords mais relevantes. Se quiseres acelerar o processo ou garantir que análisamos termos específicos, usa o campo "Nicho / concorrentes" no formulário. Mas não é obrigatório.</p></div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              Em quanto tempo recebo o relatório?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>A análise precisa de correr durante vários dias para capturar dados representativos (e não apenas um snapshot de um dia com atipicidades). O prazo máximo de entrega é 48 horas úteis após o pedido. Na maioria dos casos entregamos antes disso.</p></div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              O que acontece depois de receber o relatório?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>Recebes o PDF por email. Se o relatório revelar oportunidades e quiseres perceber como as aproveitar com campanhas Google Ads geridas profissionalmente, podes marcar uma chamada connosco. Se não quiseres continuar, tudo bem — fica com os dados.</p></div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              Porquê apenas 5 análises por mês?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>Cada análise é feita manualmente — escolhemos as keywords, configuramos a localização e corremos a análise durante vários dias. Não é um processo automatizado. Para garantir qualidade em cada relatório, limitamos a 5 por mês.</p></div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false">
+              Posso pedir análises recorrentes para monitorizar a concorrência?
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-item__a"><p>A análise gratuita é uma vez por empresa. Monitorização recorrente da concorrência faz parte do serviço de gestão Google Ads — se tornares cliente, incluímos relatórios periódicos como parte do acompanhamento.</p></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="../calculadora.html">Calculadora ROI</a></li>
+            <li><a href="../precos.html">Preços</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="../blog/index.html" class="footer__privacy">Blog</a>
+        <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" hidden>
+    <div id="pm-bar">
+      <div><strong>Usamos cookies</strong><p>Utilizamos cookies para analisar tráfego e personalizar anúncios. Pode aceitar, rejeitar ou gerir as preferências.</p></div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Rejeitar tudo</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Aceitar tudo</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Personalizar cookies">
+      <h3>Gerir preferências</h3>
+      <div class="pm-pref"><div><strong>Cookies necessários</strong><p>Essenciais para o funcionamento do site.</p></div><span class="pm-always">Sempre ativo</span></div>
+      <div class="pm-pref"><div><strong>Cookies analíticos</strong><p>Permitem medir o tráfego (Google Analytics).</p></div><label class="pm-switch" aria-label="Cookies analíticos"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label></div>
+      <div class="pm-pref"><div><strong>Cookies de marketing</strong><p>Usados para anúncios relevantes (Google Ads, Meta Pixel).</p></div><label class="pm-switch" aria-label="Cookies de marketing"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label></div>
+      <div id="pm-panel-actions"><button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Guardar preferências</button></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    const mesAtual = meses[new Date().getMonth()];
+    document.querySelectorAll('.mes-atual').forEach(el => el.textContent = mesAtual);
+  </script>
+
+  <!-- FAQ accordion -->
+  <script>
+  document.querySelectorAll('.faq-item__q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  </script>
+
+  <!-- Form submit -->
+  <script>
+  (function(){
+    var form = document.getElementById('form-analise');
+    var btn = document.getElementById('btn-submit');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'A enviar…';
+      var data = new FormData(form);
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+        .then(function(r){ return r.json(); })
+        .then(function(res){
+          if (res.success) {
+            window.location.href = '../obrigado.html';
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Enviar pedido →';
+            alert('Ocorreu um erro. Tenta novamente ou contacta-nos por email.');
+          }
+        })
+        .catch(function(){
+          btn.disabled = false;
+          btn.textContent = 'Enviar pedido →';
+          alert('Ocorreu um erro. Tenta novamente ou contacta-nos por email.');
+        });
+    });
+  })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){ gtag('consent','update',{analytics_storage:a?'granted':'denied',ad_storage:m?'granted':'denied',ad_user_data:m?'granted':'denied',ad_personalization:m?'granted':'denied'}); }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));applyConsent(a,m);banner.setAttribute('hidden','');};
+    window.pmSavePanel=function(){pmSave(document.getElementById('pm-analytics').checked,document.getElementById('pm-marketing').checked);};
+  })();
+  </script>
+
+</body>
+</html>

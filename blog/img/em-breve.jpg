@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160">
+  <rect width="400" height="160" fill="#161b22"/>
+  <rect x="1" y="1" width="398" height="158" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="200" y="66" font-family="Inter,system-ui,sans-serif" font-size="16" fill="#3b82f6" text-anchor="middle" font-weight="700">📷 SUBSTITUIR IMAGEM</text>
+  <text x="200" y="98" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8b949e" text-anchor="middle">Artigo Em Breve — Substituir | 400×160px</text>
+</svg>

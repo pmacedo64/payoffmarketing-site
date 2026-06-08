@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Pricing — Payoff Marketing</title>
+  <meta name="description" content="Transparent paid traffic management pricing. Monthly or annual plans for every stage of growth."/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .billing-toggle-wrap{text-align:center;margin-bottom:2.5rem;}
+    .billing-toggle{display:inline-flex;align-items:center;gap:.75rem;font-size:.9375rem;}
+    .billing-toggle span{color:var(--cor-texto-muted);cursor:pointer;transition:color var(--transicao);}
+    .billing-toggle span.active{color:var(--cor-texto);font-weight:600;}
+    .toggle-pill{position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;}
+    .toggle-pill input{opacity:0;width:0;height:0;position:absolute;}
+    .toggle-pill__track{position:absolute;inset:0;background:var(--cor-borda);border-radius:12px;transition:background .25s;}
+    .toggle-pill input:checked + .toggle-pill__track{background:var(--cor-primaria);}
+    .toggle-pill__thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .25s;}
+    .toggle-pill input:checked ~ .toggle-pill__thumb{transform:translateX(20px);}
+    .saving-tag{display:inline-block;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.25);color:#3fb950;font-size:.75rem;font-weight:700;padding:.15rem .6rem;border-radius:999px;margin-left:.5rem;}
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+    @media(max-width:900px){.plans-grid{grid-template-columns:1fr;}}
+    .plan-card{background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:16px;padding:2rem;position:relative;display:flex;flex-direction:column;gap:1.25rem;transition:border-color var(--transicao);}
+    .plan-card:hover{border-color:rgba(59,130,246,.4);}
+    .plan-card--featured{border-color:var(--cor-primaria);background:rgba(59,130,246,.04);}
+    .plan-badge{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;border:1px solid;width:fit-content;}
+    .plan-badge--popular{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:var(--cor-primaria);}
+    .plan-badge--value{background:rgba(63,185,80,.1);border-color:rgba(63,185,80,.25);color:#3fb950;}
+    .plan-name{font-size:1.125rem;font-weight:700;color:var(--cor-texto);}
+    .plan-desc{font-size:.875rem;color:var(--cor-texto-muted);line-height:1.6;}
+    .plan-price-wrap{display:flex;align-items:flex-end;gap:.35rem;margin-block:.25rem;}
+    .plan-price{display:flex;align-items:flex-start;}
+    .plan-price__cur{font-size:1.1rem;font-weight:700;color:var(--cor-texto);margin-top:.35rem;}
+    .plan-price__val{font-size:2.5rem;font-weight:800;color:var(--cor-texto);line-height:1;}
+    .plan-card--featured .plan-price__val{color:var(--cor-primaria);}
+    .plan-price__period{font-size:.875rem;color:var(--cor-texto-muted);margin-bottom:.2rem;}
+    .plan-annual-note{font-size:.8rem;color:var(--cor-texto-muted);}
+    .plan-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem;flex:1;}
+    .plan-features li{display:flex;align-items:flex-start;gap:.6rem;font-size:.875rem;color:var(--cor-texto-muted);}
+    .plan-features li::before{content:"✓";color:var(--cor-primaria);font-weight:700;flex-shrink:0;margin-top:.05rem;}
+    .cmp-table{width:100%;border-collapse:collapse;font-size:.875rem;}
+    .cmp-table th,.cmp-table td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--cor-borda);}
+    .cmp-table th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--cor-texto-muted);}
+    .cmp-table td:not(:first-child){text-align:center;}
+    .cmp-check{color:var(--cor-primaria);font-size:1rem;}
+    .cmp-dash{color:var(--cor-texto-muted);}
+    .addons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+    .addon-card{background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:12px;padding:1.25rem;}
+    .addon-card h3{font-size:.9375rem;margin-bottom:.25rem;}
+    .addon-card p{font-size:.875rem;color:var(--cor-texto-muted);line-height:1.55;}
+    .addon-price{font-size:.875rem;font-weight:700;color:var(--cor-primaria);margin-top:.5rem;}
+    .guarantee-banner{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:12px;padding:2rem;text-align:center;margin-top:2rem;}
+    .faq{margin-top:2rem;}.faq__item{border-bottom:1px solid var(--cor-borda);padding-block:1.25rem;}
+    .faq__item:first-child{border-top:1px solid var(--cor-borda);}
+    .faq__q{font-weight:600;color:var(--cor-texto);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:none;width:100%;text-align:left;font-size:.9375rem;font-family:var(--fonte-base);}
+    .faq__q span{color:var(--cor-primaria);font-size:1.25rem;flex-shrink:0;}
+    .faq__a{color:var(--cor-texto-muted);font-size:.9375rem;margin-top:.75rem;display:none;line-height:1.7;}
+    .faq__item.open .faq__a{display:block;}
+    .faq__item.open .faq__q span{transform:rotate(45deg);display:inline-block;}
+    .hidden{display:none!important;}
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+        <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Services <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="audit.html">Campaign Audit</a></li>
+              <li><a href="strategy.html">Traffic Strategy</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="reports.html">Reports &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculator.html">ROI Calculator</a></li>
+          <li><a href="contact.html" class="navbar__cta">Contact Us</a></li>
+        </ul>
+        <div class="lang-switch" aria-label="Language switcher">
+          <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">EN</span>
+          <span class="lang-switch__sep">|</span>
+          <a href="../precos.html" class="lang-switch__btn" lang="pt">PT</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__badge">Pricing</span>
+        <h1 id="hero-title">Simple, Transparent Pricing</h1>
+        <p>One monthly management fee. No hidden commissions on ad spend. Your budget goes to ads, not to us.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="billing-toggle-wrap">
+          <div class="billing-toggle" id="billing-toggle">
+            <span id="lbl-monthly" class="active">Monthly</span>
+            <label class="toggle-pill" aria-label="Switch to annual billing">
+              <input type="checkbox" id="annual-toggle" onchange="setBilling(this.checked)"/>
+              <span class="toggle-pill__track"></span>
+              <span class="toggle-pill__thumb"></span>
+            </label>
+            <span id="lbl-annual">Annual <span class="saving-tag" id="saving-tag" style="display:none">Save 2 months</span></span>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+
+          <!-- Starter -->
+          <div class="plan-card">
+            <p class="plan-name">Starter</p>
+            <p class="plan-desc">For businesses just starting paid traffic or with up to $3,000/month in ad spend.</p>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-price__cur">$</span>
+                <span class="plan-price__val" id="price-starter">440</span>
+              </div>
+              <span class="plan-price__period">/mo</span>
+            </div>
+            <p class="plan-annual-note hidden" id="note-starter">Billed annually · $365/mo · save $900/year</p>
+            <ul class="plan-features">
+              <li>1 platform (Google Ads or Meta Ads)</li>
+              <li>Campaign setup and structure</li>
+              <li>Keyword or audience research</li>
+              <li>Weekly optimisation</li>
+              <li>Monthly performance report</li>
+              <li>Email/WhatsApp support</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost" style="margin-top:auto;">Get Started →</a>
+          </div>
+
+          <!-- Growth -->
+          <div class="plan-card plan-card--featured">
+            <div class="plan-badge plan-badge--popular">⭐ Most Popular</div>
+            <p class="plan-name">Growth</p>
+            <p class="plan-desc">For businesses with $3,000–10,000/month in ad spend that want to scale predictably.</p>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-price__cur">$</span>
+                <span class="plan-price__val" id="price-growth">825</span>
+              </div>
+              <span class="plan-price__period">/mo</span>
+            </div>
+            <p class="plan-annual-note hidden" id="note-growth">Billed annually · $685/mo · save $1,680/year</p>
+            <ul class="plan-features">
+              <li>Up to 2 platforms (Google + Meta)</li>
+              <li>Full funnel strategy</li>
+              <li>Ad creative and copy included</li>
+              <li>Continuous A/B testing</li>
+              <li>Real-time dashboard access</li>
+              <li>Detailed monthly report</li>
+              <li>Monthly review meeting</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary" style="margin-top:auto;">Get Started →</a>
+          </div>
+
+          <!-- Scale -->
+          <div class="plan-card">
+            <div class="plan-badge plan-badge--value">Best Value/Results</div>
+            <p class="plan-name">Scale</p>
+            <p class="plan-desc">For businesses with $10,000+/month in spend that demand aggressive growth and full management.</p>
+            <div class="plan-price-wrap">
+              <div class="plan-price">
+                <span class="plan-price__cur">$</span>
+                <span class="plan-price__val" id="price-scale">1,430</span>
+              </div>
+              <span class="plan-price__period">/mo</span>
+            </div>
+            <p class="plan-annual-note hidden" id="note-scale">Billed annually · $1,190/mo · save $2,880/year</p>
+            <ul class="plan-features">
+              <li>All platforms (Google + Meta + others)</li>
+              <li>Dedicated account strategist</li>
+              <li>Full creative production</li>
+              <li>Landing page optimisation included</li>
+              <li>Weekly strategy calls</li>
+              <li>Custom dashboard</li>
+              <li>CRM and analytics integrations</li>
+              <li>Same-day support</li>
+            </ul>
+            <a href="contact.html" class="btn btn--ghost" style="margin-top:auto;">Get Started →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section__header"><h2 id="compare-title">Plan comparison</h2></div>
+        <div style="overflow-x:auto;">
+          <table class="cmp-table">
+            <thead><tr><th>Feature</th><th>Starter</th><th>Growth</th><th>Scale</th></tr></thead>
+            <tbody>
+              <tr><td>Platforms managed</td><td>1</td><td>Up to 2</td><td>Unlimited</td></tr>
+              <tr><td>Campaign setup</td><td class="cmp-check">✓</td><td class="cmp-check">✓</td><td class="cmp-check">✓</td></tr>
+              <tr><td>Ad creative production</td><td class="cmp-dash">—</td><td class="cmp-check">✓</td><td class="cmp-check">✓</td></tr>
+              <tr><td>Real-time dashboard</td><td class="cmp-dash">—</td><td class="cmp-check">✓</td><td class="cmp-check">✓</td></tr>
+              <tr><td>Monthly review meeting</td><td class="cmp-dash">—</td><td class="cmp-check">✓</td><td class="cmp-check">✓</td></tr>
+              <tr><td>Weekly strategy calls</td><td class="cmp-dash">—</td><td class="cmp-dash">—</td><td class="cmp-check">✓</td></tr>
+              <tr><td>Landing page optimisation</td><td class="cmp-dash">—</td><td class="cmp-dash">—</td><td class="cmp-check">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="addons-title">
+      <div class="container">
+        <div class="section__header"><h2 id="addons-title">Add-ons</h2><p>Bolt on extra services to any plan.</p></div>
+        <div class="addons-grid">
+          <div class="addon-card"><h3>Conversion Landing Page</h3><p>Custom page built and optimised for a specific campaign.</p><p class="addon-price">From $550 one-off</p></div>
+          <div class="addon-card"><h3>Campaign Audit</h3><p>Full audit of an existing account with prioritised action plan.</p><p class="addon-price">From $330 one-off</p></div>
+          <div class="addon-card"><h3>Traffic Strategy</h3><p>Channel mix, budgets, KPIs and 90-day roadmap document.</p><p class="addon-price">From $770 one-off</p></div>
+          <div class="addon-card"><h3>Extra Platform</h3><p>Add LinkedIn Ads, TikTok Ads or YouTube to any plan.</p><p class="addon-price">From $220/mo</p></div>
+          <div class="addon-card"><h3>Creative Boost</h3><p>Extra batch of static ad creatives — 10 formats.</p><p class="addon-price">From $330/batch</p></div>
+          <div class="addon-card"><h3>Analytics Setup</h3><p>GA4, Tag Manager, conversion tracking — full setup and validation.</p><p class="addon-price">From $440 one-off</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="container" style="max-width:720px;">
+        <div class="section__header"><h2 id="faq-title">Frequently asked questions</h2></div>
+        <div class="faq" role="list">
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Is ad spend included in the price? <span aria-hidden="true">+</span></button><p class="faq__a">No. The price shown is the management fee. Ad spend goes directly from your card to Google or Meta. This way you have full control and transparency over every dollar invested.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Is there a minimum contract? <span aria-hidden="true">+</span></button><p class="faq__a">Monthly plans have no minimum term — cancel with 30 days' notice. Annual plans get the discount in exchange for the commitment, but we offer a proportional refund in the first 60 days if you're not satisfied.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">How quickly do campaigns go live? <span aria-hidden="true">+</span></button><p class="faq__a">We complete onboarding in 3–5 business days. Campaigns are live within 7 days of signing.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Can I change plan later? <span aria-hidden="true">+</span></button><p class="faq__a">Yes — upgrade or downgrade at any time. Upgrades take effect immediately; downgrades from the next billing cycle.</p></div>
+          <div class="faq__item" role="listitem"><button class="faq__q" onclick="toggleFaq(this)" aria-expanded="false">Do you work with any type of business? <span aria-hidden="true">+</span></button><p class="faq__a">We specialise in lead generation for service businesses, e-commerce and B2B. If your business generates revenue from acquiring new customers, we can help.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="guarantee-banner">
+      <h2 style="margin-bottom:.75rem;">30-day satisfaction guarantee</h2>
+      <p style="max-width:52ch;margin-inline:auto;color:var(--cor-texto-muted);">If after the first 30 days you're not satisfied with our work, we refund the management fee — no questions asked.</p>
+    </div></div>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" style="text-align:center;">
+        <h2 id="cta-title">Not sure which plan is right for you?</h2>
+        <p style="max-width:48ch;margin-inline:auto;margin-top:.75rem;margin-bottom:2rem;">Talk to us — we'll look at your current situation and recommend the plan that makes the most sense.</p>
+        <a href="contact.html" class="btn btn--primary">Talk to Us →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand"><div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div><p>Specialised paid traffic agency. Google Ads and Meta Ads campaigns that generate qualified leads at the lowest cost per acquisition.</p></div>
+        <div class="footer__nav"><p class="footer__nav-title">Services</p><ul><li><a href="google-ads.html">Google Ads</a></li><li><a href="meta-ads.html">Meta Ads</a></li><li><a href="audit.html">Campaign Audit</a></li><li><a href="strategy.html">Traffic Strategy</a></li><li><a href="landing-pages.html">Landing Pages</a></li><li><a href="reports.html">Reports &amp; Dashboard</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="footer__contact"><p class="footer__nav-title">Contact</p><ul><li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li><li><a href="tel:+351914541365">+351 914 541 365</a></li><li>Rua de Lisboa 1<br>2765-240 Estoril, Portugal</li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">© <span id="ano"></span> Payoff Marketing. All rights reserved.</p><a href="privacy.html" class="footer__privacy">Privacy Policy</a></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('ano').textContent=new Date().getFullYear();
+    function toggleMenu(btn){var m=document.getElementById('main-menu');var o=m.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    function toggleFaq(btn){var i=btn.closest('.faq__item');var o=i.classList.toggle('open');btn.setAttribute('aria-expanded',o);}
+
+    var PRICES={starter:{mo:440,yr:365},growth:{mo:825,yr:685},scale:{mo:1430,yr:1190}};
+    function setBilling(isAnnual){
+      ['starter','growth','scale'].forEach(function(k){
+        var p=PRICES[k];
+        var el=document.getElementById('price-'+k);
+        el.style.opacity=0;
+        setTimeout(function(){el.textContent=(isAnnual?p.yr:p.mo).toLocaleString('en-US');el.style.opacity=1;},150);
+        document.getElementById('note-'+k).classList.toggle('hidden',!isAnnual);
+      });
+      document.getElementById('saving-tag').style.display=isAnnual?'':'none';
+      document.getElementById('lbl-monthly').classList.toggle('active',!isAnnual);
+      document.getElementById('lbl-annual').classList.toggle('active',isAnnual);
+    }
+  </script>
+  <script src="../js/dropdown.js"></script>
+</body>
+</html>

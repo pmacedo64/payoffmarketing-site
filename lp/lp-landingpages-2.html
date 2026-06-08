@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WSST');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triplica os Teus Leads em 30 Dias — Payoff Marketing</title>
+  <meta name="description" content="Paramos de desperdiçar o teu orçamento em tráfego que não converte. Landing page de alta conversão entregue em 10 dias — com garantia de resultados." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/lp/lp-landingpages-2.html" />
+
+  <meta property="og:title" content="Triplica os Teus Leads. Mesmo Orçamento." />
+  <meta property="og:description" content="A tua campanha não está a falhar. A página está. Vamos resolver isso em 10 dias." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://payoffmarketing.pt/img/logo.webp" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- ── Cookie Banner ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+
+  <!-- ── LP-specific styles ── -->
+  <style>
+
+    /* ── Navbar mínima ── */
+    .lp-navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .lp-navbar .navbar__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 64px;
+    }
+
+    /* ── Hero ── */
+    .lp-hero {
+      position: relative;
+      padding-block: 6rem 5rem;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -5%, rgba(59,130,246,.22) 0%, transparent 65%),
+        var(--cor-fundo);
+    }
+    .lp-hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('../blog/img/hero-lp.webp');
+      background-size: cover; background-position: center 35%;
+      filter: saturate(.4) brightness(.3);
+      mix-blend-mode: screen; pointer-events: none;
+    }
+    .lp-hero .container { position: relative; z-index: 2; }
+    .lp-hero h1 {
+      max-width: 22ch; margin-inline: auto; margin-bottom: 1.25rem;
+      text-shadow: 0 2px 18px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.5);
+    }
+    .lp-hero h1 span { color: var(--cor-primaria); }
+    .lp-hero .hero-sub {
+      max-width: 54ch; margin-inline: auto; margin-bottom: .75rem;
+      font-size: 1.125rem; color: var(--cor-texto);
+    }
+    .lp-hero .hero-sub2 {
+      max-width: 48ch; margin-inline: auto; margin-bottom: 2.25rem;
+      font-size: .9375rem; color: var(--cor-texto-muted);
+    }
+    .lp-hero__ctas {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+
+    /* Guarantee pill no hero */
+    .hero-guarantee {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(63,185,80,.1);
+      border: 1px solid rgba(63,185,80,.3);
+      color: var(--cor-sucesso);
+      font-size: .8125rem; font-weight: 600;
+      padding: .35rem 1rem; border-radius: 999px;
+    }
+    .hero-guarantee svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── Gap stats (A vs B) ── */
+    .gap-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem; align-items: center;
+      max-width: 720px; margin-inline: auto;
+    }
+    .gap-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 12px; padding: 1.75rem;
+      text-align: center;
+    }
+    .gap-card--bad  { border-color: rgba(248,81,73,.3); }
+    .gap-card--good { border-color: rgba(59,130,246,.4); box-shadow: 0 0 24px rgba(59,130,246,.12); }
+    .gap-card__label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; margin-bottom: .75rem;
+    }
+    .gap-card--bad  .gap-card__label { color: var(--cor-erro); }
+    .gap-card--good .gap-card__label { color: var(--cor-primaria); }
+    .gap-card__num {
+      font-size: 2.75rem; font-weight: 800; line-height: 1;
+      margin-bottom: .4rem;
+    }
+    .gap-card--bad  .gap-card__num { color: rgba(248,81,73,.7); }
+    .gap-card--good .gap-card__num { color: var(--cor-primaria); }
+    .gap-card p { font-size: .875rem; }
+    .gap-arrow {
+      font-size: 2rem; color: var(--cor-texto-muted);
+      text-align: center; font-weight: 300;
+    }
+    .gap-note {
+      text-align: center; margin-top: 1.5rem;
+      font-size: .9375rem; color: var(--cor-texto-muted);
+    }
+    .gap-note strong { color: var(--cor-primaria); }
+
+    /* ── Problem agitation ── */
+    .problem-list {
+      max-width: 680px; margin-inline: auto;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .problem-item {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .problem-item:hover {
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 22px rgba(59,130,246,.18);
+    }
+    .problem-item h3 {
+      font-size: 1rem; margin-bottom: .3rem;
+    }
+    .problem-item p { font-size: .9rem; }
+
+    /* ── Value Stack / Grand Slam Offer ── */
+    .offer-box {
+      background: var(--cor-superficie);
+      border: 1px solid rgba(59,130,246,.35);
+      border-radius: 16px; padding: 2.5rem;
+      max-width: 720px; margin-inline: auto;
+      box-shadow: 0 0 40px rgba(59,130,246,.1);
+    }
+    .offer-box__header {
+      text-align: center; margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .offer-box__header h2 { margin-bottom: .5rem; }
+    .offer-item {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .offer-item:last-of-type { border-bottom: none; }
+    .offer-item__left { flex: 1; }
+    .offer-item__left h3 { font-size: 1rem; margin-bottom: .25rem; }
+    .offer-item__left p  { font-size: .875rem; }
+    .offer-item__value {
+      flex-shrink: 0;
+      font-size: .9375rem; font-weight: 700;
+      color: var(--cor-texto-muted);
+      text-decoration: line-through;
+      white-space: nowrap;
+    }
+    .offer-total {
+      background: rgba(59,130,246,.08);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 1.5rem; gap: 1rem;
+    }
+    .offer-total__label { font-size: .875rem; color: var(--cor-texto-muted); }
+    .offer-total__num {
+      font-size: 1.5rem; font-weight: 800; color: var(--cor-primaria);
+      white-space: nowrap;
+    }
+    .offer-total__num s {
+      font-size: 1rem; font-weight: 400;
+      color: var(--cor-texto-muted); margin-right: .5rem;
+    }
+    .offer-cta-row {
+      margin-top: 1.75rem; text-align: center;
+    }
+    .offer-cta-row .btn { font-size: 1.0625rem; padding: .9rem 2.5rem; }
+    .offer-cta-row p {
+      margin-top: .75rem; font-size: .8125rem;
+      color: var(--cor-texto-muted);
+    }
+
+    /* ── Guarantee block ── */
+    .guarantee-box {
+      background: rgba(63,185,80,.06);
+      border: 1px solid rgba(63,185,80,.3);
+      border-radius: 16px; padding: 2.5rem;
+      max-width: 680px; margin-inline: auto;
+      text-align: center;
+    }
+    .guarantee-box__icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(63,185,80,.12);
+      border: 2px solid rgba(63,185,80,.4);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--cor-sucesso);
+    }
+    .guarantee-box__icon svg { width: 28px; height: 28px; }
+    .guarantee-box h2 { color: var(--cor-sucesso); margin-bottom: .75rem; }
+    .guarantee-box p { max-width: 52ch; margin-inline: auto; font-size: 1rem; }
+    .guarantee-box__fine {
+      margin-top: 1.25rem; font-size: .8125rem;
+      color: var(--cor-texto-muted); font-style: italic;
+    }
+
+    /* ── For you / Not for you ── */
+    .fit-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 800px; margin-inline: auto;
+    }
+    .fit-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 12px; padding: 1.75rem;
+    }
+    .fit-card--yes { border-color: rgba(59,130,246,.35); }
+    .fit-card--no  { border-color: rgba(248,81,73,.2); }
+    .fit-card__title {
+      font-size: .8125rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem;
+    }
+    .fit-card--yes .fit-card__title { color: var(--cor-primaria); }
+    .fit-card--no  .fit-card__title { color: var(--cor-erro); }
+    .fit-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .fit-list li {
+      display: flex; gap: .6rem; align-items: flex-start;
+      font-size: .9rem; color: var(--cor-texto-muted);
+    }
+    .fit-list li span.marker {
+      flex-shrink: 0; font-weight: 700; margin-top: .05rem;
+    }
+    .fit-card--yes .marker { color: var(--cor-primaria); }
+    .fit-card--no  .marker { color: var(--cor-erro); }
+
+    /* ── Testimonial (Hormozi: result-first) ── */
+    .result-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 16px; padding: 2rem;
+      max-width: 760px; margin-inline: auto;
+    }
+    .result-card__stats {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .result-stat__num {
+      font-size: 2rem; font-weight: 800;
+      color: var(--cor-primaria); display: block; line-height: 1;
+    }
+    .result-stat__label {
+      font-size: .75rem; color: var(--cor-texto-muted);
+      text-transform: uppercase; letter-spacing: .05em;
+      margin-top: .3rem; display: block;
+    }
+    .result-card__quote {
+      font-size: 1rem; line-height: 1.75;
+      color: var(--cor-texto); font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .result-card__meta { display: flex; gap: .85rem; align-items: center; }
+    .result-card__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg,rgba(59,130,246,.3),rgba(96,165,250,.2));
+      border: 2px solid rgba(59,130,246,.4);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .875rem; color: var(--cor-primaria); flex-shrink: 0;
+    }
+    .result-card__name { font-weight: 700; font-size: .9375rem; color: var(--cor-texto); }
+    .result-card__role { font-size: .8125rem; color: var(--cor-texto-muted); margin-top: .1rem; }
+
+    /* ── FAQ (Hormozi: objection-busting) ── */
+    .faq-list { max-width: 720px; margin-inline: auto; display: flex; flex-direction: column; gap: .75rem; }
+    .faq-item { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: 10px; overflow: hidden; transition: border-color .25s; }
+    .faq-item.open { border-color: rgba(59,130,246,.4); }
+    .faq-btn { width: 100%; text-align: left; background: none; border: none; color: var(--cor-texto); font-family: var(--fonte-base); font-size: 1rem; font-weight: 600; padding: 1.25rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-btn:hover { color: var(--cor-acento); }
+    .faq-chevron { flex-shrink: 0; width: 20px; height: 20px; color: var(--cor-texto-muted); transition: transform .25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-body p { padding: 0 1.5rem 1.25rem; font-size: .9375rem; line-height: 1.75; }
+
+    /* ── Final form split ── */
+    .cta-form-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .gap-grid { grid-template-columns: 1fr; }
+      .gap-arrow { transform: rotate(90deg); }
+      .fit-grid  { grid-template-columns: 1fr; }
+      .cta-form-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .lp-hero  { padding-block: 4.5rem 3.5rem; }
+      .offer-box { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ══════════════════════════════════════
+       HEADER — logo + CTA
+  ══════════════════════════════════════ -->
+  <header>
+    <nav class="navbar lp-navbar" aria-label="Navegação">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="Payoff Marketing — Página inicial">
+          <img src="../img/logo.webp" alt="Payoff Marketing" />
+        </a>
+        <a href="#form" class="btn btn--primary" style="font-size:.875rem;padding:.5rem 1.25rem;">Falar Connosco →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — dream outcome + bold promise
+    ══════════════════════════════════════ -->
+    <section class="lp-hero" aria-labelledby="hero-titulo">
+      <div class="lp-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+
+        <span class="hero__badge">Para quem gasta +€1.000/mês em tráfego pago</span>
+
+        <h1 id="hero-titulo">
+          A tua campanha não está a falhar.<br>
+          <span>A página está.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Transformamos o tráfego que já estás a pagar em 3× mais leads —
+          com uma landing page construída do zero para o teu anúncio.
+        </p>
+        <p class="hero-sub2">
+          Entrega em 10 dias úteis. Resultados mensuráveis em 30 dias.
+        </p>
+
+        <div class="lp-hero__ctas">
+          <a href="#form" class="btn btn--primary" style="font-size:1.0625rem;padding:.9rem 2.25rem;">
+            Quero 3× Mais Leads →
+          </a>
+          <a href="#oferta" class="btn btn--ghost">Ver o que está incluído ↓</a>
+        </div>
+
+        <div>
+          <span class="hero-guarantee">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Garantia de resultados — se não converter melhor, trabalhamos de graça até converter
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         O GAP — antes vs. depois, com números
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="gap-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="gap-titulo">A diferença entre uma página genérica<br>e uma página que converte</h2>
+          <p>Estes são os números reais das campanhas que gerimos antes e depois de criar uma landing page dedicada.</p>
+        </div>
+
+        <div class="gap-grid">
+          <div class="gap-card gap-card--bad">
+            <div class="gap-card__label">Sem landing page dedicada</div>
+            <div class="gap-card__num">1,4%</div>
+            <p>Taxa de conversão média de campanhas que enviam tráfego para a homepage ou uma página genérica</p>
+          </div>
+          <div class="gap-arrow" aria-hidden="true">→</div>
+          <div class="gap-card gap-card--good">
+            <div class="gap-card__label">Com landing page Payoff</div>
+            <div class="gap-card__num">5,2%</div>
+            <p>Taxa de conversão média das landing pages que criamos nos primeiros 30 dias após lançamento</p>
+          </div>
+        </div>
+
+        <p class="gap-note">
+          Com €2.000/mês em Google Ads e 500 cliques:
+          a diferença é <strong>7 leads vs. 26 leads por mês</strong> — mesmo budget, mesmo anúncio.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROBLEMA — nomear o inimigo
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="problema-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="problema-titulo">Porquê é que o teu dinheiro está a desaparecer</h2>
+          <p>Não é culpa tua. Ninguém te ensinou que o anúncio é só metade do trabalho.</p>
+        </div>
+
+        <div class="problem-list">
+
+          <div class="problem-item">
+            <div class="card__icon" aria-hidden="true" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Estás a pagar pelos cliques — mas não pelos leads</h3>
+              <p>Cada clique que não converte é dinheiro direto para o bolso do Google ou do Meta. Com uma taxa de conversão de 1,4%, 86% do teu orçamento está a ser desperdiçado na página de destino.</p>
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="card__icon" aria-hidden="true" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+            </div>
+            <div>
+              <h3>O teu anúncio faz uma promessa que a página não cumpre</h3>
+              <p>O visitante clica no anúncio com uma expectativa. Se a página não confirmar exatamente essa promessa nos primeiros 3 segundos, sai — e leva o teu dinheiro com ele.</p>
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="card__icon" aria-hidden="true" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div>
+              <h3>O Google penaliza páginas de baixa qualidade</h3>
+              <p>Um Quality Score baixo significa que pagas mais por cada clique do que os teus concorrentes. Uma landing page relevante e rápida pode reduzir o teu CPC em 20-40% — sem mexer nos lances.</p>
+            </div>
+          </div>
+
+          <div class="problem-item">
+            <div class="card__icon" aria-hidden="true" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Estás a otimizar o anúncio quando devias otimizar a página</h3>
+              <p>A maioria dos anunciantes passa semanas a testar headlines e audiences quando o verdadeiro bottleneck está depois do clique. Dobrar a conversão da página vale o dobro de qualquer otimização de campanha.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         GRAND SLAM OFFER — value stack
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" id="oferta" aria-labelledby="oferta-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="oferta-titulo">Tudo o que precisas para triplicar a conversão —<br>num único pacote</h2>
+          <p>Não vendemos horas. Vendemos um resultado. Aqui está exatamente o que está incluído.</p>
+        </div>
+
+        <div class="offer-box">
+          <div class="offer-box__header">
+            <span class="hero__badge" style="margin-bottom:.85rem;">O que recebes</span>
+            <h2 style="font-size:1.5rem;">Landing Page de Alta Conversão</h2>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>Landing page completa, do zero</h3>
+              <p>Design responsivo, mobile-first, otimizado para o anúncio específico — não um template adaptado. Alojada no teu domínio.</p>
+            </div>
+            <div class="offer-item__value">€1.200</div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>Copy persuasivo escrito para o teu público</h3>
+              <p>Headline, subheadline, benefícios, prova social e CTA escritos por copywriters com experiência em tráfego pago — não pela equipa de design.</p>
+            </div>
+            <div class="offer-item__value">€600</div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>Setup completo de tracking e conversões</h3>
+              <p>Google Tag Manager, Google Analytics 4, Meta Pixel e eventos de conversão configurados e testados antes do lançamento.</p>
+            </div>
+            <div class="offer-item__value">€350</div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>Plano de testes A/B para os primeiros 30 dias</h3>
+              <p>Definimos as variantes a testar (headline, CTA, imagem hero) com hipóteses baseadas em dados — para que a otimização comece no dia 1.</p>
+            </div>
+            <div class="offer-item__value">€250</div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>30 dias de acompanhamento e ajustes incluídos</h3>
+              <p>Se algo não estiver a funcionar nos primeiros 30 dias, ajustamos sem custo adicional — baseados nos dados reais da página.</p>
+            </div>
+            <div class="offer-item__value">€480</div>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-item__left">
+              <h3>Relatório de baseline ao fim de 30 dias</h3>
+              <p>Taxa de conversão, custo por lead, heatmap e principais aprendizagens — para que saibas exatamente o que está a acontecer e o que otimizar a seguir.</p>
+            </div>
+            <div class="offer-item__value">€220</div>
+          </div>
+
+          <div class="offer-total">
+            <div>
+              <div class="offer-total__label">Valor total do pacote</div>
+            </div>
+            <div class="offer-total__num">
+              <s>€3.100</s> Fala connosco →
+            </div>
+          </div>
+
+          <div class="offer-cta-row">
+            <a href="#form" class="btn btn--primary">Quero Este Pacote — Falar Connosco</a>
+            <p>Resposta em menos de 24 horas. Sem compromisso.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         GARANTIA — bold risk reversal
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="garantia-titulo">
+      <div class="container">
+
+        <div class="guarantee-box">
+          <div class="guarantee-box__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h2 id="garantia-titulo">Garantia de 30 dias sem risco</h2>
+          <p>
+            Se a tua nova landing page não converter melhor do que a página anterior
+            nos primeiros 30 dias após lançamento, continuamos a trabalhar nela
+            <strong style="color:var(--cor-sucesso);">sem cobrar nada adicional</strong> até converter.
+            Simples assim.
+          </p>
+          <p class="guarantee-box__fine">
+            * Aplicável a campanhas com mínimo 300 sessões no período. Baseado em dados reais do Google Analytics.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PARA QUEM É / NÃO É
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="fit-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="fit-titulo">Isto é para ti?</h2>
+          <p>Somos honestos sobre quando faz sentido trabalhar connosco — e quando não faz.</p>
+        </div>
+
+        <div class="fit-grid">
+
+          <div class="fit-card fit-card--yes">
+            <div class="fit-card__title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Sim, é para ti se…
+            </div>
+            <ul class="fit-list">
+              <li><span class="marker">✓</span><span>Já tens campanhas de Google Ads ou Meta Ads a correr com pelo menos €1.000/mês de investimento</span></li>
+              <li><span class="marker">✓</span><span>A tua taxa de conversão atual está abaixo de 3% e sabes que há margem para melhorar</span></li>
+              <li><span class="marker">✓</span><span>Queres resultados baseados em dados, não em intuições ou "achismos" de design</span></li>
+              <li><span class="marker">✓</span><span>Podes dar feedback e tomar decisões em 48 horas — queremos mover-nos rápido contigo</span></li>
+            </ul>
+          </div>
+
+          <div class="fit-card fit-card--no">
+            <div class="fit-card__title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Não é para ti se…
+            </div>
+            <ul class="fit-list">
+              <li><span class="marker">✗</span><span>Ainda não tens campanhas a correr — sem tráfego, não há dados para otimizar</span></li>
+              <li><span class="marker">✗</span><span>Procuras o serviço mais barato do mercado — fazemos trabalho de qualidade, não de quantidade</span></li>
+              <li><span class="marker">✗</span><span>Queres mudar a estratégia a cada semana — resultados requerem consistência e tempo para testar</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROVA SOCIAL — resultado em destaque
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="prova-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="prova-titulo">O que acontece quando a página está certa</h2>
+        </div>
+
+        <div class="result-card">
+          <div class="result-card__stats">
+            <div>
+              <span class="result-stat__num">1,2% → 4,8%</span>
+              <span class="result-stat__label">Taxa de conversão</span>
+            </div>
+            <div>
+              <span class="result-stat__num">−58%</span>
+              <span class="result-stat__label">Custo por lead</span>
+            </div>
+            <div>
+              <span class="result-stat__num">+19 leads</span>
+              <span class="result-stat__label">Leads extras por mês</span>
+            </div>
+            <div>
+              <span class="result-stat__num">28 dias</span>
+              <span class="result-stat__label">Para ver resultados</span>
+            </div>
+          </div>
+          <p class="result-card__quote">
+            "Tínhamos campanhas de Google Ads a correr há meses com resultados medíocres.
+            Pensávamos que o problema estava nos anúncios — afinal era a página.
+            Depois de lançar a landing page da Payoff, o custo por lead caiu a pique
+            e passámos a ter leads suficientes para fechar o mês tranquilos."
+          </p>
+          <div class="result-card__meta">
+            <div class="result-card__avatar" aria-hidden="true">MF</div>
+            <div>
+              <div class="result-card__name">Marta Ferreira</div>
+              <div class="result-card__role">Diretora de Marketing · ClinicaVida, Lisboa</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ — busting objections
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="faq-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="faq-titulo">Objeções frequentes — respondidas</h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false">
+              "Já tentei landing pages antes e não funcionou."
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body">
+              <p>Na maioria dos casos, a landing page não funcionou porque foi construída por um designer sem formação em copywriting e conversão. Uma página bonita não é uma página que converte. A nossa abordagem começa pela mensagem e pela psicologia do teu público — o design vem depois.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false">
+              "Não tenho orçamento para isto agora."
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body">
+              <p>Se estás a gastar €1.500/mês em tráfego e a converter a 1,4%, estás a perder ~€1.200/mês em cliques que não convertem. Triplicar a conversão para 4,2% com a mesma campanha significa recuperar esse investimento em menos de 30 dias. O custo de não ter a página certa é sempre mais alto do que o custo de criar uma.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false">
+              "Quanto tempo demora e o que preciso de fornecer?"
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body">
+              <p>10 dias úteis do briefing ao lançamento. Da tua parte: preencher um formulário de briefing (≈20 minutos), rever o wireframe + copy (≈30 minutos) e aprovar o design final (≈15 minutos). Tratamos do resto — incluindo a integração no teu domínio e todo o setup de tracking.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false">
+              "Como sei que a garantia é real?"
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-body">
+              <p>A garantia está no contrato — por escrito. Se a taxa de conversão da nova landing page não for superior à página anterior nos primeiros 30 dias (com mínimo 300 sessões), continuamos a fazer iterações sem cobrar nada adicional. Oferecemos esta garantia porque temos confiança nos resultados que entregamos — e porque não queremos clientes insatisfeitos.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA FINAL + FORMULÁRIO
+    ══════════════════════════════════════ -->
+    <section class="section" id="form" aria-labelledby="form-section-titulo">
+      <div class="container">
+
+        <div class="cta-form-grid">
+
+          <!-- Lado esquerdo -->
+          <div>
+            <span class="hero__badge" style="margin-bottom:1.25rem;">Próximo passo</span>
+            <h2 id="form-section-titulo" style="margin-bottom:1rem;">
+              Deixa de perder leads.<br>Fala connosco hoje.
+            </h2>
+            <p style="color:var(--cor-texto);font-size:1rem;margin-bottom:1.5rem;">
+              Analisamos a tua campanha atual gratuitamente e dizemos-te, com honestidade,
+              se uma landing page dedicada vai fazer diferença — e quanto.
+            </p>
+
+            <div style="display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem;">
+              <div style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--cor-texto-muted);">
+                <svg style="flex-shrink:0;width:16px;height:16px;color:var(--cor-sucesso);margin-top:.15rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Análise gratuita da campanha e página atual
+              </div>
+              <div style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--cor-texto-muted);">
+                <svg style="flex-shrink:0;width:16px;height:16px;color:var(--cor-sucesso);margin-top:.15rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Proposta com estimativa de melhoria esperada
+              </div>
+              <div style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--cor-texto-muted);">
+                <svg style="flex-shrink:0;width:16px;height:16px;color:var(--cor-sucesso);margin-top:.15rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Resposta em menos de 24 horas, sem compromisso
+              </div>
+              <div style="display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--cor-texto-muted);">
+                <svg style="flex-shrink:0;width:16px;height:16px;color:var(--cor-sucesso);margin-top:.15rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Garantia de 30 dias incluída em todos os projetos
+              </div>
+            </div>
+
+            <!-- Urgência subtil -->
+            <div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:1rem 1.25rem;">
+              <p style="font-size:.875rem;color:var(--cor-texto);margin:0;">
+                <strong style="color:var(--cor-primaria);">Capacidade limitada.</strong>
+                Aceitamos no máximo 3 novos projetos de landing page por mês para garantir qualidade e atenção a cada cliente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Lado direito — formulário de contatos -->
+          <div>
+            <form
+              class="form"
+              id="form-contacto"
+              novalidate
+              onsubmit="return validarFormulario(event)"
+              aria-labelledby="form-titulo"
+            >
+              <input type="hidden" name="access_key" value="db14e7ac-debe-4950-b076-73a3d2d0b20a" />
+              <input type="hidden" name="subject" value="Novo lead — LP Landing Pages v2 (Hormozi)" />
+              <input type="hidden" name="from_name" value="LP Landing Pages v2 — Payoff Marketing" />
+              <input type="hidden" name="botcheck" value="" style="display:none" />
+              <h2 id="form-titulo" style="margin-bottom:1.5rem; font-size:1.25rem;">
+                Envie‑nos uma mensagem
+              </h2>
+
+              <div class="form__group">
+                <label for="nome">Nome <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" placeholder="O seu nome completo"
+                  required minlength="2" autocomplete="name" aria-describedby="nome-erro" />
+                <span class="form__error" id="nome-erro" role="alert">Por favor, indique o seu nome (mínimo 2 caracteres).</span>
+              </div>
+
+              <div class="form__group">
+                <label for="email">E‑mail <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="exemplo@empresa.pt"
+                  required autocomplete="email" aria-describedby="email-erro" />
+                <span class="form__error" id="email-erro" role="alert">Introduza um endereço de e‑mail válido.</span>
+              </div>
+
+              <div class="form__group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="+351 9XX XXX XXX" autocomplete="tel" />
+              </div>
+
+              <div class="form__group">
+                <label for="mensagem">Mensagem <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="mensagem" name="mensagem"
+                  placeholder="Descreva brevemente o seu negócio e o que pretende melhorar nas suas campanhas…"
+                  required minlength="20" aria-describedby="mensagem-erro"></textarea>
+                <span class="form__error" id="mensagem-erro" role="alert">A mensagem deve ter pelo menos 20 caracteres.</span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="btn-enviar">
+                Enviar Mensagem
+              </button>
+
+              <div class="form__feedback" id="form-sucesso" role="status" aria-live="polite">
+                ✓ Mensagem enviada! Respondemos em menos de 24 horas.
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="../calculadora.html">Calculadora ROI</a></li>
+            <li><a href="../precos.html">Preços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="../blog/index.html" class="footer__privacy">Blog</a>
+        <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" hidden>
+    <div id="pm-bar">
+      <div>
+        <strong>Usamos cookies</strong>
+        <p>Utilizamos cookies para analisar tráfego e personalizar anúncios. Pode aceitar, rejeitar ou gerir as preferências.</p>
+      </div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Rejeitar tudo</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Aceitar tudo</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Personalizar cookies">
+      <h3>Gerir preferências</h3>
+      <div class="pm-pref">
+        <div><strong>Cookies necessários</strong><p>Essenciais para o funcionamento do site. Não podem ser desativados.</p></div>
+        <span class="pm-always">Sempre ativo</span>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies analíticos</strong><p>Permitem medir o tráfego e melhorar o desempenho do site (Google Analytics).</p></div>
+        <label class="pm-switch" aria-label="Cookies analíticos"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies de marketing</strong><p>Usados para apresentar anúncios relevantes (Google Ads, Meta Pixel).</p></div>
+        <label class="pm-switch" aria-label="Cookies de marketing"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label>
+      </div>
+      <div id="pm-panel-actions">
+        <button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Guardar preferências</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Scripts ── -->
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    /* ── Validação do formulário (idêntica a contatos.html) ── */
+    function validarFormulario(e) {
+      e.preventDefault();
+      var valido = true;
+
+      function validarCampo(id, condicao, erroId) {
+        var campo = document.getElementById(id);
+        var erro  = document.getElementById(erroId);
+        if (!condicao(campo.value.trim())) {
+          campo.classList.add('is-invalid');
+          erro.classList.add('visible');
+          valido = false;
+        } else {
+          campo.classList.remove('is-invalid');
+          erro.classList.remove('visible');
+        }
+      }
+
+      validarCampo('nome',     function(v){ return v.length >= 2; }, 'nome-erro');
+      validarCampo('email',    function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }, 'email-erro');
+      validarCampo('mensagem', function(v){ return v.length >= 20; }, 'mensagem-erro');
+
+      if (valido) {
+        var btn     = document.getElementById('btn-enviar');
+        var sucesso = document.getElementById('form-sucesso');
+        var form    = document.getElementById('form-contacto');
+        btn.disabled = true; btn.textContent = 'A enviar…';
+
+        fetch('https://api.web3forms.com/submit', { method:'POST', body: new FormData(form) })
+          .then(function(r){ return r.json(); })
+          .then(function(json){
+            if (json.success) {
+              window.location.href = '../obrigado.html';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Erro — tente novamente';
+              setTimeout(function(){ btn.textContent = 'Enviar Mensagem'; }, 3000);
+            }
+          })
+          .catch(function(){
+            btn.disabled = false;
+            btn.textContent = 'Erro — tente novamente';
+            setTimeout(function(){ btn.textContent = 'Enviar Mensagem'; }, 3000);
+          });
+      }
+      return false;
+    }
+
+    ['nome','email','mensagem'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('input', function(){
+        this.classList.remove('is-invalid');
+        document.getElementById(id+'-erro').classList.remove('visible');
+      });
+    });
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item   = btn.closest('.faq-item');
+        var body   = item.querySelector('.faq-body');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(o){
+          o.classList.remove('open');
+          o.querySelector('.faq-btn').setAttribute('aria-expanded','false');
+          o.querySelector('.faq-body').style.maxHeight = '0';
+        });
+        if (!isOpen){
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* Smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var t = document.querySelector(a.getAttribute('href'));
+        if (t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+      });
+    });
+  </script>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){
+      gtag('consent','update',{
+        analytics_storage:a?'granted':'denied',
+        ad_storage:m?'granted':'denied',
+        ad_user_data:m?'granted':'denied',
+        ad_personalization:m?'granted':'denied'
+      });
+    }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){
+      localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));
+      applyConsent(a,m);banner.setAttribute('hidden','');
+    };
+    window.pmSavePanel=function(){
+      pmSave(document.getElementById('pm-analytics').checked,
+             document.getElementById('pm-marketing').checked);
+    };
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#161b22"/>
+  <rect x="1" y="1" width="798" height="398" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="400" y="186" font-family="Inter,system-ui,sans-serif" font-size="26" fill="#3b82f6" text-anchor="middle" font-weight="700">📷 SUBSTITUIR IMAGEM</text>
+  <text x="400" y="218" font-family="Inter,system-ui,sans-serif" font-size="16" fill="#8b949e" text-anchor="middle">Erros Comuns em Landing Pages | 800×400px</text>
+</svg>

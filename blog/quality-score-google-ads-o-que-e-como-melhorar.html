@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WSST');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO On-Page ── -->
+  <title>O que é o Quality Score do Google Ads e porque afeta o que paga por clique | Payoff Marketing</title>
+  <meta name="description" content="Quality Score explicado sem jargão — o que é, como é calculado, e os passos concretos para o melhorar e pagar menos por cada clique nas suas campanhas Google Ads." />
+  <meta name="keywords" content="quality score google ads, o que é quality score, melhorar quality score, índice de qualidade google ads, ad rank google ads, cpc mais barato google ads" />
+  <meta name="author" content="Payoff Marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="O que é o Quality Score do Google Ads e porque afeta o que paga por clique" />
+  <meta property="og:description" content="Quality Score explicado sem jargão — o que é, como é calculado, e os passos concretos para o melhorar e pagar menos por clique." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar" />
+  <meta property="og:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="article:published_time" content="2026-05-17T10:00:00+01:00" />
+  <meta property="article:author" content="Payoff Marketing" />
+  <meta property="article:section" content="Google Ads" />
+  <meta property="article:tag" content="Google Ads" />
+  <meta property="article:tag" content="Otimização" />
+  <meta property="article:tag" content="Quality Score" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="O que é o Quality Score do Google Ads e porque afeta o que paga por clique" />
+  <meta name="twitter:description" content="Quality Score explicado sem jargão — os passos concretos para o melhorar e pagar menos por clique." />
+  <meta name="twitter:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+
+  <!-- Structured Data: Article + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar#article",
+        "headline": "O que é o Quality Score do Google Ads e porque afeta o que paga por clique",
+        "description": "Quality Score explicado sem jargão — o que é, como é calculado, e os passos concretos para o melhorar e pagar menos por clique.",
+        "image": "https://payoffmarketing.pt/blog/img/hero-lp.webp",
+        "datePublished": "2026-05-17T10:00:00+01:00",
+        "dateModified": "2026-05-17T10:00:00+01:00",
+        "author": {
+          "@type": "Organization",
+          "name": "Payoff Marketing",
+          "url": "https://payoffmarketing.pt"
+        },
+        "publisher": {
+          "@id": "https://payoffmarketing.pt/#organization"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar"
+        },
+        "keywords": ["Quality Score", "Google Ads", "Ad Rank", "CPC", "otimização", "tráfego pago"],
+        "articleSection": "Google Ads",
+        "inLanguage": "pt-PT",
+        "wordCount": "2200"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://payoffmarketing.pt/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://payoffmarketing.pt/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Quality Score do Google Ads", "item": "https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* ── Blog Article Layout ── */
+    .article-hero {
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, #0f1923 100%);
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 3rem 0 0;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--cor-primaria); }
+    .breadcrumb__sep { color: var(--cor-borda); }
+
+    .article-hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .article-tag {
+      display: inline-block;
+      background: rgba(59,130,246,.15);
+      color: var(--cor-primaria);
+      border: 1px solid rgba(59,130,246,.3);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 99px;
+    }
+    .article-hero__date,
+    .article-hero__read {
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+    }
+    .article-hero__date::before { content: "📅 "; }
+    .article-hero__read::before { content: "⏱ "; }
+
+    .article-hero h1 {
+      font-size: clamp(1.5rem, 3.4vw, 2.35rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 820px;
+    }
+
+    .article-hero__intro {
+      font-size: 1.125rem;
+      color: var(--cor-texto-muted);
+      max-width: 720px;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    /* Hero image */
+    .article-hero__img-wrap {
+      margin-top: 2.5rem;
+      border-radius: var(--raio) var(--raio) 0 0;
+      overflow: hidden;
+      max-height: 480px;
+    }
+    .article-hero__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Article body layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0 4rem;
+    }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar {
+        /* sidebar aparece abaixo do artigo em mobile — não usar order: -1 */
+        position: static;
+        top: auto;
+      }
+    }
+
+    /* Article prose */
+    .article-body h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      margin: 2.5rem 0 1rem;
+      padding-top: .5rem;
+      border-top: 1px solid var(--cor-borda);
+      color: var(--cor-texto);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; }
+
+    .article-body h3 {
+      font-size: 1.125rem;
+      color: var(--cor-acento);
+      margin: 1.75rem 0 .5rem;
+    }
+
+    .article-body p {
+      color: var(--cor-texto-muted);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+
+    .article-body strong { color: var(--cor-texto); }
+
+    .article-body ul, .article-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-body li {
+      color: var(--cor-texto-muted);
+      margin-bottom: .5rem;
+      line-height: 1.7;
+    }
+    .article-body li strong { color: var(--cor-texto); }
+
+    /* Inline images */
+    .article-img {
+      width: 100%;
+      border-radius: var(--raio);
+      margin: 1.75rem 0;
+      border: 1px solid var(--cor-borda);
+      overflow: hidden;
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      font-size: .8rem;
+      color: var(--cor-texto-muted);
+      padding: .6rem 1rem;
+      background: var(--cor-superficie);
+      text-align: center;
+      border-top: 1px solid var(--cor-borda);
+      font-style: italic;
+    }
+
+    /* Stat highlight blocks */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .stat-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-card__value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cor-primaria);
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .stat-card__label {
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+      line-height: 1.4;
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: .9rem;
+    }
+    .comparison-table th {
+      background: var(--cor-superficie);
+      color: var(--cor-texto);
+      font-weight: 700;
+      padding: .85rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--cor-primaria);
+    }
+    .comparison-table th:first-child { border-radius: var(--raio) 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 var(--raio) 0 0; }
+    .comparison-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--cor-borda);
+      color: var(--cor-texto-muted);
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table .check  { color: #3fb950; font-weight: 700; }
+    .comparison-table .cross  { color: #f85149; font-weight: 700; }
+
+    /* Tip / callout box */
+    .callout {
+      background: rgba(59,130,246,.08);
+      border-left: 3px solid var(--cor-primaria);
+      border-radius: 0 var(--raio) var(--raio) 0;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .callout__label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-primaria);
+      margin-bottom: .35rem;
+    }
+    .callout p {
+      margin-bottom: 0;
+      font-size: .95rem;
+    }
+
+    /* Warning callout */
+    .callout--warn {
+      background: rgba(248,81,73,.08);
+      border-left-color: var(--cor-erro);
+    }
+    .callout--warn .callout__label { color: var(--cor-erro); }
+
+    /* Success callout */
+    .callout--success {
+      background: rgba(63,185,80,.08);
+      border-left-color: #3fb950;
+    }
+    .callout--success .callout__label { color: #3fb950; }
+
+    /* Numbered checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0;
+    }
+    .checklist li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+      color: var(--cor-texto-muted);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist__num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--cor-primaria);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .1rem;
+    }
+
+    /* Inline CTA */
+    .article-cta {
+      background: linear-gradient(135deg, var(--cor-superficie), #0f1923);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 2rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    .article-cta h3 { color: var(--cor-texto); margin-bottom: .5rem; }
+    .article-cta p  { margin-bottom: 1.25rem; }
+    .article-cta .btn { display: inline-block; }
+
+    /* Sidebar */
+    .article-sidebar { position: sticky; top: 5rem; }
+
+    .toc-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .toc-card__title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-texto-muted);
+      margin-bottom: 1rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li { margin-bottom: .5rem; }
+    .toc-list a {
+      font-size: .875rem;
+      color: var(--cor-texto-muted);
+      transition: color var(--transicao);
+      line-height: 1.4;
+      display: block;
+    }
+    .toc-list a:hover { color: var(--cor-primaria); }
+    .toc-list a.active { color: var(--cor-primaria); font-weight: 600; }
+
+    .sidebar-service-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .sidebar-service-card h4 {
+      font-size: .95rem;
+      margin-bottom: .5rem;
+      color: var(--cor-texto);
+    }
+    .sidebar-service-card p {
+      font-size: .85rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .sidebar-service-card .btn {
+      display: block;
+      text-align: center;
+      font-size: .85rem;
+      padding: .6rem 1rem;
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      margin-top: 3rem;
+    }
+    .author-box__avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--cor-borda);
+    }
+    .author-box__name { font-weight: 700; color: var(--cor-texto); font-size: .95rem; }
+    .author-box__bio  { font-size: .85rem; color: var(--cor-texto-muted); margin-top: .25rem; }
+
+    /* Related articles */
+    .related-section { padding: 3rem 0; border-top: 1px solid var(--cor-borda); }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .related-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      overflow: hidden;
+      transition: border-color var(--transicao);
+    }
+    .related-card:hover { border-color: var(--cor-primaria); }
+    .related-card__img { width: 100%; height: 160px; object-fit: cover; }
+    .related-card__body { padding: 1rem; }
+    .related-card__tag  { font-size: .75rem; color: var(--cor-primaria); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .related-card__title { font-size: 1rem; font-weight: 700; color: var(--cor-texto); margin: .4rem 0 .5rem; line-height: 1.3; }
+    .related-card__excerpt { font-size: .85rem; color: var(--cor-texto-muted); line-height: 1.5; }
+
+    /* Verdict box */
+    .verdict {
+      background: linear-gradient(135deg, rgba(59,130,246,.10), rgba(168,85,247,.10));
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .verdict__label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-primaria);
+      margin-bottom: .5rem;
+    }
+    .verdict p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: var(--cor-texto); }
+    .verdict p strong { color: var(--cor-acento); }
+
+    /* QS Score visual */
+    .qs-scale {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+      margin: 1.75rem 0;
+    }
+    @media (max-width: 600px) {
+      .qs-scale { grid-template-columns: repeat(5, 1fr); }
+    }
+    .qs-scale__cell {
+      border-radius: 4px;
+      padding: .75rem .25rem;
+      text-align: center;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .qs-scale__num { display: block; font-size: 1rem; margin-bottom: .2rem; }
+    .qs-scale__cell--bad    { background: rgba(248,81,73,.15);  color: #f85149; border: 1px solid rgba(248,81,73,.3); }
+    .qs-scale__cell--ok     { background: rgba(255,166,0,.12);  color: #e3a008; border: 1px solid rgba(255,166,0,.3); }
+    .qs-scale__cell--good   { background: rgba(59,130,246,.12); color: var(--cor-primaria); border: 1px solid rgba(59,130,246,.3); }
+    .qs-scale__cell--great  { background: rgba(63,185,80,.12);  color: #3fb950; border: 1px solid rgba(63,185,80,.3); }
+
+    /* Table overflow em mobile */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.75rem 0;
+    }
+    .table-wrap .comparison-table { margin: 0; }
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+      <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="main-menu" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li class="navbar__dropdown">
+          <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+          <ul class="navbar__dropdown-menu" role="list">
+            <li><a href="../servicos.html">Todos os Serviços</a></li>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../calculadora.html">Calculadora ROI</a></li>
+        <li><a href="../contatos.html" class="navbar__cta">Falar Connosco</a></li>
+      </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="lang-switch__btn" lang="en">EN</span>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── ARTICLE HERO ─────────────────────────────────────────────────────── -->
+  <section class="article-hero">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="index.html">Blog</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Quality Score do Google Ads</span>
+      </nav>
+
+      <div class="article-hero__meta">
+        <span class="article-tag">Google Ads</span>
+        <span class="article-tag">Otimização</span>
+        <span class="article-hero__date">17 de Maio de 2026</span>
+        <span class="article-hero__read">8 min de leitura</span>
+      </div>
+
+      <h1>O que é o Quality Score do Google Ads e porque afeta o que paga por clique</h1>
+
+      <p class="article-hero__intro">
+        A maioria dos anunciantes olha para o CPC e pensa que é o Google a decidir o preço. Não é.
+        O preço que paga por cada clique depende em grande parte de uma métrica que controla — o Quality Score.
+        Este artigo explica o que é, como é calculado, e o que fazer esta semana para o melhorar.
+      </p>
+
+      <div class="article-hero__img-wrap">
+        <img
+          src="img/hero-lp.webp"
+          alt="Quality Score Google Ads — como a pontuação de qualidade afeta o custo por clique"
+          width="1200" height="480"
+          loading="eager"
+        />
+        <!-- STOCK IMAGE: Substituir por imagem sobre Quality Score / Ad Rank. Dimensões: 1200×480px. -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ARTICLE BODY + SIDEBAR ────────────────────────────────────────────── -->
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- ── ARTICLE BODY ──────────────────────────────────────────────────── -->
+      <article class="article-body">
+
+        <!-- RESPOSTA DIRETA -->
+        <h2 id="resposta">A resposta direta</h2>
+
+        <div class="verdict">
+          <p class="verdict__label">Em 30 segundos</p>
+          <p>
+            O Quality Score (QS) é uma pontuação de 1 a 10 que o Google atribui a cada palavra-chave.
+            Quanto mais alto, <strong>menos paga por clique e melhor posição ocupa</strong> — mesmo com um lance inferior ao da concorrência.
+            É calculado a partir de três fatores: <strong>taxa de clique esperada (CTR), relevância do anúncio e experiência na landing page</strong>.
+            Um QS de 8 pode valer o dobro de um QS de 4 na mesma leilão.
+          </p>
+        </div>
+
+        <p>
+          O resto do artigo explica como cada fator funciona na prática, o que pode melhorar imediatamente,
+          e o que esperar em termos de impacto no CPC.
+          Se já sabe o que é o QS e quer ir direto às melhorias, salte para a secção
+          <a href="#como-melhorar">Como melhorar o Quality Score</a>.
+        </p>
+
+        <!-- O QUE É -->
+        <h2 id="o-que-e">O que é o Quality Score — sem jargão</h2>
+
+        <p>
+          Quando alguém pesquisa algo no Google, não há um preço fixo por clique. Há um leilão em tempo real.
+          Cada anunciante faz um lance (o máximo que está disposto a pagar), mas o Google não decide a posição
+          apenas pelo valor do lance. Decide pelo <strong>Ad Rank</strong> — uma pontuação que combina o lance
+          com o Quality Score.
+        </p>
+
+        <p>
+          A fórmula simplificada é esta:
+        </p>
+
+        <div class="callout">
+          <p class="callout__label">Fórmula do Ad Rank</p>
+          <p><strong>Ad Rank = Lance máximo × Quality Score</strong> (+ outros fatores de contexto)</p>
+        </div>
+
+        <p>
+          O que isso significa na prática: um anunciante com QS 8 e lance de €1,00 tem um Ad Rank de 8.
+          Um concorrente com QS 4 e lance de €1,80 tem Ad Rank de 7,2. O primeiro ganha a posição superior
+          — e paga menos por clique. Não é teoria. É como o leilão funciona.
+        </p>
+
+        <p>
+          O Quality Score aparece na interface do Google Ads ao nível da palavra-chave, numa escala de 1 a 10.
+          É um indicador diagnóstico — o Google usa uma versão mais granular nos leilões reais, mas o número
+          visível é suficientemente preciso para guiar melhorias.
+        </p>
+
+        <!-- ESCALA VISUAL -->
+        <div class="qs-scale" aria-label="Escala de Quality Score de 1 a 10">
+          <div class="qs-scale__cell qs-scale__cell--bad">
+            <span class="qs-scale__num">1</span>Crítico
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--bad">
+            <span class="qs-scale__num">2</span>Crítico
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--bad">
+            <span class="qs-scale__num">3</span>Fraco
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--ok">
+            <span class="qs-scale__num">4</span>Fraco
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--ok">
+            <span class="qs-scale__num">5</span>Médio
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--ok">
+            <span class="qs-scale__num">6</span>Médio
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--good">
+            <span class="qs-scale__num">7</span>Bom
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--good">
+            <span class="qs-scale__num">8</span>Bom
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--great">
+            <span class="qs-scale__num">9</span>Ótimo
+          </div>
+          <div class="qs-scale__cell qs-scale__cell--great">
+            <span class="qs-scale__num">10</span>Ótimo
+          </div>
+        </div>
+
+        <!-- OS 3 FATORES -->
+        <h2 id="fatores">Os 3 fatores que determinam o Quality Score</h2>
+
+        <p>
+          O Google avalia cada palavra-chave em três dimensões. Cada uma contribui de forma diferente
+          para o QS final — e as alavancas de melhoria são distintas.
+        </p>
+
+        <h3>1. Taxa de clique esperada (Expected CTR)</h3>
+        <p>
+          O Google prevê a probabilidade de o seu anúncio ser clicado quando aparece para aquela
+          palavra-chave — comparando com o histórico de todos os anunciantes para os mesmos termos.
+          Não é o CTR real da sua conta. É uma previsão baseada no texto do anúncio, na correspondência
+          com a pesquisa, e no histórico da palavra-chave.
+        </p>
+        <p>
+          <strong>O que impacta:</strong> título do anúncio, descrição, e quão diretamente o anúncio responde
+          à intenção da pesquisa. Um anúncio genérico tem CTR esperado baixo. Um anúncio específico,
+          com a keyword no título e uma proposta de valor clara, tem CTR esperado alto.
+        </p>
+
+        <h3>2. Relevância do anúncio (Ad Relevance)</h3>
+        <p>
+          Mede o alinhamento entre a palavra-chave que disparou o anúncio e o conteúdo desse mesmo anúncio.
+          Se tem uma keyword "contabilista Lisboa" num grupo de anúncios genérico sobre "serviços financeiros",
+          a relevância vai ser baixa. Se o anúncio menciona explicitamente contabilista e Lisboa, sobe.
+        </p>
+        <p>
+          <strong>O que impacta:</strong> estrutura dos grupos de anúncios. Grupos demasiado amplos — com
+          dezenas de keywords diferentes num só grupo — são o erro mais comum e o que mais baixa a relevância.
+        </p>
+
+        <h3>3. Experiência na landing page (Landing Page Experience)</h3>
+        <p>
+          O Google avalia se a página para onde envia o utilizador é relevante, útil, e de carregamento rápido.
+          Analisa o conteúdo da página, a velocidade de carregamento (Core Web Vitals), a taxa de rejeição,
+          e se a página entrega o que o anúncio prometeu.
+        </p>
+        <p>
+          <strong>O que impacta:</strong> velocidade da página, coerência entre anúncio e landing page,
+          clareza da oferta, e ausência de elementos que perturbem a navegação (pop-ups agressivos,
+          conteúdo irrelevante, páginas genéricas em vez de páginas dedicadas).
+        </p>
+
+        <!-- IMPACTO NO CPC -->
+        <h2 id="impacto-cpc">O impacto real no CPC — com números</h2>
+
+        <p>
+          O Google não publica a fórmula exata do desconto por QS, mas os dados publicados pela
+          indústria ao longo dos anos são consistentes. Um QS mais alto reduz o CPC efetivo de forma
+          significativa — e um QS baixo penaliza com um premium que paga involuntariamente.
+        </p>
+
+        <figure class="article-img">
+          <img
+            src="img/hero-lp.webp"
+            alt="Tabela de impacto do Quality Score no CPC — quanto poupa ou paga a mais por QS"
+            width="800" height="450"
+            loading="lazy"
+          />
+          <figcaption>O impacto estimado do QS no CPC efetivo — um QS de 3 pode custar o dobro de um QS de 7 pelo mesmo clique. — STOCK IMAGE: Substituir por gráfico real.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Quality Score</th>
+              <th>Impacto estimado no CPC</th>
+              <th>Exemplo: keyword com lance €2,00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color:#f85149;">1 – 3</strong></td>
+              <td>+25% a +150% acima do normal</td>
+              <td>Paga €2,50 – €5,00 por clique</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#e3a008;">4 – 6</strong></td>
+              <td>Próximo da média</td>
+              <td>Paga ~€2,00 por clique</td>
+            </tr>
+            <tr>
+              <td><strong style="color:var(--cor-primaria);">7 – 8</strong></td>
+              <td>–15% a –30% abaixo da média</td>
+              <td>Paga €1,40 – €1,70 por clique</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#3fb950;">9 – 10</strong></td>
+              <td>–30% a –50% abaixo da média</td>
+              <td>Paga €1,00 – €1,40 por clique</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>
+          Numa campanha com €1 500/mês de investimento e CPC médio de €2,50, passar de QS 4 para QS 7
+          pode poupar €400–€500/mês sem reduzir um euro do orçamento — simplesmente porque cada clique
+          passa a custar menos. É o mesmo budget a gerar mais tráfego.
+        </p>
+
+        <div class="callout">
+          <p class="callout__label">Nota de media buyer</p>
+          <p>QS de 10 é raro e não é o objetivo. O objetivo prático é 7+. De 1–4 para 7+ é onde está
+          o impacto real. De 7 para 10 já é rendimento decrescente para a maioria das contas.</p>
+        </div>
+
+        <!-- ONDE VER -->
+        <h2 id="onde-ver">Onde ver o Quality Score na conta</h2>
+
+        <p>
+          O QS não aparece por defeito na vista de palavras-chave. Tem de o ativar manualmente:
+        </p>
+
+        <ol class="checklist">
+          <li>
+            <span class="checklist__num">1</span>
+            <div>No Google Ads, vá a <strong>Campanhas → Palavras-chave de pesquisa</strong></div>
+          </li>
+          <li>
+            <span class="checklist__num">2</span>
+            <div>Clique no ícone de colunas (canto superior direito da tabela)</div>
+          </li>
+          <li>
+            <span class="checklist__num">3</span>
+            <div>Em <strong>"Atributos"</strong>, adicione: <em>Índice de qualidade</em>, <em>CTR esperado</em>,
+            <em>Relevância do anúncio</em> e <em>Exp. na página de destino</em></div>
+          </li>
+          <li>
+            <span class="checklist__num">4</span>
+            <div>Ordene pela coluna "Índice de qualidade" (crescente) para ver os piores primeiro</div>
+          </li>
+        </ol>
+
+        <p>
+          Cada um dos três componentes tem uma avaliação própria: <strong>Abaixo da média</strong>,
+          <strong>Média</strong> ou <strong>Acima da média</strong>. Isso diz-lhe exatamente qual dos
+          três fatores está a puxar o QS para baixo — e onde deve focar a correção.
+        </p>
+
+        <!-- CTA INLINE -->
+        <div class="article-cta">
+          <h3>Quality Score baixo nas suas campanhas?</h3>
+          <p>Fazemos uma auditoria completa e identificamos exatamente o que está a custar dinheiro — em 5 dias úteis.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria Gratuita →</a>
+        </div>
+
+        <!-- COMO MELHORAR -->
+        <h2 id="como-melhorar">Como melhorar o Quality Score — por fator</h2>
+
+        <p>
+          Não há atalhos. Mas há uma ordem de prioridades. Estes são os ajustes com maior impacto,
+          organizados por fator.
+        </p>
+
+        <h3>Para melhorar o CTR esperado</h3>
+        <ul>
+          <li><strong>Coloque a keyword no título 1 do anúncio.</strong> O Google valoriza a correspondência direta entre o que foi pesquisado e o que aparece no anúncio.</li>
+          <li><strong>Use a inserção dinâmica de keyword com cuidado.</strong> Funciona bem para grupos de anúncios homogéneos. Em grupos mistos, pode criar títulos sem sentido.</li>
+          <li><strong>Teste pelo menos 3 variantes de anúncio por grupo.</strong> O Google otimiza automaticamente para o melhor CTR — mas precisa de variantes para comparar.</li>
+          <li><strong>Use números e especificidade.</strong> "Reduz o CPA em 30%" tem CTR superior a "Melhore a sua campanha". Seja concreto.</li>
+          <li><strong>Inclua extensões de anúncio relevantes</strong> — sitelinks, callouts, snippets. Aumentam o espaço visual e o CTR sem custo extra.</li>
+        </ul>
+
+        <h3>Para melhorar a relevância do anúncio</h3>
+        <ul>
+          <li><strong>Reestruture os grupos de anúncios por tema tight.</strong> Cada grupo deve ter keywords que partilham a mesma intenção e podem ser servidas pelo mesmo anúncio. Se tiver 30+ keywords num grupo, é quase certo que a relevância está baixa.</li>
+          <li><strong>Idealmente, SKAG ou grupos pequenos.</strong> SKAG (Single Keyword Ad Group) é um extremo — mas grupos de 5 a 10 keywords muito semelhantes é o equilíbrio certo para a maioria das contas.</li>
+          <li><strong>Reveja as keywords de correspondência ampla.</strong> Podem estar a disparar pesquisas irrelevantes que baixam a relevância do grupo inteiro. Use correspondência de frase ou exata para os termos mais importantes.</li>
+        </ul>
+
+        <h3>Para melhorar a experiência na landing page</h3>
+        <ul>
+          <li><strong>Nunca envie tráfego pago para a homepage.</strong> Crie landing pages dedicadas para cada grupo de anúncios ou tema. A homepage é genérica demais para responder à intenção específica de uma keyword.</li>
+          <li><strong>O título da landing page deve espelhar o título do anúncio.</strong> Se o anúncio diz "Contabilista para Empresas em Lisboa", a landing page deve começar com algo equivalente. Coerência = confiança = menor taxa de rejeição.</li>
+          <li><strong>Velocidade é obrigatória.</strong> Use o <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> para verificar. Em mobile, abaixo de 50 pontos está a penalizar o QS e a taxa de conversão em simultâneo.</li>
+          <li><strong>Remova pop-ups que aparecem imediatamente.</strong> O Google penaliza páginas que interrompem a navegação logo ao entrar.</li>
+          <li><strong>Certifique-se que a página é mobile-first.</strong> Mais de 60% das pesquisas são em mobile. Uma página que funciona mal em telemóvel baixa o QS e converte menos.</li>
+        </ul>
+
+        <!-- ERROS COMUNS -->
+        <h2 id="erros">Os erros mais comuns que baixam o QS</h2>
+
+        <div class="callout callout--warn">
+          <p class="callout__label">⚠ Erro frequente</p>
+          <p>Muitos anunciantes focam-se no QS de palavras-chave com poucos dados. O Google precisa de
+          histórico de impressões para calcular um QS fiável — keywords com menos de 100–200 impressões
+          mostram "—" ou valores instáveis que não refletem a realidade. Foque-se nas keywords com volume real.</p>
+        </div>
+
+        <ul>
+          <li><strong>Grupos de anúncios demasiado grandes.</strong> 50 keywords num grupo = relevância baixa para a maioria delas. É o erro estrutural mais comum em contas criadas sem experiência.</li>
+          <li><strong>Copiar o mesmo anúncio para todos os grupos.</strong> Um anúncio genérico baixa o CTR esperado e a relevância em simultâneo.</li>
+          <li><strong>Landing page igual para todas as campanhas.</strong> Se a homepage serve como destino de todas as campanhas, a experiência na landing page vai ser sistematicamente baixa.</li>
+          <li><strong>Ignorar as keywords negativas.</strong> Pesquisas irrelevantes que disparam os seus anúncios geram impressões sem cliques — o que penaliza o CTR esperado ao longo do tempo.</li>
+          <li><strong>Pausar e reativar keywords com histórico mau.</strong> O histório de QS negativo acumula. Em casos de QS muito baixo (1–3) com muitas impressões, às vezes é melhor criar uma keyword nova do zero.</li>
+        </ul>
+
+        <!-- PRIORIDADES -->
+        <h2 id="por-onde-comecar">Por onde começar esta semana</h2>
+
+        <p>
+          Se tem uma conta ativa, este é o plano de ação por ordem de impacto:
+        </p>
+
+        <ol class="checklist">
+          <li>
+            <span class="checklist__num">1</span>
+            <div>
+              <strong>Ative as colunas de QS</strong> e identifique as 10 keywords com maior volume
+              de impressões e QS abaixo de 5. São as que mais custam.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">2</span>
+            <div>
+              <strong>Veja qual dos 3 componentes está "Abaixo da média".</strong> Se é a relevância do anúncio,
+              o problema é estrutural (grupos grandes). Se é a landing page, o problema é de destino.
+              Se é o CTR esperado, o problema é o copy do anúncio.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">3</span>
+            <div>
+              <strong>Para cada keyword problemática, verifique:</strong> o anúncio que está a servir
+              menciona explicitamente o tema da keyword? A landing page de destino responde à intenção
+              dessa keyword? Se não, corrija primeiro estes dois pontos.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">4</span>
+            <div>
+              <strong>Adicione keywords negativas</strong> com base no relatório de termos de pesquisa.
+              Eliminar tráfego irrelevante melhora o CTR esperado sem tocar nos anúncios.
+            </div>
+          </li>
+          <li>
+            <span class="checklist__num">5</span>
+            <div>
+              <strong>Teste a velocidade das landing pages</strong> com o PageSpeed Insights.
+              Se o score mobile está abaixo de 60, é prioritário — tanto para o QS como para a conversão.
+            </div>
+          </li>
+        </ol>
+
+        <div class="callout callout--success">
+          <p class="callout__label">Tempo até ver resultados</p>
+          <p>O QS não muda da noite para o dia. O Google atualiza com base em dados acumulados.
+          Tipicamente, 2 a 4 semanas após as melhorias começa a ver movimento. Melhorias na landing page
+          são das mais rápidas a refletir — o Google rastreia regularmente.</p>
+        </div>
+
+        <!-- CONCLUSÃO -->
+        <h2 id="conclusao">Conclusão: o QS é um sintoma, não um objetivo</h2>
+
+        <p>
+          O Quality Score não é uma métrica de vaidade. É um diagnóstico. Um QS baixo diz-lhe que
+          alguma coisa está desalinhada — o anúncio não corresponde à keyword, a landing page não
+          entrega o que o anúncio prometeu, ou o copy não está a gerar interesse suficiente.
+        </p>
+        <p>
+          A boa notícia: os mesmos problemas que baixam o QS também baixam a taxa de conversão.
+          Por isso, quando resolve o QS, está tipicamente a resolver as duas coisas ao mesmo tempo —
+          paga menos por clique e converte melhor. É a otimização com maior alavancagem numa conta Google Ads.
+        </p>
+        <p>
+          Se quer perceber onde está a perder dinheiro nas suas campanhas atuais, fazemos uma
+          <a href="../auditoria.html">auditoria completa</a> em 5 dias úteis — com análise do QS,
+          estrutura de grupos, landing pages e keywords negativas. Sem compromisso.
+        </p>
+
+        <!-- Author box -->
+        <div class="author-box">
+          <img
+            class="author-box__avatar"
+            src="../img/logo.webp"
+            alt="Payoff Marketing"
+            width="56"
+            height="56"
+          />
+          <!-- STOCK IMAGE: Substituir por foto real do autor. Dimensões: 56×56px (circular). -->
+          <div>
+            <p class="author-box__name">Payoff Marketing</p>
+            <p class="author-box__bio">Agência especializada em gestão de tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para PMEs com foco em leads qualificados ao menor CPA.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="article-sidebar" aria-label="Sidebar do artigo">
+
+        <!-- Table of Contents -->
+        <div class="toc-card">
+          <p class="toc-card__title">Neste artigo</p>
+          <ul class="toc-list" id="toc">
+            <li><a href="#resposta">A resposta direta</a></li>
+            <li><a href="#o-que-e">O que é o Quality Score</a></li>
+            <li><a href="#fatores">Os 3 fatores</a></li>
+            <li><a href="#impacto-cpc">Impacto no CPC</a></li>
+            <li><a href="#onde-ver">Onde ver na conta</a></li>
+            <li><a href="#como-melhorar">Como melhorar</a></li>
+            <li><a href="#erros">Erros mais comuns</a></li>
+            <li><a href="#por-onde-comecar">Por onde começar</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ul>
+        </div>
+
+        <!-- Service CTA card 1 -->
+        <div class="sidebar-service-card">
+          <h4>Auditoria de Campanhas</h4>
+          <p>Identificamos onde está a perder dinheiro — Quality Score, estrutura, landing pages e negativos.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria →</a>
+        </div>
+
+        <!-- Service CTA card 2 -->
+        <div class="sidebar-service-card">
+          <h4>Gestão de Google Ads</h4>
+          <p>Campanhas Search, Performance Max e Shopping geridas por especialistas Google Partner.</p>
+          <a href="../google-ads.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+        <!-- Service CTA card 3 -->
+        <div class="sidebar-service-card">
+          <h4>Landing Pages</h4>
+          <p>Landing pages dedicadas que melhoram o QS e convertem mais — em 10 dias úteis.</p>
+          <a href="../landing-pages.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+      </aside>
+
+    </div><!-- /.article-layout -->
+  </div><!-- /.container -->
+
+  <!-- ── RELATED ARTICLES ─────────────────────────────────────────────────── -->
+  <section class="related-section">
+    <div class="container">
+      <h2>Artigos relacionados</h2>
+      <div class="related-grid">
+
+        <a href="google-ads-vs-meta-ads-qual-escolher-2026.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Google Ads vs Meta Ads: qual escolher para o seu negócio em 2026"
+               width="400" height="160" loading="lazy"
+          />
+          <div class="related-card__body">
+            <span class="related-card__tag">Estratégia</span>
+            <p class="related-card__title">Google Ads vs Meta Ads: Qual Escolher para o Seu Negócio em 2026</p>
+            <p class="related-card__excerpt">Intenção de compra, CPL real por setor e quando usar cada canal — ou os dois.</p>
+          </div>
+        </a>
+
+        <a href="como-escrever-anuncios-pesquisa-google-ads-rsas.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Como escrever anúncios Google Ads RSA que convertem"
+               width="400" height="160" loading="lazy"
+          />
+          <div class="related-card__body">
+            <span class="related-card__tag">Copywriting</span>
+            <p class="related-card__title">Como Escrever Anúncios Google Ads que Convertem: Guia Completo de RSAs</p>
+            <p class="related-card__excerpt">As 5 categorias de headline, o que o Ad Strength ignora e como evitar combinações sem sentido.</p>
+          </div>
+        </a>
+
+        <a href="performance-max-google-ads-2026-guia-pratico.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img"
+               src="img/hero-lp.webp"
+               alt="Performance Max Google Ads 2026 — guia prático"
+               width="400" height="160" loading="lazy"
+          />
+          <!-- STOCK IMAGE: Substituir. Dimensões: 400×160px. -->
+          <div class="related-card__body">
+            <span class="related-card__tag">Google Ads</span>
+            <p class="related-card__title">Performance Max: o que mudou em 2026 e como tirar partido</p>
+            <p class="related-card__excerpt">Quando usar PMax, como configurar asset groups e o que esperar nos primeiros 30 dias.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+        <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+      </div>
+
+      <div class="footer__nav">
+        <p class="footer__nav-title">Serviços</p>
+        <ul>
+          <li><a href="../google-ads.html">Google Ads</a></li>
+          <li><a href="../meta-ads.html">Meta Ads</a></li>
+          <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+          <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+          <li><a href="../landing-pages.html">Landing Pages</a></li>
+          <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          <li><a href="../precos.html">Preços</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <p class="footer__nav-title">Contacto</p>
+        <ul>
+          <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+          <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+          <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__privacy">Blog</a>
+      <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Cookie Banner ─────────────────────────────────────────────────────── -->
+<div id="pm-consent" role="region" aria-label="Preferências de cookies" style="display:none;">
+  <div id="pm-bar">
+    <p>
+      <strong>Utilizamos cookies</strong>
+      Usamos cookies analíticos para perceber como os visitantes interagem com o site. Pode aceitar, recusar ou personalizar as suas preferências.
+    </p>
+    <div id="pm-actions">
+      <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+      <button class="pm-btn pm-btn--reject" onclick="pmSetConsent(false)">Recusar</button>
+      <button class="pm-btn pm-btn--accept" onclick="pmSetConsent(true)">Aceitar tudo</button>
+    </div>
+  </div>
+  <div id="pm-panel">
+    <h3>Preferências de privacidade</h3>
+    <div class="pm-pref">
+      <div><strong>Cookies essenciais</strong><p>Necessários para o funcionamento do site. Não podem ser desativados.</p></div>
+      <span class="pm-always">Sempre ativo</span>
+    </div>
+    <div class="pm-pref">
+      <div><strong>Cookies analíticos</strong><p>Ajudam-nos a perceber como usa o site (Google Analytics via GTM).</p></div>
+      <label class="pm-switch" aria-label="Ativar cookies analíticos">
+        <input type="checkbox" id="pm-analytics-toggle">
+        <span class="pm-slider"></span>
+      </label>
+    </div>
+    <div id="pm-panel-actions">
+      <button class="pm-btn pm-btn--accept" onclick="pmSavePrefs()">Guardar preferências</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  function toggleMenu(btn) {
+    var menu = document.getElementById('main-menu');
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+
+  // TOC highlight active section
+  (function() {
+    var headings = document.querySelectorAll('.article-body h2[id]');
+    var tocLinks = document.querySelectorAll('#toc a');
+    function onScroll() {
+      var scrollY = window.scrollY + 120;
+      var active = null;
+      headings.forEach(function(h) {
+        if (h.offsetTop <= scrollY) active = h.id;
+      });
+      tocLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Cookie consent
+  (function() {
+    var KEY = 'pm_consent_v1';
+    var stored = localStorage.getItem(KEY);
+    if (stored !== null) { applyConsent(stored === 'full'); return; }
+    document.getElementById('pm-consent').style.display = 'block';
+  })();
+  function pmSetConsent(full) {
+    localStorage.setItem('pm_consent_v1', full ? 'full' : 'none');
+    applyConsent(full);
+    document.getElementById('pm-consent').style.display = 'none';
+  }
+  function pmTogglePanel() {
+    document.getElementById('pm-panel').classList.toggle('open');
+  }
+  function pmSavePrefs() {
+    var analytics = document.getElementById('pm-analytics-toggle').checked;
+    pmSetConsent(analytics);
+  }
+  function applyConsent(full) {
+    if (full) {
+      gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+    }
+  }
+</script>
+
+<script src="../js/dropdown.js"></script>
+</body>
+</html>

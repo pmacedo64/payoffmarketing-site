@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacidade
+Disallow: /en/privacy
+
+Sitemap: https://payoffmarketing.pt/sitemap.xml

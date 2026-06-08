@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>ROI Calculator — Payoff Marketing | Free Paid Traffic Tool</title>
+  <meta name="description" content="Calculate your return on paid traffic investment. Estimate leads, cost per lead, ROAS and net revenue for Google Ads and Meta Ads campaigns."/>
+  <link rel="canonical" href="https://payoffmarketing.pt/en/calculator.html"/>
+  <link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/calculadora.html"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .platform-toggle{display:flex;gap:.5rem;margin-bottom:1.75rem;}
+    .platform-toggle button{flex:1;padding:.6rem 1rem;border-radius:var(--raio);border:1px solid var(--cor-borda);background:var(--cor-superficie);color:var(--cor-texto-muted);font-size:.875rem;font-weight:600;cursor:pointer;transition:all var(--transicao);font-family:var(--fonte-base);}
+    .platform-toggle button.active{background:var(--cor-primaria);border-color:var(--cor-primaria);color:#fff;}
+    .calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+    @media(max-width:768px){.calc-wrap{grid-template-columns:1fr;}}
+    .calc-panel{background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:12px;padding:1.75rem;}
+    .slider-field{margin-bottom:1.75rem;}
+    .slider-field:last-child{margin-bottom:0;}
+    .slider-field__label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;font-size:.875rem;color:var(--cor-texto-muted);}
+    .slider-field__val{font-weight:700;color:var(--cor-texto);font-size:.9375rem;}
+    input[type=range]{width:100%;height:4px;border-radius:2px;outline:none;-webkit-appearance:none;background:linear-gradient(to right,var(--cor-primaria) 0%,var(--cor-primaria) var(--sp,0%),var(--cor-borda) var(--sp,0%),var(--cor-borda) 100%);cursor:pointer;}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--cor-primaria);border:2px solid #fff;box-shadow:0 0 0 2px var(--cor-primaria);transition:transform .15s;}
+    .result-panel{display:flex;flex-direction:column;gap:1rem;}
+    .result-card{background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:10px;padding:1.125rem 1.25rem;}
+    .result-card__label{font-size:.75rem;text-transform:uppercase;letter-spacing:.07em;color:var(--cor-texto-muted);margin-bottom:.25rem;}
+    .result-card__val{font-size:1.625rem;font-weight:800;color:var(--cor-texto);}
+    .result-card--highlight{border-color:var(--cor-primaria);background:rgba(59,130,246,.06);}
+    .result-card--highlight .result-card__val{color:var(--cor-primaria);}
+    .roi-bar-wrap{margin-top:.5rem;}
+    .roi-bar{height:8px;border-radius:4px;background:var(--cor-borda);overflow:hidden;margin-top:.4rem;}
+    .roi-bar__fill{height:100%;border-radius:4px;transition:width .5s ease,background .5s ease;}
+    .cmp-table{width:100%;border-collapse:collapse;font-size:.875rem;margin-top:1.5rem;}
+    .cmp-table th,.cmp-table td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--cor-borda);}
+    .cmp-table th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--cor-texto-muted);font-weight:600;}
+    .cmp-table td:not(:first-child){text-align:right;font-weight:600;}
+    .cmp-table .highlight{color:var(--cor-primaria);}
+    .why-card{background:var(--cor-superficie);border:1px solid var(--cor-borda);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:border-color var(--transicao);}
+    .why-card:hover{border-color:var(--cor-primaria);}
+    .why-card__icon{width:44px;height:44px;border-radius:10px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);display:flex;align-items:center;justify-content:center;color:var(--cor-primaria);flex-shrink:0;}
+    .why-card__icon svg{width:24px;height:24px;stroke:currentColor;}
+    .why-card h3{font-size:1rem;margin-bottom:.4rem;}
+    .why-card p{font-size:.875rem;color:var(--cor-texto-muted);margin:0;line-height:1.65;}
+    .calc-sub-header h2{font-size:1.375rem;margin-bottom:.35rem;}
+  </style>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container navbar__inner">
+        <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+        <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Services <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="audit.html">Campaign Audit</a></li>
+              <li><a href="strategy.html">Traffic Strategy</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="reports.html">Reports &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculator.html">ROI Calculator</a></li>
+          <li><a href="contact.html" class="navbar__cta">Contact Us</a></li>
+        </ul>
+        <div class="lang-switch" aria-label="Language switcher">
+          <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">EN</span>
+          <span class="lang-switch__sep">|</span>
+          <a href="../calculadora.html" class="lang-switch__btn" lang="pt">PT</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__badge">Free Tool</span>
+        <h1 id="hero-title">ROI Calculator</h1>
+        <p>Estimate your return on paid traffic investment before you spend a single dollar.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="why-title">Why invest in paid traffic?</h2>
+          <p>The fastest and most predictable way to acquire new customers — with full control over budget and results.</p>
+        </div>
+        <div class="cards-grid">
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Results from day one</h3><p>Campaigns live in 7 days. First leads within 48 hours. No waiting months for organic results.</p></div>
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Full cost control</h3><p>You decide how much to spend. Every dollar tracked. Pause, adjust or scale at any time.</p></div>
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Qualified audience</h3><p>You reach people actively searching for what you sell — at the right moment, with the right message.</p></div>
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Scalable growth</h3><p>Found a profitable campaign? Increase the budget and results scale with it. Growth follows your decision.</p></div>
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Gets better over time</h3><p>Every click generates data. Over time campaigns become more efficient — lower CPC, better CPA, higher ROI.</p></div>
+          <div class="why-card"><div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Measurable</h3><p>Unlike traditional media, every dollar has a traceable return. CPL, ROAS and conversion rate — always visible.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="calc-title">
+      <div class="container">
+        <div class="calc-sub-header section__header">
+          <h2 id="calc-title">Simulate your return</h2>
+          <p>Adjust the sliders and see results update in real time.</p>
+        </div>
+        <div class="platform-toggle" role="group" aria-label="Ad platform">
+          <button id="btn-google" class="active" onclick="setPlatform('google')">Google Ads</button>
+          <button id="btn-meta" onclick="setPlatform('meta')">Meta Ads</button>
+        </div>
+        <div class="calc-wrap">
+          <div class="calc-panel">
+            <div class="slider-field">
+              <div class="slider-field__label"><span>Monthly budget</span><span class="slider-field__val" id="val-budget">$ 1,000</span></div>
+              <input type="range" id="sl-budget" min="100" max="10000" step="100" value="1000" oninput="syncSlider('budget',this)"/>
+            </div>
+            <div class="slider-field">
+              <div class="slider-field__label"><span>Estimated avg. CPC</span><span class="slider-field__val" id="val-cpc">$ 0.80</span></div>
+              <input type="range" id="sl-cpc" min="0.1" max="10" step="0.1" value="0.8" oninput="syncSlider('cpc',this)"/>
+            </div>
+            <div class="slider-field">
+              <div class="slider-field__label"><span>Conversion rate</span><span class="slider-field__val" id="val-cvr">2.0%</span></div>
+              <input type="range" id="sl-cvr" min="0.5" max="20" step="0.5" value="2" oninput="syncSlider('cvr',this)"/>
+            </div>
+            <div class="slider-field">
+              <div class="slider-field__label"><span>Customer lifetime value (LTV)</span><span class="slider-field__val" id="val-ltv">$ 500</span></div>
+              <input type="range" id="sl-ltv" min="50" max="10000" step="50" value="500" oninput="syncSlider('ltv',this)"/>
+            </div>
+            <div class="slider-field">
+              <div class="slider-field__label"><span>Gross margin</span><span class="slider-field__val" id="val-margin">50%</span></div>
+              <input type="range" id="sl-margin" min="5" max="95" step="5" value="50" oninput="syncSlider('margin',this)"/>
+            </div>
+          </div>
+          <div class="result-panel" aria-live="polite" aria-label="Calculation results">
+            <div class="result-card"><div class="result-card__label">Monthly clicks</div><div class="result-card__val" id="res-clicks">1,250</div></div>
+            <div class="result-card"><div class="result-card__label">Estimated monthly leads</div><div class="result-card__val" id="res-leads">25</div></div>
+            <div class="result-card"><div class="result-card__label">Cost per lead (CPL)</div><div class="result-card__val" id="res-cpl">$40</div></div>
+            <div class="result-card result-card--highlight"><div class="result-card__label">Attributed revenue</div><div class="result-card__val" id="res-revenue">$12,500</div></div>
+            <div class="result-card result-card--highlight"><div class="result-card__label">ROAS</div><div class="result-card__val" id="res-roas">12.5×</div></div>
+            <div class="result-card">
+              <div class="result-card__label">ROI health</div>
+              <div id="roi-label" style="font-size:.875rem;font-weight:600;margin-bottom:.3rem;"></div>
+              <div class="roi-bar"><div class="roi-bar__fill" id="roi-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem;">
+          <div class="calc-sub-header section__header"><h2>Self-managed vs. with Payoff Marketing</h2><p>Based on the values above, here's what typically changes with professional management.</p></div>
+          <div style="overflow-x:auto;">
+            <table class="cmp-table" aria-label="Results comparison with and without Payoff Marketing">
+              <thead><tr><th>Metric</th><th>Self-managed</th><th class="highlight">With Payoff Marketing</th></tr></thead>
+              <tbody>
+                <tr><td>CPC</td><td id="cmp-cpc-base">$0.80</td><td class="highlight" id="cmp-cpc-pm">$0.60</td></tr>
+                <tr><td>Conversion rate</td><td id="cmp-cvr-base">2.0%</td><td class="highlight" id="cmp-cvr-pm">2.7%</td></tr>
+                <tr><td>Monthly leads</td><td id="cmp-leads-base">25</td><td class="highlight" id="cmp-leads-pm">34</td></tr>
+                <tr><td>Cost per lead (CPL)</td><td id="cmp-cpl-base">$40</td><td class="highlight" id="cmp-cpl-pm">$22</td></tr>
+                <tr><td>ROAS</td><td id="cmp-roas-base">12.5×</td><td class="highlight" id="cmp-roas-pm">22.5×</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:.8rem;color:var(--cor-texto-muted);margin-top:.75rem;">* Estimates based on averages from managed accounts over the last 12 months. Actual results vary by industry and market.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container" style="text-align:center;">
+        <h2 id="cta-title">Like what you see?</h2>
+        <p style="max-width:48ch;margin-inline:auto;margin-top:.75rem;margin-bottom:2rem;">Talk to us and we'll do a free analysis of your current campaigns and show you exactly where you can improve.</p>
+        <a href="contact.html" class="btn btn--primary">Free Campaign Analysis →</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand"><div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div><p>Specialised paid traffic agency. Google Ads and Meta Ads campaigns that generate qualified leads at the lowest cost per acquisition.</p></div>
+        <div class="footer__nav"><p class="footer__nav-title">Services</p><ul><li><a href="google-ads.html">Google Ads</a></li><li><a href="meta-ads.html">Meta Ads</a></li><li><a href="audit.html">Campaign Audit</a></li><li><a href="strategy.html">Traffic Strategy</a></li><li><a href="landing-pages.html">Landing Pages</a></li><li><a href="reports.html">Reports &amp; Dashboard</a></li><li><a href="calculator.html">ROI Calculator</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+        <div class="footer__contact"><p class="footer__nav-title">Contact</p><ul><li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li><li><a href="tel:+351914541365">+351 914 541 365</a></li><li>Rua de Lisboa 1<br>2765-240 Estoril, Portugal</li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">© <span id="ano"></span> Payoff Marketing. All rights reserved.</p><a href="privacy.html" class="footer__privacy">Privacy Policy</a></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('ano').textContent=new Date().getFullYear();
+    function toggleMenu(btn){var m=document.getElementById('main-menu');var o=m.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');}
+
+    var platform='google';
+    var DEFAULTS={google:{cpc:0.8,cvr:2},meta:{cpc:0.5,cvr:1.5}};
+
+    function setPlatform(p){
+      platform=p;
+      document.getElementById('btn-google').classList.toggle('active',p==='google');
+      document.getElementById('btn-meta').classList.toggle('active',p==='meta');
+      var sl=document.getElementById('sl-cpc'); sl.value=DEFAULTS[p].cpc; syncSlider('cpc',sl);
+      var sl2=document.getElementById('sl-cvr'); sl2.value=DEFAULTS[p].cvr; syncSlider('cvr',sl2);
+    }
+
+    function fmt(n,dec){return n.toLocaleString('en-US',{minimumFractionDigits:dec||0,maximumFractionDigits:dec||0});}
+
+    function syncSlider(key,el){
+      var v=parseFloat(el.value);
+      var min=parseFloat(el.min),max=parseFloat(el.max);
+      el.style.setProperty('--sp',((v-min)/(max-min)*100)+'%');
+      var labels={budget:'$ '+fmt(v),cpc:'$ '+fmt(v,2),cvr:fmt(v,1)+'%',ltv:'$ '+fmt(v),margin:fmt(v)+'%'};
+      document.getElementById('val-'+key).textContent=labels[key]||v;
+      calc();
+    }
+
+    function calc(){
+      var budget=parseFloat(document.getElementById('sl-budget').value);
+      var cpc=parseFloat(document.getElementById('sl-cpc').value);
+      var cvr=parseFloat(document.getElementById('sl-cvr').value)/100;
+      var ltv=parseFloat(document.getElementById('sl-ltv').value);
+      var margin=parseFloat(document.getElementById('sl-margin').value)/100;
+      var clicks=budget/cpc;
+      var leads=clicks*cvr;
+      var cpl=leads>0?budget/leads:0;
+      var revenue=leads*ltv*margin;
+      var roas=budget>0?revenue/budget:0;
+      document.getElementById('res-clicks').textContent=fmt(clicks);
+      document.getElementById('res-leads').textContent=fmt(leads);
+      document.getElementById('res-cpl').textContent='$'+fmt(cpl,0);
+      document.getElementById('res-revenue').textContent='$'+fmt(revenue);
+      document.getElementById('res-roas').textContent=fmt(roas,1)+'x';
+      var pct=Math.min(roas/5*100,100);
+      var fill=document.getElementById('roi-fill');
+      fill.style.width=pct+'%';
+      fill.style.background=roas<1?'#f85149':roas<2?'#d29922':roas<3?'#3fb950':'#3b82f6';
+      var lbl=document.getElementById('roi-label');
+      lbl.textContent=roas<1?'Negative ROI':roas<2?'Break-even zone':roas<3?'Positive ROI':'Strong ROI';
+      lbl.style.color=fill.style.background;
+
+      var cpc2=parseFloat(document.getElementById('sl-cpc').value);
+      var cvr2=parseFloat(document.getElementById('sl-cvr').value)/100;
+      var cpcPM=cpc2*0.75, cvrPM=cvr2*1.35;
+      var clicksPM=budget/cpcPM, leadsPM=clicksPM*cvrPM;
+      var cplPM=leadsPM>0?budget/leadsPM:0;
+      var revenuePM=leadsPM*ltv*margin;
+      var roasPM=budget>0?revenuePM/budget:0;
+      document.getElementById('cmp-cpc-base').textContent='$'+fmt(cpc2,2);
+      document.getElementById('cmp-cpc-pm').textContent='$'+fmt(cpcPM,2);
+      document.getElementById('cmp-cvr-base').textContent=fmt(cvr2*100,1)+'%';
+      document.getElementById('cmp-cvr-pm').textContent=fmt(cvrPM*100,1)+'%';
+      document.getElementById('cmp-leads-base').textContent=fmt(leads);
+      document.getElementById('cmp-leads-pm').textContent=fmt(leadsPM);
+      document.getElementById('cmp-cpl-base').textContent='$'+fmt(cpl,0);
+      document.getElementById('cmp-cpl-pm').textContent='$'+fmt(cplPM,0);
+      document.getElementById('cmp-roas-base').textContent=fmt(roas,1)+'x';
+      document.getElementById('cmp-roas-pm').textContent=fmt(roasPM,1)+'x';
+    }
+
+    document.querySelectorAll('input[type=range]').forEach(function(el){
+      var v=parseFloat(el.value),min=parseFloat(el.min),max=parseFloat(el.max);
+      el.style.setProperty('--sp',((v-min)/(max-min)*100)+'%');
+    });
+    calc();
+  </script>
+
+  <!-- ── dropdown inline ── -->
+  <script>/* ============================================================
+   Elo — dropdown.js
+   Controla o dropdown de Serviços na navbar
+   ============================================================ */
+
+(function () {
+  /* Abre / fecha o dropdown clicado */
+  window.toggleDropdown = function (btn) {
+    var dropdown = btn.closest('.navbar__dropdown');
+    var isOpen   = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    /* Fecha outros dropdowns eventualmente abertos */
+    document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+      if (d !== dropdown) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
+  /* Fecha ao clicar fora */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar__dropdown')) {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  /* Fecha com a tecla Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();</script>
+  <!-- ── trail inline ── -->
+  <script>/* trail.js — mouse trail for .hero and .page-hero sections */
+(function () {
+  var LIFE  = 650;
+  var MAX_R = 5;
+  var MAX_A = 0.22;
+
+  function initTrail(section) {
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    section.insertBefore(canvas, section.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var pts = [];
+    var raf = null;
+
+    function resize() {
+      canvas.width  = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    section.addEventListener('mousemove', function (e) {
+      var r = section.getBoundingClientRect();
+      pts.push({
+        x: e.clientX - r.left,
+        y: e.clientY - r.top,
+        radius: 2 + Math.random() * (MAX_R - 2),
+        born: performance.now()
+      });
+      if (!raf) tick();
+    });
+
+    function tick() {
+      var now = performance.now();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts = pts.filter(function (p) { return now - p.born < LIFE; });
+      pts.forEach(function (p) {
+        var progress = (now - p.born) / LIFE;
+        var alpha    = MAX_A * (1 - progress);
+        var radius   = p.radius * (1 - progress * 0.5);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      });
+      raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+    }
+  }
+
+  document.querySelectorAll('.hero, .page-hero').forEach(initTrail);
+})();</script>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Cookie preferences" hidden>
+    <div id="pm-bar">
+      <div>
+        <strong>We use cookies</strong>
+        <p>We use cookies to analyse traffic and personalise ads. You can accept, reject or manage your preferences.</p>
+      </div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Customise</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Reject all</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Accept all</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Customise cookies">
+      <h3>Manage preferences</h3>
+      <div class="pm-pref">
+        <div><strong>Necessary cookies</strong><p>Essential for the site to function. Cannot be disabled.</p></div>
+        <span class="pm-always">Always active</span>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Analytics cookies</strong><p>Allow us to measure traffic and improve the site (Google Analytics).</p></div>
+        <label class="pm-switch" aria-label="Analytics cookies"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Marketing cookies</strong><p>Used to show relevant ads (Google Ads, Meta Pixel).</p></div>
+        <label class="pm-switch" aria-label="Marketing cookies"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label>
+      </div>
+      <div id="pm-panel-actions">
+        <button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Save preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){
+      gtag('consent','update',{
+        analytics_storage:a?'granted':'denied',
+        ad_storage:m?'granted':'denied',
+        ad_user_data:m?'granted':'denied',
+        ad_personalization:m?'granted':'denied'
+      });
+    }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){
+      localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));
+      applyConsent(a,m);
+      banner.setAttribute('hidden','');
+    };
+    window.pmSavePanel=function(){
+      pmSave(document.getElementById('pm-analytics').checked,
+             document.getElementById('pm-marketing').checked);
+    };
+  })();
+  </script>
+</body>
+</html>

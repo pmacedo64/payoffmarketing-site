@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WSST');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Segmentação Meta Ads: Custom Audiences, Lookalike e Interest Targeting em 2026 | Payoff Marketing</title>
+  <meta name="description" content="Custom Audiences, Lookalike e Interest Targeting no Meta Ads: o que ainda funciona em 2026, o que piorou com o iOS 14, e como estruturar audiências para PMEs portuguesas." />
+  <meta name="keywords" content="segmentação meta ads, custom audiences facebook, lookalike audiences meta, interest targeting facebook ads, audiências meta ads portugal, segmentação facebook ads 2026" />
+  <meta name="author" content="Payoff Marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo" />
+
+  <meta property="og:title" content="Segmentação Meta Ads: Custom Audiences, Lookalike e Interest Targeting em 2026" />
+  <meta property="og:description" content="O que ainda funciona no targeting Meta Ads em 2026, o que piorou com o iOS 14 e como estruturar audiências para PMEs." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo" />
+  <meta property="og:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="article:published_time" content="2026-05-19T11:00:00+01:00" />
+  <meta property="article:author" content="Payoff Marketing" />
+  <meta property="article:section" content="Meta Ads" />
+  <meta property="article:tag" content="Meta Ads" />
+  <meta property="article:tag" content="Segmentação" />
+  <meta property="article:tag" content="Custom Audiences" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Segmentação Meta Ads: Custom Audiences, Lookalike e Interest Targeting em 2026" />
+  <meta name="twitter:description" content="O que ainda funciona no targeting Meta Ads — Custom Audiences, Lookalike e Interest." />
+  <meta name="twitter:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo#article",
+        "headline": "Segmentação Meta Ads: Custom Audiences, Lookalike e Interest Targeting em 2026",
+        "description": "Custom Audiences, Lookalike e Interest Targeting no Meta Ads: o que ainda funciona em 2026, o impacto do iOS 14 e como estruturar audiências para PMEs portuguesas.",
+        "image": "https://payoffmarketing.pt/blog/img/hero-lp.webp",
+        "datePublished": "2026-05-19T11:00:00+01:00",
+        "dateModified": "2026-05-19T11:00:00+01:00",
+        "author": { "@type": "Organization", "name": "Payoff Marketing", "url": "https://payoffmarketing.pt" },
+        "publisher": { "@id": "https://payoffmarketing.pt/#organization" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo" },
+        "keywords": ["segmentação Meta Ads", "Custom Audiences", "Lookalike Audiences", "Interest Targeting", "Meta Ads Portugal 2026"],
+        "articleSection": "Meta Ads",
+        "inLanguage": "pt-PT",
+        "wordCount": "2900"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://payoffmarketing.pt/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://payoffmarketing.pt/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Segmentação Meta Ads", "item": "https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, #0f1923 100%);
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 3rem 0 0;
+    }
+    .breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: var(--cor-texto-muted); margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--cor-primaria); }
+    .breadcrumb__sep { color: var(--cor-borda); }
+    .article-hero__meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .article-tag { display: inline-block; background: rgba(59,130,246,.15); color: var(--cor-primaria); border: 1px solid rgba(59,130,246,.3); font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: .25rem .75rem; border-radius: 99px; }
+    .article-tag--meta { background: rgba(24,119,242,.15); color: #1877f2; border-color: rgba(24,119,242,.3); }
+    .article-hero__date, .article-hero__read { font-size: .85rem; color: var(--cor-texto-muted); }
+    .article-hero__date::before { content: "📅 "; }
+    .article-hero__read::before { content: "⏱ "; }
+    .article-hero h1 { font-size: clamp(1.5rem, 3.4vw, 2.35rem); line-height: 1.2; margin-bottom: 1rem; max-width: 820px; }
+    .article-hero__intro { font-size: 1.125rem; color: var(--cor-texto-muted); max-width: 720px; margin-bottom: 2rem; line-height: 1.75; }
+    .article-hero__img-wrap { margin-top: 2.5rem; border-radius: var(--raio) var(--raio) 0 0; overflow: hidden; max-height: 480px; }
+    .article-hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start; padding: 3rem 0 4rem; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; top: auto; }
+    }
+
+    .article-body h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 2.5rem 0 1rem; padding-top: .5rem; border-top: 1px solid var(--cor-borda); color: var(--cor-texto); }
+    .article-body h2:first-child { border-top: none; margin-top: 0; }
+    .article-body h3 { font-size: 1.125rem; color: var(--cor-acento); margin: 1.75rem 0 .5rem; }
+    .article-body p { color: var(--cor-texto-muted); line-height: 1.8; margin-bottom: 1.1rem; }
+    .article-body strong { color: var(--cor-texto); }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .article-body li { color: var(--cor-texto-muted); margin-bottom: .5rem; line-height: 1.7; }
+    .article-body li strong { color: var(--cor-texto); }
+
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.75rem 0; }
+    .table-wrap .comparison-table { margin: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .comparison-table th { background: var(--cor-superficie); color: var(--cor-texto); font-weight: 700; padding: .85rem 1rem; text-align: left; border-bottom: 2px solid var(--cor-primaria); }
+    .comparison-table th:first-child { border-radius: var(--raio) 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 var(--raio) 0 0; }
+    .comparison-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--cor-borda); color: var(--cor-texto-muted); vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .row--bad  td:first-child { border-left: 3px solid var(--cor-erro); }
+    .row--good td:first-child { border-left: 3px solid #3fb950; }
+
+    .callout { background: rgba(59,130,246,.08); border-left: 3px solid var(--cor-primaria); border-radius: 0 var(--raio) var(--raio) 0; padding: 1rem 1.25rem; margin: 1.75rem 0; }
+    .callout__label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-primaria); margin-bottom: .35rem; }
+    .callout p { margin-bottom: 0; font-size: .95rem; }
+    .callout--warn { background: rgba(248,81,73,.08); border-left-color: var(--cor-erro); }
+    .callout--warn .callout__label { color: var(--cor-erro); }
+    .callout--success { background: rgba(63,185,80,.08); border-left-color: #3fb950; }
+    .callout--success .callout__label { color: #3fb950; }
+
+    .article-cta { background: linear-gradient(135deg, var(--cor-superficie), #0f1923); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 2rem; text-align: center; margin: 2.5rem 0; }
+    .article-cta h3 { color: var(--cor-texto); margin-bottom: .5rem; }
+    .article-cta p  { margin-bottom: 1.25rem; }
+    .article-cta .btn { display: inline-block; }
+
+    .article-sidebar { position: sticky; top: 5rem; }
+    .toc-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-bottom: 1.5rem; }
+    .toc-card__title { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-texto-muted); margin-bottom: 1rem; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: .5rem; }
+    .toc-list a { font-size: .875rem; color: var(--cor-texto-muted); transition: color var(--transicao); line-height: 1.4; display: block; }
+    .toc-list a:hover { color: var(--cor-primaria); }
+    .toc-list a.active { color: var(--cor-primaria); font-weight: 600; }
+    .sidebar-service-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-bottom: 1rem; }
+    .sidebar-service-card h4 { font-size: .95rem; margin-bottom: .5rem; color: var(--cor-texto); }
+    .sidebar-service-card p { font-size: .85rem; margin-bottom: 1rem; line-height: 1.5; }
+    .sidebar-service-card .btn { display: block; text-align: center; font-size: .85rem; padding: .6rem 1rem; }
+
+    .author-box { display: flex; align-items: center; gap: 1rem; background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-top: 3rem; }
+    .author-box__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--cor-borda); }
+    .author-box__name { font-weight: 700; color: var(--cor-texto); font-size: .95rem; }
+    .author-box__bio  { font-size: .85rem; color: var(--cor-texto-muted); margin-top: .25rem; }
+
+    .related-section { padding: 3rem 0; border-top: 1px solid var(--cor-borda); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .related-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); overflow: hidden; transition: border-color var(--transicao); }
+    .related-card:hover { border-color: var(--cor-primaria); }
+    .related-card__img { width: 100%; height: 160px; object-fit: cover; }
+    .related-card__body { padding: 1rem; }
+    .related-card__tag  { font-size: .75rem; color: var(--cor-primaria); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .related-card__title { font-size: 1rem; font-weight: 700; color: var(--cor-texto); margin: .4rem 0 .5rem; line-height: 1.3; }
+    .related-card__excerpt { font-size: .85rem; color: var(--cor-texto-muted); line-height: 1.5; }
+
+    .verdict { background: linear-gradient(135deg, rgba(59,130,246,.10), rgba(168,85,247,.10)); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.5rem 1.75rem; margin: 1.5rem 0 2rem; }
+    .verdict__label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-primaria); margin-bottom: .5rem; }
+    .verdict p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: var(--cor-texto); }
+    .verdict p strong { color: var(--cor-acento); }
+
+    /* ── Cards de tipo de audiência ── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .audience-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .audience-card--custom   { border-top: 3px solid #3fb950; }
+    .audience-card--lookalike{ border-top: 3px solid var(--cor-primaria); }
+    .audience-card--interest { border-top: 3px solid #f59e0b; }
+    .audience-card--broad    { border-top: 3px solid #8b949e; }
+
+    .audience-card__header { display: flex; align-items: center; gap: .75rem; }
+    .audience-card__icon { font-size: 1.4rem; flex-shrink: 0; }
+    .audience-card__name { font-size: .95rem; font-weight: 700; color: var(--cor-texto); }
+    .audience-card--custom    .audience-card__name { color: #3fb950; }
+    .audience-card--lookalike .audience-card__name { color: var(--cor-primaria); }
+    .audience-card--interest  .audience-card__name { color: #f59e0b; }
+
+    .audience-card__desc {
+      font-size: .85rem;
+      color: var(--cor-texto-muted);
+      line-height: 1.6;
+    }
+    .audience-card__pros {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: .3rem;
+    }
+    .audience-card__pros li {
+      font-size: .82rem; color: var(--cor-texto-muted);
+      line-height: 1.5; padding-left: 1.1rem; position: relative;
+    }
+    .audience-card__pros li::before { content: "✓"; position: absolute; left: 0; color: #3fb950; font-weight: 700; }
+    .audience-card__pros li strong { color: var(--cor-texto); }
+
+    .audience-card__stat {
+      font-size: .78rem; font-weight: 600; margin-top: auto;
+    }
+    .audience-card--custom    .audience-card__stat { color: #3fb950; }
+    .audience-card--lookalike .audience-card__stat { color: var(--cor-primaria); }
+    .audience-card--interest  .audience-card__stat { color: #f59e0b; }
+    .audience-card--broad     .audience-card__stat { color: #8b949e; }
+
+    /* ── Barra de qualidade de audiência ── */
+    .quality-table { margin: 1.75rem 0; }
+    .quality-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .quality-row:last-child { border-bottom: none; }
+    .quality-row__label {
+      font-size: .85rem;
+      color: var(--cor-texto);
+      font-weight: 600;
+      width: 160px;
+      flex-shrink: 0;
+    }
+    .quality-row__bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: var(--cor-borda);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .quality-row__bar {
+      height: 100%;
+      border-radius: 4px;
+    }
+    .quality-row__score {
+      font-size: .8rem;
+      color: var(--cor-texto-muted);
+      width: 80px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+      <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="main-menu" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li class="navbar__dropdown">
+          <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+          <ul class="navbar__dropdown-menu" role="list">
+            <li><a href="../servicos.html">Todos os Serviços</a></li>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="active" aria-current="page">Blog</a></li>
+        <li><a href="../calculadora.html">Calculadora ROI</a></li>
+        <li><a href="../contatos.html" class="navbar__cta">Falar Connosco</a></li>
+      </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="lang-switch__btn" lang="en">EN</span>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="article-hero">
+    <div class="container">
+
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="index.html">Blog</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">Segmentação Meta Ads</span>
+      </nav>
+
+      <div class="article-hero__meta">
+        <span class="article-tag article-tag--meta">Meta Ads</span>
+        <span class="article-tag">Segmentação</span>
+        <span class="article-hero__date">19 Mai 2026</span>
+        <span class="article-hero__read">11 min de leitura</span>
+      </div>
+
+      <h1>Segmentação Meta Ads em 2026: Custom Audiences, Lookalike e Interest Targeting</h1>
+      <p class="article-hero__intro">
+        O iOS 14 destruiu parte do targeting Meta Ads em 2021. O algoritmo recuperou —
+        mas não da mesma forma. O interest targeting perdeu precisão. Os Lookalike Audiences
+        ficaram dependentes da qualidade da fonte. As Custom Audiences continuam a ser
+        a ferramenta mais fiável. Este guia explica o que ainda funciona e o que mudou.
+      </p>
+    </div>
+    <div class="article-hero__img-wrap">
+      <div class="container">
+        <img
+          src="img/hero-lp.webp"
+          alt="Segmentação Meta Ads 2026 — Custom Audiences, Lookalike e Interest Targeting"
+          width="1200" height="480"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LAYOUT ── -->
+  <div class="container">
+    <div class="article-layout">
+
+      <article class="article-body">
+
+        <!-- RESPOSTA DIRETA -->
+        <h2 id="resposta">A resposta direta</h2>
+
+        <div class="verdict">
+          <p class="verdict__label">Hierarquia de audiências em 2026</p>
+          <p>
+            <strong>Custom Audiences primeiro</strong> — são as mais precisas e as menos afetadas
+            pelo iOS 14. <strong>Lookalike a seguir</strong> — mas apenas criadas a partir de fontes
+            de alta qualidade (compradores, leads qualificadas). <strong>Interest targeting por último</strong>
+            — útil para top of funnel, mas não confie nele para conversão. Audiências amplas (Advantage+)
+            funcionam bem para contas com histórico de dados robusto.
+          </p>
+        </div>
+
+        <!-- O IMPACTO DO iOS 14 -->
+        <h2 id="ios14">O que o iOS 14 mudou — e o que ficou igual</h2>
+
+        <p>
+          Em abril de 2021, a Apple introduziu o App Tracking Transparency (ATT) — a obrigação
+          de pedir permissão antes de rastrear utilizadores entre apps. Em Portugal e Europa,
+          a taxa de opt-in ficou entre 20–35%. Isso significa que o pixel Meta deixou de ver
+          60–80% dos utilizadores iOS — e passou a modelar estatisticamente as conversões que
+          não consegue medir diretamente.
+        </p>
+
+        <p>
+          O impacto prático foi duplo: o <strong>retargeting de visitantes do site ficou menos preciso</strong>
+          (audiências menores, menos dados), e os <strong>Lookalike Audiences baseados em eventos do pixel
+          perderam qualidade</strong> porque a fonte passou a ter menos dados reais. O interest
+          targeting não foi diretamente afetado — mas a otimização de conversões ficou mais ruidosa,
+          o que torna qualquer audiência menos eficiente.
+        </p>
+
+        <div class="callout callout--warn">
+          <p class="callout__label">O que piorou definitivamente</p>
+          <p>Retargeting de visitantes do site com janelas curtas (7 dias), Lookalike de "Add to cart"
+          ou "View Content" (eventos de topo de funil com muita modelação), e atribuição de conversões
+          dentro do próprio Meta Ads — os números são mais otimistas do que a realidade.</p>
+        </div>
+
+        <p>
+          O que a Meta fez em resposta: reforçou a Conversions API (CAPI) como forma de enviar
+          eventos diretamente do servidor — sem depender do pixel no browser. Contas com CAPI
+          configurada corretamente recuperaram grande parte da qualidade de dados perdida com o iOS 14.
+          Se não tem CAPI ativa, está a deixar dados na mesa.
+        </p>
+
+        <!-- OS QUATRO TIPOS -->
+        <h2 id="tipos">Os quatro tipos de audiência Meta Ads</h2>
+
+        <div class="audience-grid">
+          <div class="audience-card audience-card--custom">
+            <div class="audience-card__header">
+              <span class="audience-card__icon">🎯</span>
+              <span class="audience-card__name">Custom Audiences</span>
+            </div>
+            <p class="audience-card__desc">
+              Audiências criadas a partir dos seus próprios dados: listas de clientes,
+              visitantes do site, utilizadores da app, engagement no Instagram/Facebook.
+              São as mais precisas porque se baseiam em comportamento real — não em inferência.
+            </p>
+            <ul class="audience-card__pros">
+              <li><strong>Maior precisão</strong> — dados primários da sua empresa</li>
+              <li><strong>Base para Lookalike</strong> — a qualidade da fonte define o resultado</li>
+              <li><strong>Retargeting</strong> — reativa leads que não converteram</li>
+            </ul>
+            <span class="audience-card__stat">★★★★★ Qualidade mais alta</span>
+          </div>
+
+          <div class="audience-card audience-card--lookalike">
+            <div class="audience-card__header">
+              <span class="audience-card__icon">🔍</span>
+              <span class="audience-card__name">Lookalike Audiences</span>
+            </div>
+            <p class="audience-card__desc">
+              O Meta encontra pessoas com perfil semelhante à sua Custom Audience de origem.
+              O tamanho vai de 1% (mais parecidos) a 10% da população — em Portugal, o 1%
+              representa ~55–60k pessoas, o 5% ~280k.
+            </p>
+            <ul class="audience-card__pros">
+              <li><strong>Escala a partir de dados reais</strong> — não depende de interesses declarados</li>
+              <li><strong>Melhor desempenho</strong> a 1–2% com fonte de alta qualidade</li>
+              <li><strong>Ideal para prospecção</strong> quando interest targeting falha</li>
+            </ul>
+            <span class="audience-card__stat">★★★★☆ Alta qualidade (fonte-dependente)</span>
+          </div>
+
+          <div class="audience-card audience-card--interest">
+            <div class="audience-card__header">
+              <span class="audience-card__icon">📌</span>
+              <span class="audience-card__name">Interest Targeting</span>
+            </div>
+            <p class="audience-card__desc">
+              Segmentação por interesses, comportamentos e dados demográficos declarados
+              ou inferidos pelo Meta. Em Portugal, a granularidade é menor do que em mercados
+              grandes — muitos interesses específicos têm audiências de poucos milhares.
+            </p>
+            <ul class="audience-card__pros">
+              <li><strong>Útil para top of funnel</strong> quando não há Custom Audiences</li>
+              <li><strong>Rápido de configurar</strong> sem necessidade de dados próprios</li>
+              <li><strong>Bom para testar nichos</strong> novos antes de ter dados de conversão</li>
+            </ul>
+            <span class="audience-card__stat">★★★☆☆ Qualidade média (depende do nicho)</span>
+          </div>
+
+          <div class="audience-card audience-card--broad">
+            <div class="audience-card__header">
+              <span class="audience-card__icon">🌐</span>
+              <span class="audience-card__name">Audiência Ampla (Advantage+)</span>
+            </div>
+            <p class="audience-card__desc">
+              Sem targeting manual — o Meta decide quem ver o anúncio com base nos sinais
+              de conversão da conta. Funciona bem com histórico de dados robusto (+50 conv/semana).
+              Em contas novas ou com pouco volume, é uma aposta sem base.
+            </p>
+            <ul class="audience-card__pros">
+              <li><strong>Menos trabalho de gestão</strong> — sem listas para manter</li>
+              <li><strong>Pode descobrir segmentos</strong> que não teria considerado</li>
+              <li><strong>Escala bem</strong> em contas com dados históricos sólidos</li>
+            </ul>
+            <span class="audience-card__stat">★★★☆☆ Depende do histórico da conta</span>
+          </div>
+        </div>
+
+        <!-- CUSTOM AUDIENCES EM DETALHE -->
+        <h2 id="custom-audiences">Custom Audiences: os tipos e como usar cada um</h2>
+
+        <h3>Website Custom Audience (pixel)</h3>
+        <p>
+          Visitantes do site segmentados por URL, evento ou tempo de permanência. Em 2026,
+          com iOS 14, estas audiências são menores do que antes — mas continuam a ser as mais
+          valiosas para retargeting. Use janelas de 30–60 dias (não 7 dias — população demasiado
+          pequena em Portugal). Exclua sempre os clientes atuais para não desperdiçar impressões.
+        </p>
+
+        <h3>Customer List (lista de contactos)</h3>
+        <p>
+          Upload de emails ou números de telefone de clientes ou leads. A taxa de match com
+          perfis Meta em Portugal fica entre 40–60% — o que significa que uma lista de
+          1 000 contactos produz uma audiência de 400–600 pessoas. Para Lookalike Audiences,
+          use pelo menos 500–1 000 contactos na fonte; abaixo disso a qualidade do Lookalike
+          cai significativamente.
+        </p>
+
+        <h3>Engagement Audiences</h3>
+        <p>
+          Pessoas que interagiram com o seu perfil Instagram, página Facebook, vídeos ou
+          formulários Lead Gen. São audiências warm — já conhecem a marca. Especialmente
+          úteis para campanhas de retargeting de baixo custo, onde o objetivo é reativar
+          interesse sem o custo de uma conversão fria.
+        </p>
+
+        <div class="callout callout--success">
+          <p class="callout__label">A melhor Custom Audience para PMEs portuguesas</p>
+          <p>Lista de clientes ou leads qualificadas enviada como Customer List. Mesmo com
+          400–600 pessoas no match, é a fonte mais limpa para criar Lookalike Audiences —
+          porque cada pessoa na lista representa alguém que já converteu ou demonstrou
+          intenção real.</p>
+        </div>
+
+        <!-- LOOKALIKE EM DETALHE -->
+        <h2 id="lookalike">Lookalike Audiences: como construir bem</h2>
+
+        <p>
+          Um Lookalike 1% em Portugal representa ~55–60 mil pessoas — um tamanho razoável
+          para campanhas de prospecção com budget de €500–1 500/mês. A regra mais importante
+          é simples: <strong>a qualidade do Lookalike é proporcional à qualidade da fonte</strong>.
+        </p>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Fonte do Lookalike</th>
+              <th>Qualidade esperada</th>
+              <th>Porquê</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row--good">
+              <td><strong>Lista de clientes pagantes</strong></td>
+              <td>★★★★★ Máxima</td>
+              <td>A fonte representa o comportamento final desejado — compra ou contratação</td>
+            </tr>
+            <tr class="row--good">
+              <td><strong>Leads qualificadas (SQLs)</strong></td>
+              <td>★★★★☆ Alta</td>
+              <td>Pessoas que passaram por qualificação — intenção demonstrada</td>
+            </tr>
+            <tr class="row--good">
+              <td><strong>Evento de compra do pixel (Purchase)</strong></td>
+              <td>★★★★☆ Alta (com CAPI)</td>
+              <td>Conversão real, mas com impacto de iOS 14 — melhor com CAPI configurada</td>
+            </tr>
+            <tr>
+              <td><strong>Visitantes do site (últimos 30 dias)</strong></td>
+              <td>★★★☆☆ Média</td>
+              <td>Inclui curiosos sem intenção de compra — menos focado que lista de clientes</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Seguidores do Instagram/Facebook</strong></td>
+              <td>★★☆☆☆ Baixa</td>
+              <td>Inclui seguidores que nunca compraram, bots e pessoas que seguiram por conteúdo orgânico</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Visualizações de vídeo (25–50%)</strong></td>
+              <td>★★☆☆☆ Baixa</td>
+              <td>Ver 3 segundos de um vídeo não indica intenção de compra</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>
+          Para mercados pequenos como Portugal, o Lookalike 1–2% é geralmente o ponto
+          certo. Acima de 3–4% começa a perder precisão sem ganhar qualidade suficiente
+          em volume para justificar. Teste sempre com exclusão das Custom Audiences existentes
+          para não sobrepor audiências.
+        </p>
+
+        <!-- INTEREST TARGETING -->
+        <h2 id="interest-targeting">Interest targeting: quando usar e quando evitar</h2>
+
+        <p>
+          O interest targeting perdeu credibilidade entre media buyers experientes — mas
+          continua a ter casos de uso legítimos. O problema não é o conceito; é a execução
+          e as expectativas.
+        </p>
+
+        <h3>O que o interest targeting realmente mede</h3>
+        <p>
+          Os interesses do Meta não são declarações explícitas — são inferências baseadas
+          em comportamento: páginas que a pessoa segue, conteúdo com que interage, apps
+          que usa. Uma pessoa sinalizada como "interessada em marketing digital" pode ser
+          um freelancer, um estudante de comunicação, ou alguém que clicou num artigo
+          do assunto há 6 meses. A precisão é baixa.
+        </p>
+
+        <h3>Quando faz sentido usar</h3>
+        <ul>
+          <li><strong>Conta nova sem Custom Audiences</strong> — não há alternativa enquanto acumula dados</li>
+          <li><strong>Produto de nicho muito específico</strong> com interesse sem ambiguidade (ex.: "Crossfit" para uma marca de equipamento de treino funcional)</li>
+          <li><strong>Top of funnel</strong> com objetivo de awareness — o CPM é baixo e não está a pedir conversão</li>
+          <li><strong>Teste de segmentos</strong> — identifica se um nicho responde ao anúncio antes de construir Lookalike</li>
+        </ul>
+
+        <h3>Quando evitar</h3>
+        <ul>
+          <li>Como audiência principal para campanhas de conversão ou lead gen — o CPL será consistentemente mais alto do que Lookalike ou Custom Audiences</li>
+          <li>Interesses demasiado amplos: "Negócios", "Tecnologia", "Saúde" — abrangem dezenas de milhões de pessoas sem qualquer precisão</li>
+          <li>Stacking excessivo de interesses (5+ interesses combinados com AND) — reduz a audiência ao ponto de ser demasiado pequena para o algoritmo otimizar</li>
+        </ul>
+
+        <div class="callout callout--warn">
+          <p class="callout__label">O erro mais comum com interest targeting em Portugal</p>
+          <p>Selecionar interesses específicos que têm audiências de 10–30k em Portugal.
+          Uma audiência tão pequena não dá espaço ao algoritmo para otimizar — o CPM sobe
+          porque o Meta leiloa repetidamente para as mesmas pessoas. O mínimo viável
+          para uma campanha de conversão é 200–500k.</p>
+        </div>
+
+        <!-- ESTRUTURA DE AUDIÊNCIAS -->
+        <h2 id="estrutura">Como estruturar audiências por fase do funil</h2>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Fase</th>
+              <th>Audiência recomendada</th>
+              <th>Objetivo</th>
+              <th>Exclusões</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Topo — Frio</strong></td>
+              <td>Lookalike 1–2% de clientes / Advantage+ / Interest como teste</td>
+              <td>Alcance, awareness, tráfego qualificado</td>
+              <td>Excluir clientes atuais e visitantes recentes</td>
+            </tr>
+            <tr>
+              <td><strong>Meio — Warm</strong></td>
+              <td>Visitantes do site (30–60 dias) + Engagement audiences (Instagram/Facebook)</td>
+              <td>Consideração, leads, conversão de primeira compra</td>
+              <td>Excluir clientes atuais</td>
+            </tr>
+            <tr>
+              <td><strong>Fundo — Quente</strong></td>
+              <td>Visitantes de páginas de produto/serviço (14 dias) + leads não convertidas</td>
+              <td>Conversão, recuperação de abandono</td>
+              <td>Excluir compradores recentes para não desperdiçar impressões</td>
+            </tr>
+            <tr>
+              <td><strong>Retenção</strong></td>
+              <td>Customer List de clientes (excluindo churned)</td>
+              <td>Upsell, cross-sell, reativação</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>
+          A regra de ouro em qualquer estrutura de audiências Meta: <strong>nunca deixe que
+          ad sets diferentes compitam pela mesma audiência</strong>. Use exclusões para
+          garantir que topo, meio e fundo não se sobrepõem — caso contrário, os ad sets
+          competem entre si no leilão e os CPMs sobem sem razão.
+        </p>
+
+        <!-- ADVANTAGE+ -->
+        <h2 id="advantage">Advantage+ Audience: a abordagem "caixa negra"</h2>
+
+        <p>
+          O Advantage+ Audience (antes chamado de broad targeting ou Advantage Detailed Targeting)
+          permite ao Meta escolher completamente a audiência com base nos sinais de conversão
+          da conta. É o equivalente do broad match com Smart Bidding no Google — funciona
+          bem com dados suficientes, é arriscado sem eles.
+        </p>
+
+        <p>
+          Para PMEs portuguesas, o Advantage+ faz mais sentido em campanhas de catálogo
+          (e-commerce) do que em serviços — porque em e-commerce o pixel tem volume de eventos
+          suficiente para alimentar o algoritmo. Para campanhas de geração de leads com budget
+          de €500–1 000/mês, o Lookalike 1% de clientes continua a ser mais fiável.
+        </p>
+
+        <div class="callout">
+          <p class="callout__label">Quando testar Advantage+</p>
+          <p>Quando tem pelo menos 50 conversões por semana registadas no pixel e um histórico
+          de conta de 3+ meses. Abaixo disso, o algoritmo não tem base suficiente e os
+          resultados são inconsistentes.</p>
+        </div>
+
+        <!-- QUALIDADE COMPARATIVA -->
+        <h2 id="comparacao">Comparação de qualidade por tipo de audiência</h2>
+
+        <div class="quality-table">
+          <div class="quality-row">
+            <span class="quality-row__label">Lista de clientes</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:95%;background:#3fb950;"></div></div>
+            <span class="quality-row__score">CPL: mais baixo</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Lookalike 1% (clientes)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:82%;background:#3fb950;"></div></div>
+            <span class="quality-row__score">CPL: baixo</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Retargeting (pixel)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:78%;background:#3b82f6;"></div></div>
+            <span class="quality-row__score">CPL: baixo</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Lookalike 1% (pixel purchase)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:68%;background:#3b82f6;"></div></div>
+            <span class="quality-row__score">CPL: médio-baixo</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Advantage+ (conta madura)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:60%;background:#f59e0b;"></div></div>
+            <span class="quality-row__score">CPL: variável</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Interest targeting (nicho)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:45%;background:#f59e0b;"></div></div>
+            <span class="quality-row__score">CPL: médio-alto</span>
+          </div>
+          <div class="quality-row">
+            <span class="quality-row__label">Interest targeting (amplo)</span>
+            <div class="quality-row__bar-wrap"><div class="quality-row__bar" style="width:22%;background:var(--cor-erro);"></div></div>
+            <span class="quality-row__score">CPL: alto</span>
+          </div>
+        </div>
+
+        <!-- CONCLUSÃO -->
+        <h2 id="conclusao">Conclusão: em Portugal, os seus dados valem mais do que qualquer interesse</h2>
+
+        <p>
+          O mercado português é pequeno — há audiências de interest targeting que não chegam
+          a 50 000 pessoas, e Lookalike 1% representa apenas ~55k. Isso significa que
+          <strong>a qualidade da fonte importa mais aqui do que em qualquer mercado grande</strong>.
+          Com 300 clientes numa lista bem segmentada, já tem a base para uma estratégia de
+          audiências eficaz: Custom Audience para retargeting, Lookalike 1% para prospecção,
+          e Advantage+ quando a conta tiver dados suficientes.
+        </p>
+        <p>
+          O passo mais impactante que a maioria das PMEs pode dar agora não é criar mais
+          ad sets com interesses diferentes — é <strong>configurar a Conversions API</strong>
+          para recuperar os dados que o iOS 14 está a esconder, e garantir que o pixel está
+          a registar todos os eventos relevantes corretamente.
+        </p>
+        <p>
+          Se quiser uma auditoria da estrutura de audiências e configuração do pixel nas suas
+          campanhas Meta Ads —
+          <a href="../auditoria.html">fazemos esse diagnóstico gratuitamente</a>.
+        </p>
+
+        <div class="article-cta">
+          <h3>O seu pixel está a registar tudo o que devia?</h3>
+          <p>Analisamos a configuração do pixel, CAPI e estrutura de audiências das suas campanhas
+          Meta Ads — com relatório de oportunidades em 48h.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir auditoria gratuita →</a>
+        </div>
+
+        <div class="author-box">
+          <img class="author-box__avatar" src="../img/logo.webp" alt="Payoff Marketing" width="56" height="56" />
+          <div>
+            <p class="author-box__name">Payoff Marketing</p>
+            <p class="author-box__bio">Agência especializada em gestão de tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para PMEs com foco em leads qualificados ao menor CPA.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="article-sidebar" aria-label="Sidebar do artigo">
+
+        <div class="toc-card">
+          <p class="toc-card__title">Neste artigo</p>
+          <ul class="toc-list" id="toc">
+            <li><a href="#resposta">A resposta direta</a></li>
+            <li><a href="#ios14">O que o iOS 14 mudou</a></li>
+            <li><a href="#tipos">Os quatro tipos de audiência</a></li>
+            <li><a href="#custom-audiences">Custom Audiences</a></li>
+            <li><a href="#lookalike">Lookalike Audiences</a></li>
+            <li><a href="#interest-targeting">Interest targeting</a></li>
+            <li><a href="#estrutura">Estrutura por fase do funil</a></li>
+            <li><a href="#advantage">Advantage+ Audience</a></li>
+            <li><a href="#comparacao">Comparação de qualidade</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Auditoria Meta Ads</h4>
+          <p>Analisamos pixel, CAPI, estrutura de audiências e criativos — com relatório de oportunidades em 48h.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Gestão Meta Ads</h4>
+          <p>Gerimos as suas campanhas Meta do início ao fim — audiências, criativos, testes A/B e otimização contínua.</p>
+          <a href="../meta-ads.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Landing Pages</h4>
+          <p>A melhor audiência não converte com uma landing page fraca. Criamos páginas otimizadas para campanhas Meta.</p>
+          <a href="../landing-pages.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="container">
+      <h2>Artigos relacionados</h2>
+      <div class="related-grid">
+
+        <a href="quanto-investir-meta-ads-guia-pme.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Quanto investir em Meta Ads — guia para PMEs" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Meta Ads</span>
+            <p class="related-card__title">Quanto investir em Meta Ads: guia completo para PMEs</p>
+            <p class="related-card__excerpt">CPM por objetivo, CPL por setor e o que o algoritmo precisa para otimizar com orçamentos de PME.</p>
+          </div>
+        </a>
+
+        <a href="google-ads-vs-meta-ads-qual-escolher-2026.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Google Ads vs Meta Ads — qual escolher em 2026?" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Estratégia</span>
+            <p class="related-card__title">Google Ads vs Meta Ads: qual escolher para o seu negócio em 2026?</p>
+            <p class="related-card__excerpt">Intenção de compra, CPL real por setor e quando usar cada canal — ou os dois.</p>
+          </div>
+        </a>
+
+        <a href="landing-pages-campanhas-trafego-pago.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Landing Pages em campanhas de tráfego pago" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Conversão</span>
+            <p class="related-card__title">Landing Pages em campanhas de tráfego pago: porquê são essenciais para converter</p>
+            <p class="related-card__excerpt">Está a enviar tráfego pago para a homepage? Está a desperdiçar pelo menos metade do budget.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+        <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+      </div>
+      <div class="footer__nav">
+        <p class="footer__nav-title">Serviços</p>
+        <ul>
+          <li><a href="../google-ads.html">Google Ads</a></li>
+          <li><a href="../meta-ads.html">Meta Ads</a></li>
+          <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+          <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+          <li><a href="../landing-pages.html">Landing Pages</a></li>
+          <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          <li><a href="../precos.html">Preços</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__nav-title">Contacto</p>
+        <ul>
+          <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+          <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+          <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__privacy">Blog</a>
+      <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE CONSENT ── -->
+<div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" style="
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#161b22;border-top:1px solid #30363d;font-family:inherit;">
+  <div id="pm-bar" style="display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;">
+    <p style="margin:0;max-width:65ch;line-height:1.5;color:#8b949e;">
+      <strong style="display:block;margin-bottom:.2rem;color:#e6edf3;">Este site usa cookies</strong>
+      Usamos cookies para análise de tráfego e melhoria da experiência.
+    </p>
+    <div id="pm-actions" style="display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;">
+      <button class="pm-btn pm-btn--ghost" onclick="document.getElementById('pm-panel').classList.toggle('open')">Gerir preferências</button>
+      <button class="pm-btn pm-btn--reject" onclick="pmConsent('deny')">Rejeitar</button>
+      <button class="pm-btn pm-btn--accept" onclick="pmConsent('allow')">Aceitar todos</button>
+    </div>
+  </div>
+  <div id="pm-panel" style="display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;">
+    <h3 style="font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;">Preferências de cookies</h3>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies essenciais</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Necessários para o funcionamento do site.</p></div>
+      <span style="font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;">Sempre ativos</span>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies analíticos</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google Analytics.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-analytics" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies de publicidade</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google e Meta Ads.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-ads" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div style="margin-top:1rem;text-align:right;">
+      <button class="pm-btn pm-btn--accept" onclick="pmConsentCustom()">Guardar preferências</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  (function(){ if(localStorage.getItem('pm_consent')) document.getElementById('pm-consent').style.display='none'; })();
+  function pmConsent(mode){
+    localStorage.setItem('pm_consent',mode);
+    document.getElementById('pm-consent').style.display='none';
+    var a=mode==='allow';
+    gtag('consent','update',{analytics_storage:a?'granted':'denied',ad_storage:a?'granted':'denied',ad_user_data:a?'granted':'denied',ad_personalization:a?'granted':'denied'});
+  }
+  function pmConsentCustom(){
+    var an=document.getElementById('pm-analytics').checked, ad=document.getElementById('pm-ads').checked;
+    localStorage.setItem('pm_consent','custom');
+    document.getElementById('pm-consent').style.display='none';
+    gtag('consent','update',{analytics_storage:an?'granted':'denied',ad_storage:ad?'granted':'denied',ad_user_data:ad?'granted':'denied',ad_personalization:ad?'granted':'denied'});
+  }
+  (function(){
+    var links=document.querySelectorAll('#toc a');
+    var sections=Array.from(links).map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+    function onScroll(){
+      var scrollY=window.scrollY+120, current=sections[0];
+      sections.forEach(function(s){if(s&&s.offsetTop<=scrollY)current=s;});
+      links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+current.id);});
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+  })();
+  function toggleMenu(btn){
+    var menu=document.getElementById('main-menu');
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  }
+</script>
+<script src="../js/dropdown.js"></script>
+</body>
+</html>

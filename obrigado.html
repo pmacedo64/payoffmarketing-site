@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:300});
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WSST');</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado — Payoff Marketing</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ── Cookie Banner ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#161b22;border-top:1px solid #30363d;font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;font-weight:600;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+
+  <style>
+    /* ── Navbar mínima ── */
+    .ty-navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cor-borda);
+    }
+    .ty-navbar .navbar__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 64px;
+    }
+
+    /* ── Hero de confirmação ── */
+    .ty-hero {
+      padding-block: 5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(59,130,246,.15) 0%, transparent 65%),
+        var(--cor-fundo);
+    }
+    .ty-hero .container { position: relative; z-index: 1; }
+
+    .ty-check {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(34,197,94,.1);
+      border: 2px solid rgba(34,197,94,.35);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.75rem;
+      animation: pop-in .5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .ty-check svg { color: #22c55e; }
+
+    @keyframes pop-in {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .ty-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: .75rem;
+    }
+    .ty-hero h1 span { color: var(--cor-primaria); }
+    .ty-hero__sub {
+      font-size: 1.0625rem;
+      color: var(--cor-texto-muted);
+      max-width: 46ch; margin-inline: auto;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── Timeline "o que acontece a seguir" ── */
+    .timeline {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 640px;
+      margin-inline: auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 22px; left: calc(16.66% + 22px);
+      right: calc(16.66% + 22px);
+      height: 2px;
+      background: linear-gradient(90deg, rgba(59,130,246,.4), rgba(59,130,246,.15));
+    }
+    .tl-step {
+      flex: 1; text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+      gap: .65rem;
+    }
+    .tl-dot {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .875rem;
+      flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+    .tl-dot--done {
+      background: rgba(34,197,94,.12);
+      border: 2px solid rgba(34,197,94,.4);
+      color: #22c55e;
+    }
+    .tl-dot--next {
+      background: rgba(59,130,246,.12);
+      border: 2px solid rgba(59,130,246,.35);
+      color: var(--cor-primaria);
+    }
+    .tl-dot--later {
+      background: rgba(255,255,255,.04);
+      border: 2px solid var(--cor-borda);
+      color: var(--cor-texto-muted);
+    }
+    .tl-label {
+      font-size: .8rem; line-height: 1.4;
+    }
+    .tl-label strong { display: block; font-size: .875rem; color: var(--cor-texto); margin-bottom: .1rem; }
+    .tl-label span { color: var(--cor-texto-muted); }
+
+    /* ── Secção "enquanto esperas" ── */
+    .while-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .while-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 14px;
+      padding: 1.75rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color .25s, box-shadow .25s, transform .25s;
+    }
+    .while-card:hover {
+      border-color: var(--cor-primaria);
+      box-shadow: 0 0 24px rgba(59,130,246,.16);
+      transform: translateY(-3px);
+    }
+    .while-card h3 {
+      font-size: 1rem; margin-bottom: .4rem;
+      color: var(--cor-texto);
+    }
+    .while-card p {
+      font-size: .875rem; color: var(--cor-texto-muted);
+      line-height: 1.6; margin-bottom: 1rem;
+    }
+    .while-card__cta {
+      font-size: .8125rem; font-weight: 700;
+      color: var(--cor-primaria);
+      display: flex; align-items: center; gap: .3rem;
+    }
+
+    /* ── Bloco auditoria (upsell) ── */
+    .upsell-box {
+      background: linear-gradient(135deg, rgba(59,130,246,.08) 0%, rgba(59,130,246,.03) 100%);
+      border: 1px solid rgba(59,130,246,.25);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem 3rem;
+      align-items: center;
+      max-width: 760px; margin-inline: auto;
+    }
+    .upsell-box h2 { font-size: 1.375rem; margin-bottom: .5rem; }
+    .upsell-box p { color: var(--cor-texto-muted); font-size: .9375rem; margin: 0; line-height: 1.6; }
+    .upsell-box__action { flex-shrink: 0; text-align: center; }
+    .upsell-box__price {
+      font-size: 1.75rem; font-weight: 800;
+      color: var(--cor-primaria); line-height: 1;
+      margin-bottom: .2rem;
+    }
+    .upsell-box__price-note {
+      font-size: .75rem; color: var(--cor-texto-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Redes sociais ── */
+    .social-grid {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: flex; align-items: center; gap: .65rem;
+      padding: .7rem 1.25rem;
+      border: 1px solid var(--cor-borda);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--cor-texto);
+      font-size: .9rem; font-weight: 600;
+      transition: border-color .2s, background .2s, transform .2s;
+      background: var(--cor-superficie);
+    }
+    .social-btn:hover {
+      border-color: var(--cor-primaria);
+      background: rgba(59,130,246,.06);
+      transform: translateY(-2px);
+    }
+    .social-btn__icon { flex-shrink: 0; }
+    .social-btn__sub { font-size: .75rem; color: var(--cor-texto-muted); font-weight: 400; display: block; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .while-grid { grid-template-columns: 1fr; }
+      .upsell-box { grid-template-columns: 1fr; text-align: center; }
+      .upsell-box__action { justify-self: center; }
+      .timeline { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .timeline::before { display: none; }
+      .tl-step { flex-direction: row; text-align: left; }
+      .tl-label { text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ── Navbar ── -->
+  <header>
+    <nav class="navbar ty-navbar" aria-label="Navegação">
+      <div class="container navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Payoff Marketing — Página inicial">
+          <img src="img/logo.webp" alt="Payoff Marketing" />
+        </a>
+        <a href="index.html" class="btn btn--ghost" style="font-size:.875rem;padding:.5rem 1.25rem;">← Voltar ao site</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         CONFIRMAÇÃO
+    ══════════════════════════════════════ -->
+    <section class="ty-hero" aria-labelledby="ty-titulo">
+      <div class="container" style="max-width:680px;">
+
+        <div class="ty-check" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+
+        <h1 id="ty-titulo">Obrigado.<br><span>A mensagem chegou.</span></h1>
+
+        <p class="ty-hero__sub">
+          Recebemos o teu contacto e respondemos em menos de 24 horas úteis.<br>
+          Entretanto, fica à vontade para explorar o que preparámos abaixo.
+        </p>
+
+        <!-- Timeline -->
+        <div class="timeline" role="list" aria-label="Próximos passos">
+
+          <div class="tl-step" role="listitem">
+            <div class="tl-dot tl-dot--done" aria-label="Concluído">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="tl-label">
+              <strong>Agora</strong>
+              <span>Mensagem enviada</span>
+            </div>
+          </div>
+
+          <div class="tl-step" role="listitem">
+            <div class="tl-dot tl-dot--next" aria-label="A seguir">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.32h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="tl-label">
+              <strong>Até 24h</strong>
+              <span>Entramos em contacto</span>
+            </div>
+          </div>
+
+          <div class="tl-step" role="listitem">
+            <div class="tl-dot tl-dot--later" aria-label="Em breve">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="tl-label">
+              <strong>Próximos dias</strong>
+              <span>Onboarding &amp; arranque</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ENQUANTO ESPERAS
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="while-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="while-titulo">Enquanto esperas</h2>
+          <p>Três recursos que valem o tempo — sem formulários, sem obrigações.</p>
+        </div>
+
+        <div class="while-grid">
+
+          <!-- Calculadora ROI -->
+          <a href="calculadora.html" class="while-card" aria-label="Abrir calculadora ROI">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3>Calculadora de ROI</h3>
+            <p>Introduz o teu budget e setor — a calculadora estima o número de leads e o custo por lead que podes esperar com gestão profissional.</p>
+            <span class="while-card__cta">
+              Calcular o meu potencial
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <!-- Blog -->
+          <a href="blog/index.html" class="while-card" aria-label="Ir para o blog">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3>Blog — Paid Traffic</h3>
+            <p>Artigos práticos sobre Google Ads, Meta Ads e estratégia de tráfego pago. Sem jargão — escrito para quem decide, não para quem executa.</p>
+            <span class="while-card__cta">
+              Ver artigos
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+          <!-- Preços -->
+          <a href="precos.html" class="while-card" aria-label="Ver planos e preços">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
+            <h3>Planos &amp; Preços</h3>
+            <p>Explora os planos disponíveis, o que está incluído em cada um e como funcionam os upgrades. Tudo transparente — sem letras pequenas.</p>
+            <span class="while-card__cta">
+              Ver planos
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UPSELL — Auditoria gratuita
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="upsell-titulo">
+      <div class="container">
+
+        <div class="upsell-box">
+          <div>
+            <span class="hero__badge" style="margin-bottom:.75rem;">Para quem já tem campanhas</span>
+            <h2 id="upsell-titulo">Tens campanhas a correr?<br>Pede uma auditoria gratuita.</h2>
+            <p>
+              Se já tens Google Ads ou Meta Ads ativos, a auditoria identifica onde está o dinheiro a ser desperdiçado —
+              antes de começarmos a trabalhar juntos. Sem compromisso.
+            </p>
+          </div>
+          <div class="upsell-box__action">
+            <div class="upsell-box__price">€0</div>
+            <div class="upsell-box__price-note">Auditoria sem custo</div>
+            <a href="auditoria.html" class="btn btn--primary">
+              Saber mais →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         REDES SOCIAIS
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="social-titulo">
+      <div class="container" style="text-align:center;max-width:640px;">
+
+        <h2 id="social-titulo" style="margin-bottom:.5rem;">Segue-nos</h2>
+        <p style="color:var(--cor-texto-muted);margin-bottom:2rem;font-size:.9375rem;">
+          Publicamos dicas, casos reais e tendências de paid traffic — sem o ruído habitual das redes.
+        </p>
+
+        <div class="social-grid">
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/payoffmarketing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Seguir Payoff Marketing no LinkedIn">
+            <span class="social-btn__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color:#0a66c2;">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </span>
+            <span>
+              LinkedIn
+              <span class="social-btn__sub">Conteúdo B2B e cases</span>
+            </span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/payoffmarketing" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Seguir Payoff Marketing no Instagram">
+            <span class="social-btn__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                  <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#f09433"/>
+                    <stop offset="25%" style="stop-color:#e6683c"/>
+                    <stop offset="50%" style="stop-color:#dc2743"/>
+                    <stop offset="75%" style="stop-color:#cc2366"/>
+                    <stop offset="100%" style="stop-color:#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </span>
+            <span>
+              Instagram
+              <span class="social-btn__sub">Dicas visuais e bastidores</span>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="google-ads.html">Google Ads</a></li>
+            <li><a href="meta-ads.html">Meta Ads</a></li>
+            <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="landing-pages.html">Landing Pages</a></li>
+            <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="calculadora.html">Calculadora ROI</a></li>
+            <li><a href="precos.html">Preços</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="blog/index.html" class="footer__privacy">Blog</a>
+        <a href="privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" hidden>
+    <div id="pm-bar">
+      <div><strong>Usamos cookies</strong><p>Utilizamos cookies para analisar tráfego e personalizar anúncios. Pode aceitar, rejeitar ou gerir as preferências.</p></div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Rejeitar tudo</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Aceitar tudo</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Personalizar cookies">
+      <h3>Gerir preferências</h3>
+      <div class="pm-pref"><div><strong>Cookies necessários</strong><p>Essenciais para o funcionamento do site.</p></div><span class="pm-always">Sempre ativo</span></div>
+      <div class="pm-pref"><div><strong>Cookies analíticos</strong><p>Permitem medir o tráfego (Google Analytics).</p></div><label class="pm-switch" aria-label="Cookies analíticos"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label></div>
+      <div class="pm-pref"><div><strong>Cookies de marketing</strong><p>Usados para anúncios relevantes (Google Ads, Meta Pixel).</p></div><label class="pm-switch" aria-label="Cookies de marketing"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label></div>
+      <div id="pm-panel-actions"><button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Guardar preferências</button></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){ gtag('consent','update',{analytics_storage:a?'granted':'denied',ad_storage:m?'granted':'denied',ad_user_data:m?'granted':'denied',ad_personalization:m?'granted':'denied'}); }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));applyConsent(a,m);banner.setAttribute('hidden','');};
+    window.pmSavePanel=function(){pmSave(document.getElementById('pm-analytics').checked,document.getElementById('pm-marketing').checked);};
+  })();
+  </script>
+
+</body>
+</html>

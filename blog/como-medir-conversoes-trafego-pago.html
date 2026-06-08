@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WSST');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Como Medir Conversões em Tráfego Pago: GA4, Pixel Meta e Google Ads | Payoff Marketing</title>
+  <meta name="description" content="Guia prático de tracking para tráfego pago: Google Ads conversion tracking, pixel Meta com CAPI, GA4 e os erros que distorcem os dados e destroem as decisões de otimização." />
+  <meta name="keywords" content="medir conversões tráfego pago, google ads conversion tracking, pixel meta ads, ga4 conversões, capi meta ads, tracking campanhas digitais portugal, dupla contagem google ads" />
+  <meta name="author" content="Payoff Marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago" />
+
+  <meta property="og:title" content="Como Medir Conversões em Tráfego Pago: GA4, Pixel Meta e Google Ads" />
+  <meta property="og:description" content="Guia prático de tracking: Google Ads conversion tracking, pixel Meta com CAPI, GA4 e os erros mais comuns que distorcem as decisões de otimização." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago" />
+  <meta property="og:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="article:published_time" content="2026-05-19T14:00:00+01:00" />
+  <meta property="article:author" content="Payoff Marketing" />
+  <meta property="article:section" content="Google Ads" />
+  <meta property="article:tag" content="Google Ads" />
+  <meta property="article:tag" content="Meta Ads" />
+  <meta property="article:tag" content="Tracking" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Como Medir Conversões em Tráfego Pago: GA4, Pixel Meta e Google Ads" />
+  <meta name="twitter:description" content="Guia prático de tracking para campanhas pagas — o que configurar e os erros que destroem as decisões." />
+  <meta name="twitter:image" content="https://payoffmarketing.pt/blog/img/hero-lp.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago#article",
+        "headline": "Como Medir Conversões em Tráfego Pago: GA4, Pixel Meta e Google Ads Conversion Tracking",
+        "description": "Guia prático de tracking para tráfego pago: Google Ads conversion tracking, pixel Meta com CAPI, GA4 e os erros que distorcem os dados e destroem as decisões de otimização.",
+        "image": "https://payoffmarketing.pt/blog/img/hero-lp.webp",
+        "datePublished": "2026-05-19T14:00:00+01:00",
+        "dateModified": "2026-05-19T14:00:00+01:00",
+        "author": { "@type": "Organization", "name": "Payoff Marketing", "url": "https://payoffmarketing.pt" },
+        "publisher": { "@id": "https://payoffmarketing.pt/#organization" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago" },
+        "keywords": ["medir conversões tráfego pago", "Google Ads conversion tracking", "pixel Meta CAPI", "GA4 conversões", "tracking campanhas digitais"],
+        "articleSection": "Google Ads",
+        "inLanguage": "pt-PT",
+        "wordCount": "3000"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://payoffmarketing.pt/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://payoffmarketing.pt/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Como Medir Conversões em Tráfego Pago", "item": "https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, #0f1923 100%);
+      border-bottom: 1px solid var(--cor-borda);
+      padding: 3rem 0 0;
+    }
+    .breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: var(--cor-texto-muted); margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--cor-primaria); }
+    .breadcrumb__sep { color: var(--cor-borda); }
+    .article-hero__meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .article-tag { display: inline-block; background: rgba(59,130,246,.15); color: var(--cor-primaria); border: 1px solid rgba(59,130,246,.3); font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: .25rem .75rem; border-radius: 99px; }
+    .article-tag--google { background: rgba(66,133,244,.15); color: #4285f4; border-color: rgba(66,133,244,.3); }
+    .article-tag--meta   { background: rgba(24,119,242,.15); color: #1877f2; border-color: rgba(24,119,242,.3); }
+    .article-hero__date, .article-hero__read { font-size: .85rem; color: var(--cor-texto-muted); }
+    .article-hero__date::before { content: "📅 "; }
+    .article-hero__read::before { content: "⏱ "; }
+    .article-hero h1 { font-size: clamp(1.5rem, 3.4vw, 2.35rem); line-height: 1.2; margin-bottom: 1rem; max-width: 820px; }
+    .article-hero__intro { font-size: 1.125rem; color: var(--cor-texto-muted); max-width: 720px; margin-bottom: 2rem; line-height: 1.75; }
+    .article-hero__img-wrap { margin-top: 2.5rem; border-radius: var(--raio) var(--raio) 0 0; overflow: hidden; max-height: 480px; }
+    .article-hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start; padding: 3rem 0 4rem; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; top: auto; }
+    }
+
+    .article-body h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 2.5rem 0 1rem; padding-top: .5rem; border-top: 1px solid var(--cor-borda); color: var(--cor-texto); }
+    .article-body h2:first-child { border-top: none; margin-top: 0; }
+    .article-body h3 { font-size: 1.125rem; color: var(--cor-acento); margin: 1.75rem 0 .5rem; }
+    .article-body p { color: var(--cor-texto-muted); line-height: 1.8; margin-bottom: 1.1rem; }
+    .article-body strong { color: var(--cor-texto); }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .article-body li { color: var(--cor-texto-muted); margin-bottom: .5rem; line-height: 1.7; }
+    .article-body li strong { color: var(--cor-texto); }
+
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.75rem 0; }
+    .table-wrap .comparison-table { margin: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .comparison-table th { background: var(--cor-superficie); color: var(--cor-texto); font-weight: 700; padding: .85rem 1rem; text-align: left; border-bottom: 2px solid var(--cor-primaria); }
+    .comparison-table th:first-child { border-radius: var(--raio) 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 var(--raio) 0 0; }
+    .comparison-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--cor-borda); color: var(--cor-texto-muted); vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .row--bad  td:first-child { border-left: 3px solid var(--cor-erro); }
+    .row--good td:first-child { border-left: 3px solid #3fb950; }
+
+    .callout { background: rgba(59,130,246,.08); border-left: 3px solid var(--cor-primaria); border-radius: 0 var(--raio) var(--raio) 0; padding: 1rem 1.25rem; margin: 1.75rem 0; }
+    .callout__label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-primaria); margin-bottom: .35rem; }
+    .callout p { margin-bottom: 0; font-size: .95rem; }
+    .callout--warn { background: rgba(248,81,73,.08); border-left-color: var(--cor-erro); }
+    .callout--warn .callout__label { color: var(--cor-erro); }
+    .callout--success { background: rgba(63,185,80,.08); border-left-color: #3fb950; }
+    .callout--success .callout__label { color: #3fb950; }
+
+    .article-cta { background: linear-gradient(135deg, var(--cor-superficie), #0f1923); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 2rem; text-align: center; margin: 2.5rem 0; }
+    .article-cta h3 { color: var(--cor-texto); margin-bottom: .5rem; }
+    .article-cta p  { margin-bottom: 1.25rem; }
+    .article-cta .btn { display: inline-block; }
+
+    .article-sidebar { position: sticky; top: 5rem; }
+    .toc-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-bottom: 1.5rem; }
+    .toc-card__title { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-texto-muted); margin-bottom: 1rem; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: .5rem; }
+    .toc-list a { font-size: .875rem; color: var(--cor-texto-muted); transition: color var(--transicao); line-height: 1.4; display: block; }
+    .toc-list a:hover { color: var(--cor-primaria); }
+    .toc-list a.active { color: var(--cor-primaria); font-weight: 600; }
+    .sidebar-service-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-bottom: 1rem; }
+    .sidebar-service-card h4 { font-size: .95rem; margin-bottom: .5rem; color: var(--cor-texto); }
+    .sidebar-service-card p { font-size: .85rem; margin-bottom: 1rem; line-height: 1.5; }
+    .sidebar-service-card .btn { display: block; text-align: center; font-size: .85rem; padding: .6rem 1rem; }
+
+    .author-box { display: flex; align-items: center; gap: 1rem; background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.25rem; margin-top: 3rem; }
+    .author-box__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--cor-borda); }
+    .author-box__name { font-weight: 700; color: var(--cor-texto); font-size: .95rem; }
+    .author-box__bio  { font-size: .85rem; color: var(--cor-texto-muted); margin-top: .25rem; }
+
+    .related-section { padding: 3rem 0; border-top: 1px solid var(--cor-borda); }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .related-card { background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); overflow: hidden; transition: border-color var(--transicao); }
+    .related-card:hover { border-color: var(--cor-primaria); }
+    .related-card__img { width: 100%; height: 160px; object-fit: cover; }
+    .related-card__body { padding: 1rem; }
+    .related-card__tag  { font-size: .75rem; color: var(--cor-primaria); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .related-card__title { font-size: 1rem; font-weight: 700; color: var(--cor-texto); margin: .4rem 0 .5rem; line-height: 1.3; }
+    .related-card__excerpt { font-size: .85rem; color: var(--cor-texto-muted); line-height: 1.5; }
+
+    .verdict { background: linear-gradient(135deg, rgba(59,130,246,.10), rgba(168,85,247,.10)); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 1.5rem 1.75rem; margin: 1.5rem 0 2rem; }
+    .verdict__label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cor-primaria); margin-bottom: .5rem; }
+    .verdict p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.7; color: var(--cor-texto); }
+    .verdict p strong { color: var(--cor-acento); }
+
+    /* ── Cards de ferramenta de tracking ── */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .tool-card {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .tool-card--google { border-top: 3px solid #4285f4; }
+    .tool-card--meta   { border-top: 3px solid #1877f2; }
+    .tool-card--ga4    { border-top: 3px solid #f59e0b; }
+
+    .tool-card__header { display: flex; align-items: center; gap: .75rem; }
+    .tool-card__icon { font-size: 1.4rem; flex-shrink: 0; }
+    .tool-card__name { font-size: .95rem; font-weight: 700; }
+    .tool-card--google .tool-card__name { color: #4285f4; }
+    .tool-card--meta   .tool-card__name { color: #1877f2; }
+    .tool-card--ga4    .tool-card__name { color: #f59e0b; }
+
+    .tool-card__desc { font-size: .85rem; color: var(--cor-texto-muted); line-height: 1.6; }
+    .tool-card__role {
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .3rem .7rem;
+      border-radius: 99px;
+      width: fit-content;
+    }
+    .tool-card--google .tool-card__role { background: rgba(66,133,244,.12); color: #4285f4; }
+    .tool-card--meta   .tool-card__role { background: rgba(24,119,242,.12); color: #1877f2; }
+    .tool-card--ga4    .tool-card__role { background: rgba(245,158,11,.12); color: #f59e0b; }
+
+    /* ── Checklist de auditoria ── */
+    .checklist {
+      background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .checklist__title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cor-texto-muted);
+      margin-bottom: .5rem;
+    }
+    .checklist__item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .875rem;
+      color: var(--cor-texto-muted);
+      line-height: 1.5;
+    }
+    .checklist__item::before {
+      content: "☐";
+      font-size: 1rem;
+      color: var(--cor-primaria);
+      flex-shrink: 0;
+      margin-top: -.05rem;
+    }
+    .checklist__item strong { color: var(--cor-texto); }
+
+    /* ── inline code ── */
+    code { font-family: monospace; font-size: .88rem; background: rgba(59,130,246,.1); color: var(--cor-primaria); padding: .1rem .4rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></a>
+      <button class="navbar__toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__menu" id="main-menu" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li class="navbar__dropdown">
+          <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+          <ul class="navbar__dropdown-menu" role="list">
+            <li><a href="../servicos.html">Todos os Serviços</a></li>
+            <li><a href="../google-ads.html">Google Ads</a></li>
+            <li><a href="../meta-ads.html">Meta Ads</a></li>
+            <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="../landing-pages.html">Landing Pages</a></li>
+            <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="active" aria-current="page">Blog</a></li>
+        <li><a href="../calculadora.html">Calculadora ROI</a></li>
+        <li><a href="../contatos.html" class="navbar__cta">Falar Connosco</a></li>
+      </ul>
+      <div class="lang-switch" aria-label="Language switcher">
+        <span class="lang-switch__btn" lang="en">EN</span>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="article-hero">
+    <div class="container">
+
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="index.html">Blog</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">Como Medir Conversões em Tráfego Pago</span>
+      </nav>
+
+      <div class="article-hero__meta">
+        <span class="article-tag article-tag--google">Google Ads</span>
+        <span class="article-tag article-tag--meta">Meta Ads</span>
+        <span class="article-tag">Tracking</span>
+        <span class="article-hero__date">19 Mai 2026</span>
+        <span class="article-hero__read">11 min de leitura</span>
+      </div>
+
+      <h1>Como medir conversões em tráfego pago: GA4, pixel Meta e Google Ads conversion tracking</h1>
+      <p class="article-hero__intro">
+        Sem tracking correto, todas as decisões de otimização são cegas. O Smart Bidding do Google
+        otimiza para conversões que não existem. O Meta Ads aprende com sinais errados.
+        E os relatórios mostram números que convencem — mas mentem. Este guia cobre o que
+        configurar, como verificar e os erros que a maioria das contas tem sem saber.
+      </p>
+    </div>
+    <div class="article-hero__img-wrap">
+      <div class="container">
+        <img
+          src="img/hero-lp.webp"
+          alt="Como medir conversões em tráfego pago — GA4, pixel Meta, Google Ads"
+          width="1200" height="480"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LAYOUT ── -->
+  <div class="container">
+    <div class="article-layout">
+
+      <article class="article-body">
+
+        <!-- RESPOSTA DIRETA -->
+        <h2 id="resposta">O mínimo que precisa para tomar decisões</h2>
+
+        <div class="verdict">
+          <p class="verdict__label">Stack de tracking mínimo viável</p>
+          <p>
+            <strong>Google Ads:</strong> conversion tracking nativo configurado diretamente no Google Ads
+            (não importado do GA4) com a ação de conversão primária como o evento de negócio real
+            — formulário submetido, chamada, compra. <strong>Meta Ads:</strong> pixel + Conversions API
+            (CAPI) para recuperar os dados iOS 14. <strong>GA4:</strong> para visão cross-canal e
+            análise de comportamento — não para otimizar campanhas individuais.
+          </p>
+        </div>
+
+        <!-- AS TRÊS FERRAMENTAS -->
+        <h2 id="ferramentas">As três ferramentas e o papel de cada uma</h2>
+
+        <div class="tool-grid">
+          <div class="tool-card tool-card--google">
+            <div class="tool-card__header">
+              <span class="tool-card__icon">⚡</span>
+              <span class="tool-card__name">Google Ads Conversion Tracking</span>
+            </div>
+            <p class="tool-card__desc">
+              Tag nativa do Google Ads que regista conversões diretamente na plataforma.
+              É o sinal que o Smart Bidding usa para otimizar lances — por isso tem de ser
+              o mais limpo e preciso possível. Não depende do GA4 e não deve ser substituído
+              por ele para campanhas Search.
+            </p>
+            <span class="tool-card__role">Otimização de lances + relatórios Google Ads</span>
+          </div>
+
+          <div class="tool-card tool-card--meta">
+            <div class="tool-card__header">
+              <span class="tool-card__icon">📡</span>
+              <span class="tool-card__name">Meta Pixel + CAPI</span>
+            </div>
+            <p class="tool-card__desc">
+              O pixel regista eventos no browser do utilizador. A Conversions API (CAPI) envia
+              os mesmos eventos diretamente do servidor — sem depender de cookies ou do iOS 14.
+              Em conjunto, duplicam os sinais e o Meta desduplicam automaticamente. Sozinho
+              (sem CAPI), o pixel está a perder 30–50% dos eventos em utilizadores iOS.
+            </p>
+            <span class="tool-card__role">Otimização de audiências + relatórios Meta Ads</span>
+          </div>
+
+          <div class="tool-card tool-card--ga4">
+            <div class="tool-card__header">
+              <span class="tool-card__icon">📊</span>
+              <span class="tool-card__name">Google Analytics 4</span>
+            </div>
+            <p class="tool-card__desc">
+              Ferramenta de análise cross-canal — mostra o comportamento dos utilizadores
+              em todo o site, a jornada multi-canal e os dados agregados. Não é a fonte
+              de verdade para otimizar campanhas individuais — é a fonte de verdade para
+              perceber o quadro completo. Os números do GA4 diferem dos do Google Ads
+              porque usam modelos de atribuição diferentes.
+            </p>
+            <span class="tool-card__role">Análise de comportamento + visão cross-canal</span>
+          </div>
+        </div>
+
+        <div class="callout callout--warn">
+          <p class="callout__label">O erro de configuração mais comum</p>
+          <p>Importar conversões do GA4 para o Google Ads e usá-las como conversão primária.
+          O GA4 usa atribuição data-driven por defeito — o que significa que distribui crédito
+          por múltiplos canais. O resultado no Google Ads: o Smart Bidding otimiza para uma
+          fração da conversão, não para o evento completo. Use sempre <strong>Google Ads
+          conversion tracking nativo</strong> como conversão primária.</p>
+        </div>
+
+        <!-- GOOGLE ADS CONVERSION TRACKING -->
+        <h2 id="google-ads-tracking">Google Ads: como configurar corretamente</h2>
+
+        <h3>Conversões primárias vs secundárias</h3>
+        <p>
+          O Google Ads distingue entre conversões primárias (usadas pelo Smart Bidding para
+          otimizar) e secundárias (registadas para análise, mas sem influenciar os lances).
+          Esta distinção é crítica e ignorada na maioria das contas.
+        </p>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Evento</th>
+              <th>Tipo recomendado</th>
+              <th>Porquê</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row--good">
+              <td><strong>Formulário submetido com sucesso</strong></td>
+              <td>Conversão Primária</td>
+              <td>Evento de negócio real — é o que quer que o algoritmo maximize</td>
+            </tr>
+            <tr class="row--good">
+              <td><strong>Chamada telefónica (+60 seg)</strong></td>
+              <td>Conversão Primária</td>
+              <td>Indica intenção real; duração mínima filtra chamadas acidentais</td>
+            </tr>
+            <tr class="row--good">
+              <td><strong>Compra / transação</strong></td>
+              <td>Conversão Primária</td>
+              <td>O evento de maior valor — use com valor de conversão para Target ROAS</td>
+            </tr>
+            <tr>
+              <td><strong>Clique em email / telefone</strong></td>
+              <td>Conversão Secundária</td>
+              <td>Indica interesse, não conversão — útil para análise, não para lances</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Clique em botão / scroll depth</strong></td>
+              <td>Não usar como conversão</td>
+              <td>Micro-comportamento sem correlação com valor de negócio — envenena o Smart Bidding</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Visita à página de contacto</strong></td>
+              <td>Não usar como conversão primária</td>
+              <td>Muitos visitantes chegam à página e não preenchem — falso positivo frequente</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Como registar o evento certo</h3>
+        <p>
+          Para formulários, a forma mais fiável é disparar a tag de conversão na página de
+          "obrigado" — a URL de confirmação após submissão. Isso garante que só conta quem
+          completou o formulário. Alternativa: usar GTM para disparar o evento no submit
+          do formulário (útil quando não há página de confirmação dedicada).
+        </p>
+
+        <div class="callout">
+          <p class="callout__label">Contagem de conversões: "Uma" vs "Cada"</p>
+          <p>
+            Para geração de leads, use <strong>"Uma" conversão por clique</strong> —
+            se a mesma pessoa submeter o formulário duas vezes depois do mesmo clique, conta
+            apenas uma vez. Para e-commerce (compras), use <strong>"Cada"</strong> —
+            cada transação deve ser contabilizada individualmente.
+          </p>
+        </div>
+
+        <!-- META PIXEL + CAPI -->
+        <h2 id="meta-pixel">Meta Pixel + CAPI: a configuração que a maioria não tem</h2>
+
+        <h3>O que o pixel faz e onde falha</h3>
+        <p>
+          O pixel Meta é um fragmento de JavaScript que corre no browser do utilizador e
+          envia eventos para o Meta quando determinadas ações acontecem (PageView, Lead,
+          Purchase, etc.). O problema: em utilizadores iOS com opt-out de tracking, o pixel
+          é bloqueado — e os eventos simplesmente não chegam ao Meta.
+        </p>
+
+        <h3>A Conversions API (CAPI) resolve o problema</h3>
+        <p>
+          A CAPI envia os mesmos eventos diretamente do servidor da sua empresa para o Meta —
+          sem passar pelo browser, sem ser bloqueada pelo iOS 14 ou por bloqueadores de anúncios.
+          O Meta recebe o evento de duas fontes (pixel + CAPI) e desduplicam automaticamente
+          usando um <code>event_id</code> único em cada evento.
+        </p>
+
+        <p>
+          O resultado prático: contas com CAPI configurada corretamente recuperam 30–50%
+          dos eventos de conversão que estavam a ser perdidos. Isso melhora a qualidade
+          das audiências Lookalike, a otimização de conversões e a exatidão dos relatórios.
+        </p>
+
+        <div class="callout callout--success">
+          <p class="callout__label">Como configurar CAPI sem programação</p>
+          <p>A forma mais rápida é usar a integração nativa via GTM Server-Side ou as
+          integrações diretas com plataformas como Shopify, WooCommerce, HubSpot ou
+          Zapier/Make. Para sites WordPress com formulários de contacto, a integração
+          via Make (antigo Integromat) é a mais acessível sem necessidade de desenvolvimento.</p>
+        </div>
+
+        <h3>Eventos Meta: prioridade e o que usar</h3>
+        <p>
+          O Meta usa um sistema de prioridade de eventos quando não consegue reportar
+          todas as conversões de um utilizador (por limitações iOS). Os 8 eventos
+          prioritários têm de ser escolhidos e ordenados do mais para o menos importante:
+        </p>
+        <ol>
+          <li><strong>Purchase</strong> — sempre em primeiro se for e-commerce</li>
+          <li><strong>Lead</strong> — para campanhas de geração de leads</li>
+          <li><strong>CompleteRegistration</strong> — inscrição concluída</li>
+          <li><strong>AddToCart</strong> — intenção de compra</li>
+          <li><strong>ViewContent</strong> — visita a página de produto</li>
+          <li><strong>Search</strong> — pesquisa no site</li>
+          <li><strong>Contact</strong> — clique em telefone/email</li>
+          <li><strong>InitiateCheckout</strong> — início de checkout</li>
+        </ol>
+        <p>
+          Para PMEs com campanhas de lead gen, a prioridade deve ser: Lead → Contact →
+          ViewContent. Não coloque Purchase em 1º se não tiver e-commerce — desperdiça
+          uma posição de prioridade num evento que nunca vai disparar.
+        </p>
+
+        <!-- GA4 -->
+        <h2 id="ga4">GA4: o que configurar e como interpretar os números</h2>
+
+        <h3>Eventos e conversões no GA4</h3>
+        <p>
+          O GA4 funciona com um modelo de eventos — tudo é um evento, desde um pageview
+          até um clique num botão. Para campanhas pagas, os eventos mais importantes a
+          marcar como conversões são os mesmos que no Google Ads: formulário submetido,
+          chamada, compra. A configuração faz-se em GA4 → Admin → Eventos → Marcar como
+          conversão.
+        </p>
+
+        <h3>Porque os números do GA4 e do Google Ads diferem</h3>
+        <p>
+          Esta discrepância confunde a maioria dos anunciantes. A resposta é simples:
+          usam modelos de atribuição diferentes por defeito.
+        </p>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Ferramenta</th>
+              <th>Atribuição padrão</th>
+              <th>O que isso significa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Ads</strong></td>
+              <td>Data-driven (dentro do Google Ads)</td>
+              <td>Atribui crédito aos cliques Google Ads que contribuíram para a conversão — ignora outros canais</td>
+            </tr>
+            <tr>
+              <td><strong>GA4</strong></td>
+              <td>Data-driven (cross-canal)</td>
+              <td>Distribui crédito por todos os canais na jornada do utilizador — Google Ads recebe uma fração</td>
+            </tr>
+            <tr>
+              <td><strong>Meta Ads</strong></td>
+              <td>7-day click, 1-day view</td>
+              <td>Atribui a conversão ao Meta se o utilizador clicou nos últimos 7 dias ou viu o anúncio no último dia</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>
+          O resultado: a mesma conversão pode ser atribuída ao Google Ads, ao Meta Ads e
+          ao tráfego orgânico ao mesmo tempo — cada plataforma reclama o crédito. O GA4
+          é a única ferramenta que tenta fazer uma visão unificada. Use-o para perceber
+          quais os canais que contribuem para a jornada de conversão — não para julgar
+          o desempenho de um canal individual.
+        </p>
+
+        <!-- ERROS COMUNS -->
+        <h2 id="erros">Os 7 erros de tracking que distorcem todas as decisões</h2>
+
+        <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Erro</th>
+              <th>Impacto</th>
+              <th>Como corrigir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row--bad">
+              <td><strong>Dupla contagem de conversões</strong></td>
+              <td>O Google Ads reporta 2× mais conversões — o Smart Bidding otimiza para um número falso e os CPA reais são o dobro do que aparecem</td>
+              <td>Verifique se a tag de conversão está a disparar apenas uma vez; use "Uma conversão por clique" para leads; confirme que GA4 e Google Ads não estão ambos a contar o mesmo evento</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Micro-conversões como primárias</strong></td>
+              <td>O Smart Bidding otimiza para cliques em botões ou visitas a páginas — não para leads reais; CPA parece baixo mas vendas não aumentam</td>
+              <td>Mova cliques, scrolls e pageviews para conversões secundárias; o evento primário deve ser sempre o de negócio real</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Pixel Meta sem CAPI</strong></td>
+              <td>30–50% dos eventos iOS não chegam ao Meta; audiências Lookalike de pior qualidade; otimização de conversões com dados incompletos</td>
+              <td>Configure CAPI via integração nativa da plataforma (Shopify, WooCommerce) ou via GTM Server-Side ou Make/Zapier</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Conversão na visita à página de obrigado (URL genérica)</strong></td>
+              <td>Se a URL de agradecimento for acessível diretamente (sem formulário), conta visitas diretas como conversões</td>
+              <td>Bloqueie o acesso direto à página de obrigado via redirecionamento, ou use o evento de submit do formulário em vez da URL</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Tag de conversão em todas as páginas</strong></td>
+              <td>Dispara a cada pageview, não apenas na confirmação — resulta em centenas de "conversões" falsas por dia</td>
+              <td>A tag de conversão deve estar apenas na página de confirmação ou disparar apenas no evento de submit — verifique com o Tag Assistant</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Janela de conversão demasiado longa para o ciclo de venda</strong></td>
+              <td>Uma janela de 90 dias para um produto de decisão rápida atribui ao Google Ads conversões que aconteceram muito depois e por outros motivos</td>
+              <td>Ajuste a janela de conversão ao ciclo de venda real: 7–30 dias para serviços simples; 30–90 dias para B2B com ciclo longo</td>
+            </tr>
+            <tr class="row--bad">
+              <td><strong>Sem enhanced conversions</strong></td>
+              <td>O Google não consegue fazer match entre conversões offline e cliques — dados de qualidade mais baixa para Smart Bidding</td>
+              <td>Active Enhanced Conversions no Google Ads e envie os dados de lead (email hasheado) quando o formulário é submetido</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <!-- CHECKLIST -->
+        <h2 id="checklist">Checklist de auditoria de tracking</h2>
+
+        <p>
+          Use esta lista para verificar o estado do tracking das suas campanhas. Qualquer
+          "não" nesta lista está a distorcer os seus dados.
+        </p>
+
+        <div class="checklist">
+          <p class="checklist__title">Google Ads</p>
+          <div class="checklist__item"><strong>A conversão primária é um evento de negócio real</strong> (formulário, chamada, compra) — não um clique ou pageview</div>
+          <div class="checklist__item"><strong>Sem conversões importadas do GA4 como primárias</strong> — use Google Ads conversion tracking nativo</div>
+          <div class="checklist__item"><strong>Contagem "Uma" para leads, "Cada" para compras</strong></div>
+          <div class="checklist__item"><strong>Tag a disparar apenas na página/evento de confirmação</strong> — verificado com Google Tag Assistant</div>
+          <div class="checklist__item"><strong>Enhanced Conversions ativo</strong> — a enviar email hasheado do utilizador</div>
+          <div class="checklist__item"><strong>Janela de conversão ajustada ao ciclo de venda do negócio</strong></div>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist__title">Meta Ads</p>
+          <div class="checklist__item"><strong>Pixel instalado em todas as páginas</strong> — verificado com Meta Pixel Helper</div>
+          <div class="checklist__item"><strong>CAPI configurada</strong> — Event Match Quality (EMQ) acima de 6.0 no Events Manager</div>
+          <div class="checklist__item"><strong>Deduplicação ativa</strong> — event_id único enviado em pixel e CAPI para o mesmo evento</div>
+          <div class="checklist__item"><strong>Evento Lead configurado como conversão primária</strong> (ou Purchase para e-commerce)</div>
+          <div class="checklist__item"><strong>8 eventos prioritários definidos e ordenados</strong> no Events Manager → Aggregated Event Measurement</div>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist__title">GA4</p>
+          <div class="checklist__item"><strong>Conta GA4 ligada ao Google Ads</strong> (para importação de audiências e relatórios cross-canal)</div>
+          <div class="checklist__item"><strong>Eventos de conversão marcados</strong> — os mesmos que no Google Ads</div>
+          <div class="checklist__item"><strong>Parâmetros UTM consistentes</strong> em todos os URLs de campanha para atribuição correta de canal</div>
+          <div class="checklist__item"><strong>Explorar: Funil de conversão</strong> configurado para perceber onde os utilizadores abandonam</div>
+        </div>
+
+        <!-- COMO VERIFICAR -->
+        <h2 id="verificar">Como verificar se o tracking está a funcionar</h2>
+
+        <p>
+          Configurar não é suficiente — tem de verificar. As ferramentas gratuitas para isso:
+        </p>
+
+        <ul>
+          <li><strong>Google Tag Assistant</strong> (extensão Chrome) — mostra quais tags estão a disparar em cada página e se há erros</li>
+          <li><strong>Google Ads → Conversões → Detalhes da conversão</strong> — mostra as últimas conversões registadas com data e hora; se não aparecerem após um teste, a tag não está a funcionar</li>
+          <li><strong>Meta Pixel Helper</strong> (extensão Chrome) — mostra os eventos a disparar em tempo real e avisa de duplicações</li>
+          <li><strong>Meta Events Manager → Testar eventos</strong> — ferramenta nativa que simula eventos e confirma se chegam corretamente</li>
+          <li><strong>GA4 → DebugView</strong> — modo de debug em tempo real; mostra cada evento à medida que é registado durante a navegação</li>
+        </ul>
+
+        <div class="callout callout--success">
+          <p class="callout__label">Teste de sanidade rápido</p>
+          <p>Submeta um formulário de teste no seu site. Em 2–5 minutos deve ver a conversão
+          aparecer em Google Ads → Conversões → Ver conversões recentes, e no Meta Events
+          Manager com o evento Lead. Se não aparecer, a tag está mal configurada.</p>
+        </div>
+
+        <!-- CONCLUSÃO -->
+        <h2 id="conclusao">Conclusão: o tracking é a fundação de tudo o resto</h2>
+
+        <p>
+          O Smart Bidding do Google e o algoritmo de otimização do Meta são tão bons quanto
+          os dados que recebem. Com tracking errado, está a pagar para otimizar para os objetivos
+          errados — e os relatórios mostram resultados que não refletem a realidade do negócio.
+        </p>
+        <p>
+          A maioria dos problemas de tracking tem solução simples: evento de conversão errado,
+          dupla contagem, CAPI não configurada. Corrigir estes três pontos tem mais impacto
+          no desempenho das campanhas do que qualquer ajuste de audiência ou copy — porque
+          resolve o problema na raiz.
+        </p>
+        <p>
+          Se quiser uma auditoria completa do tracking das suas campanhas —
+          com identificação de dados em falta, dupla contagem e oportunidades de melhoria —
+          <a href="../auditoria.html">fazemos esse diagnóstico gratuitamente</a>.
+        </p>
+
+        <div class="article-cta">
+          <h3>O seu tracking está a contar o que devia?</h3>
+          <p>Auditamos a configuração do pixel Meta, CAPI, Google Ads conversion tracking e GA4
+          — e identificamos o que está a distorcer os seus dados de otimização.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir auditoria gratuita →</a>
+        </div>
+
+        <div class="author-box">
+          <img class="author-box__avatar" src="../img/logo.webp" alt="Payoff Marketing" width="56" height="56" />
+          <div>
+            <p class="author-box__name">Payoff Marketing</p>
+            <p class="author-box__bio">Agência especializada em gestão de tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para PMEs com foco em leads qualificados ao menor CPA.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="article-sidebar" aria-label="Sidebar do artigo">
+
+        <div class="toc-card">
+          <p class="toc-card__title">Neste artigo</p>
+          <ul class="toc-list" id="toc">
+            <li><a href="#resposta">O mínimo necessário</a></li>
+            <li><a href="#ferramentas">As três ferramentas</a></li>
+            <li><a href="#google-ads-tracking">Google Ads conversion tracking</a></li>
+            <li><a href="#meta-pixel">Meta Pixel + CAPI</a></li>
+            <li><a href="#ga4">GA4: configurar e interpretar</a></li>
+            <li><a href="#erros">Os 7 erros mais comuns</a></li>
+            <li><a href="#checklist">Checklist de auditoria</a></li>
+            <li><a href="#verificar">Como verificar</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Auditoria de Campanhas</h4>
+          <p>Verificamos toda a configuração de tracking — pixel, CAPI, conversion tags e GA4 — com relatório de problemas em 48h.</p>
+          <a href="../auditoria.html" class="btn btn--primary">Pedir Auditoria →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Gestão Google Ads</h4>
+          <p>Gerimos campanhas com tracking correto desde o início — sem dados envenenados que enganam o Smart Bidding.</p>
+          <a href="../google-ads.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+        <div class="sidebar-service-card">
+          <h4>Gestão Meta Ads</h4>
+          <p>Configuramos pixel, CAPI e estrutura de audiências para maximizar a qualidade dos dados de otimização.</p>
+          <a href="../meta-ads.html" class="btn btn--outline">Ver Serviço →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="container">
+      <h2>Artigos relacionados</h2>
+      <div class="related-grid">
+
+        <a href="como-reduzir-cpa-google-ads.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Como reduzir o CPA no Google Ads" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Otimização</span>
+            <p class="related-card__title">Como reduzir o CPA no Google Ads: 7 ajustes com impacto imediato</p>
+            <p class="related-card__excerpt">Estratégias práticas para baixar o custo por lead sem reduzir o volume de conversões — testadas em contas reais.</p>
+          </div>
+        </a>
+
+        <a href="segmentacao-audiencias-meta-ads-guia-completo.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Segmentação Meta Ads 2026" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Meta Ads</span>
+            <p class="related-card__title">Segmentação Meta Ads em 2026: Custom Audiences, Lookalike e Interest Targeting</p>
+            <p class="related-card__excerpt">O que ainda funciona após o iOS 14 e como construir Lookalike Audiences de qualidade.</p>
+          </div>
+        </a>
+
+        <a href="landing-pages-campanhas-trafego-pago.html" class="related-card" style="text-decoration:none;">
+          <img class="related-card__img" src="img/hero-lp.webp" alt="Landing Pages em campanhas de tráfego pago" width="400" height="160" loading="lazy" />
+          <div class="related-card__body">
+            <span class="related-card__tag">Conversão</span>
+            <p class="related-card__title">Landing Pages em campanhas de tráfego pago: porquê são essenciais para converter</p>
+            <p class="related-card__excerpt">Está a enviar tráfego pago para a homepage? Está a desperdiçar pelo menos metade do budget.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../img/logo.webp" alt="Payoff Marketing" /></div>
+        <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="../img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+      </div>
+      <div class="footer__nav">
+        <p class="footer__nav-title">Serviços</p>
+        <ul>
+          <li><a href="../google-ads.html">Google Ads</a></li>
+          <li><a href="../meta-ads.html">Meta Ads</a></li>
+          <li><a href="../auditoria.html">Auditoria de Campanhas</a></li>
+          <li><a href="../estrategia.html">Estratégia de Tráfego</a></li>
+          <li><a href="../landing-pages.html">Landing Pages</a></li>
+          <li><a href="../relatorios.html">Relatórios &amp; Dashboard</a></li>
+          <li><a href="../calculadora.html">Calculadora ROI</a></li>
+          <li><a href="../precos.html">Preços</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__nav-title">Contacto</p>
+        <ul>
+          <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+          <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+          <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__privacy">Blog</a>
+      <a href="../privacidade.html" class="footer__privacy">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE CONSENT ── -->
+<div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" style="
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#161b22;border-top:1px solid #30363d;font-family:inherit;">
+  <div id="pm-bar" style="display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;">
+    <p style="margin:0;max-width:65ch;line-height:1.5;color:#8b949e;">
+      <strong style="display:block;margin-bottom:.2rem;color:#e6edf3;">Este site usa cookies</strong>
+      Usamos cookies para análise de tráfego e melhoria da experiência.
+    </p>
+    <div id="pm-actions" style="display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;">
+      <button class="pm-btn pm-btn--ghost" onclick="document.getElementById('pm-panel').classList.toggle('open')">Gerir preferências</button>
+      <button class="pm-btn pm-btn--reject" onclick="pmConsent('deny')">Rejeitar</button>
+      <button class="pm-btn pm-btn--accept" onclick="pmConsent('allow')">Aceitar todos</button>
+    </div>
+  </div>
+  <div id="pm-panel" style="display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;">
+    <h3 style="font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;">Preferências de cookies</h3>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies essenciais</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Necessários para o funcionamento do site.</p></div>
+      <span style="font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;">Sempre ativos</span>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies analíticos</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google Analytics.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-analytics" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div class="pm-pref" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;">
+      <div><strong style="font-size:.8125rem;color:#e6edf3;">Cookies de publicidade</strong><p style="font-size:.75rem;color:#8b949e;margin:.15rem 0 0;">Google e Meta Ads.</p></div>
+      <label style="position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;">
+        <input type="checkbox" id="pm-ads" style="opacity:0;width:0;height:0;" />
+        <span onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked;this.style.background=this.previousElementSibling.checked?'#3b82f6':'#30363d';" style="position:absolute;inset:0;background:#30363d;border-radius:11px;cursor:pointer;transition:background .2s;"></span>
+      </label>
+    </div>
+    <div style="margin-top:1rem;text-align:right;">
+      <button class="pm-btn pm-btn--accept" onclick="pmConsentCustom()">Guardar preferências</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  (function(){ if(localStorage.getItem('pm_consent')) document.getElementById('pm-consent').style.display='none'; })();
+  function pmConsent(mode){
+    localStorage.setItem('pm_consent',mode);
+    document.getElementById('pm-consent').style.display='none';
+    var a=mode==='allow';
+    gtag('consent','update',{analytics_storage:a?'granted':'denied',ad_storage:a?'granted':'denied',ad_user_data:a?'granted':'denied',ad_personalization:a?'granted':'denied'});
+  }
+  function pmConsentCustom(){
+    var an=document.getElementById('pm-analytics').checked, ad=document.getElementById('pm-ads').checked;
+    localStorage.setItem('pm_consent','custom');
+    document.getElementById('pm-consent').style.display='none';
+    gtag('consent','update',{analytics_storage:an?'granted':'denied',ad_storage:ad?'granted':'denied',ad_user_data:ad?'granted':'denied',ad_personalization:ad?'granted':'denied'});
+  }
+  (function(){
+    var links=document.querySelectorAll('#toc a');
+    var sections=Array.from(links).map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+    function onScroll(){
+      var scrollY=window.scrollY+120, current=sections[0];
+      sections.forEach(function(s){if(s&&s.offsetTop<=scrollY)current=s;});
+      links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+current.id);});
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+  })();
+  function toggleMenu(btn){
+    var menu=document.getElementById('main-menu');
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  }
+</script>
+<script src="../js/dropdown.js"></script>
+</body>
+</html>
