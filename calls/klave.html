@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klave · Discovery Call — Payoff Marketing</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f4f0;
+      --surface: #ffffff;
+      --border: #e0ddd6;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #1c3d5a;
+      --accent-light: #e8eff5;
+      --green: #2d6a4f;
+      --green-light: #e9f5ef;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    body {
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 16px 80px;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title span.num {
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field:last-child { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    label .hint {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    select, input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 14px;
+      color: var(--text);
+      background: #fafaf9;
+      appearance: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    select:focus, input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(28,61,90,0.1);
+    }
+
+    textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #fafaf9;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      user-select: none;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .checkbox-item:has(input:checked) {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    .checkbox-item span {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 500px) { .row { grid-template-columns: 1fr; } }
+
+    .submit-area {
+      margin-top: 24px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:hover { background: #16304a; }
+    .btn:active { transform: scale(0.99); }
+    .btn:disabled { background: #9ab3c7; cursor: not-allowed; }
+
+    .success-msg {
+      display: none;
+      background: var(--green-light);
+      border: 1px solid #a8d5be;
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .success-msg h3 { color: var(--green); font-size: 16px; margin-bottom: 4px; }
+    .success-msg p { color: var(--muted); font-size: 13px; }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .meta-row strong { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-tag">Payoff Marketing</div>
+    <h1>Discovery Call · Klave</h1>
+    <p>Preenche antes da reunião para estruturar a conversa e enviar o resumo automaticamente.</p>
+    <div class="meta-row">
+      <span>Prospect: <strong>Luiza Vegini</strong></span>
+      <span>·</span>
+      <span>Site: <strong>klave.pt</strong></span>
+    </div>
+  </div>
+
+  <form id="discoveryForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="db14e7ac-debe-4950-b076-73a3d2d0b20a">
+    <input type="hidden" name="subject" value="Discovery Call — Klave (Luiza Vegini)">
+    <input type="hidden" name="from_name" value="Payoff Marketing">
+
+    <!-- 1. Situação atual -->
+    <div class="card">
+      <div class="card-title"><span class="num">1</span> Situação atual em paid media</div>
+
+      <div class="field">
+        <label>Já têm campanhas ativas?</label>
+        <select name="campanhas_ativas">
+          <option value="">— Selecionar —</option>
+          <option>Não, partem do zero</option>
+          <option>Sim, mas a gerir internamente</option>
+          <option>Sim, com outra agência</option>
+          <option>Já tiveram mas pausaram</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Plataformas em uso <span class="hint">(selecionar todas que se aplicam)</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="Meta Ads"><span>Meta Ads</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="Google Ads"><span>Google Ads</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="TikTok Ads"><span>TikTok Ads</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="LinkedIn Ads"><span>LinkedIn Ads</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="YouTube"><span>YouTube</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="plataformas" value="Nenhuma"><span>Nenhuma</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Principais resultados atuais <span class="hint">(CPL, volume, qualidade)</span></label>
+        <textarea name="resultados_atuais" placeholder="Ex: CPL €15 no Meta mas leads frios, sem qualificação..."></textarea>
+      </div>
+    </div>
+
+    <!-- 2. Mercados -->
+    <div class="card">
+      <div class="card-title"><span class="num">2</span> Mercados e audiências</div>
+
+      <div class="field">
+        <label>Mercado prioritário agora</label>
+        <select name="mercado_prioritario">
+          <option value="">— Selecionar —</option>
+          <option>Israel / Mercado israelita</option>
+          <option>Brasil</option>
+          <option>Chipre</option>
+          <option>Todos com peso igual</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Mercados a ativar <span class="hint">(selecionar todos)</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="Israel"><span>🇮🇱 Israel</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="Brasil"><span>🇧🇷 Brasil</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="Chipre"><span>🇨🇾 Chipre</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="EUA"><span>🇺🇸 EUA</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="Reino Unido"><span>🇬🇧 Reino Unido</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="mercados" value="Outro"><span>Outro</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Ticket médio de cliente (investimento imobiliário)</label>
+        <select name="ticket_medio">
+          <option value="">— Selecionar —</option>
+          <option>Abaixo de €150k</option>
+          <option>€150k – €300k</option>
+          <option>€300k – €600k</option>
+          <option>€600k – €1M</option>
+          <option>Acima de €1M</option>
+          <option>Varia muito por mercado</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Idiomas necessários para os criativos</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="idiomas" value="Português (PT-BR)"><span>PT-BR</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="idiomas" value="Inglês"><span>EN</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="idiomas" value="Hebraico"><span>HE</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="idiomas" value="Grego"><span>GR</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="idiomas" value="Espanhol"><span>ES</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Funil e produto de entrada -->
+    <div class="card">
+      <div class="card-title"><span class="num">3</span> Funil e produto de entrada</div>
+
+      <div class="field">
+        <label>Produto de topo de funil preferido</label>
+        <select name="produto_funil">
+          <option value="">— Selecionar —</option>
+          <option>Consulta gratuita (WhatsApp/call)</option>
+          <option>Lead ad com formulário direto</option>
+          <option>Download de e-book</option>
+          <option>Webinar / evento online</option>
+          <option>A definir com a agência</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>O e-book é usado ativamente como lead magnet?</label>
+        <select name="ebook_lead_magnet">
+          <option value="">— Selecionar —</option>
+          <option>Sim, já temos fluxo de captura</option>
+          <option>Está no site mas sem campanha</option>
+          <option>Não está a ser aproveitado</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Existem landing pages dedicadas para campanhas?</label>
+        <select name="landing_pages">
+          <option value="">— Selecionar —</option>
+          <option>Sim, temos LPs específicas</option>
+          <option>Enviamos para o site principal</option>
+          <option>Não, precisamos criar</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 4. Qualidade de lead -->
+    <div class="card">
+      <div class="card-title"><span class="num">4</span> Qualificação e qualidade de lead</div>
+
+      <div class="field">
+        <label>O que define um lead qualificado para eles?</label>
+        <select name="lead_qualificado">
+          <option value="">— Selecionar —</option>
+          <option>Capital disponível confirmado (€150k+)</option>
+          <option>Intenção de compra nos próximos 6 meses</option>
+          <option>Interesse em Portugal declarado</option>
+          <option>Qualquer contacto com interesse genérico</option>
+          <option>A definir</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Volume de leads esperado por mês</label>
+        <select name="volume_leads">
+          <option value="">— Selecionar —</option>
+          <option>Menos de 50 leads/mês</option>
+          <option>50 – 150 leads/mês</option>
+          <option>150 – 300 leads/mês</option>
+          <option>300+ leads/mês</option>
+          <option>Sem expectativa definida</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Preferência: volume alto com triagem interna ou volume baixo mais qualificado?</label>
+        <select name="preferencia_volume">
+          <option value="">— Selecionar —</option>
+          <option>Volume + triagem interna</option>
+          <option>Qualidade — prefiro menos leads melhores</option>
+          <option>Equilibrado</option>
+          <option>A testar</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 5. Tracking -->
+    <div class="card">
+      <div class="card-title"><span class="num">5</span> Tracking e infraestrutura técnica</div>
+
+      <div class="field">
+        <label>O que têm instalado <span class="hint">(selecionar todos)</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="tracking" value="Meta Pixel"><span>Meta Pixel</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="tracking" value="Google Analytics 4"><span>GA4</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="tracking" value="Google Tag Manager"><span>GTM</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="tracking" value="CRM"><span>CRM</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="tracking" value="Nenhum"><span>Nenhum</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>CRM em uso</label>
+        <select name="crm">
+          <option value="">— Selecionar —</option>
+          <option>HubSpot</option>
+          <option>Pipedrive</option>
+          <option>Zoho CRM</option>
+          <option>Notion / Airtable</option>
+          <option>Spreadsheet (Excel/Sheets)</option>
+          <option>Sem CRM</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Processo atual de follow-up dos leads</label>
+        <select name="followup">
+          <option value="">— Selecionar —</option>
+          <option>Resposta manual via WhatsApp</option>
+          <option>Email automático + follow-up manual</option>
+          <option>Sequência automatizada</option>
+          <option>Sem processo definido</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 6. Criativos -->
+    <div class="card">
+      <div class="card-title"><span class="num">6</span> Criativos e conteúdo</div>
+
+      <div class="field">
+        <label>Têm assets de criativo disponíveis?</label>
+        <select name="assets_criativos">
+          <option value="">— Selecionar —</option>
+          <option>Sim, temos fotos e vídeos profissionais</option>
+          <option>Temos alguns mas são limitados</option>
+          <option>Apenas conteúdo do site/redes sociais</option>
+          <option>Não, precisamos produzir tudo</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Quem trata da criação de conteúdo?</label>
+        <select name="criacao_conteudo">
+          <option value="">— Selecionar —</option>
+          <option>Equipa interna</option>
+          <option>Freelancer externo</option>
+          <option>Agência atual</option>
+          <option>Ninguém — precisam de apoio</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 7. Budget e histórico -->
+    <div class="card">
+      <div class="card-title"><span class="num">7</span> Budget e histórico</div>
+
+      <div class="row">
+        <div class="field">
+          <label>Budget mensal para media spend</label>
+          <select name="budget_media">
+            <option value="">— Selecionar —</option>
+            <option>Menos de €1.000/mês</option>
+            <option>€1.000 – €3.000/mês</option>
+            <option>€3.000 – €7.000/mês</option>
+            <option>€7.000 – €15.000/mês</option>
+            <option>€15.000+/mês</option>
+            <option>A definir</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Fee de gestão esperado</label>
+          <select name="fee_gestao">
+            <option value="">— Selecionar —</option>
+            <option>% do spend (15–20%)</option>
+            <option>Fee fixo mensal</option>
+            <option>Misto (fixo + %) </option>
+            <option>CPA / performance</option>
+            <option>Sem ideia ainda</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Já trabalharam com alguma agência?</label>
+        <select name="historico_agencia">
+          <option value="">— Selecionar —</option>
+          <option>Não, primeira vez</option>
+          <option>Sim, experiência positiva</option>
+          <option>Sim, mas correu mal</option>
+          <option>Sim, resultados neutros</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Se sim, o que correu mal / o que querem diferente? <span class="hint">(campo aberto)</span></label>
+        <textarea name="historico_detalhe" placeholder="Ex: agência demorava a responder, não entendia o produto, leads sem qualidade..."></textarea>
+      </div>
+    </div>
+
+    <!-- 8. Notas -->
+    <div class="card">
+      <div class="card-title"><span class="num">8</span> Notas da call / próximos passos</div>
+
+      <div class="field">
+        <label>Prazo para começar</label>
+        <select name="prazo_inicio">
+          <option value="">— Selecionar —</option>
+          <option>Imediatamente (esta semana)</option>
+          <option>Próximas 2–4 semanas</option>
+          <option>Próximos 1–3 meses</option>
+          <option>Ainda em avaliação</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Próximos passos acordados</label>
+        <select name="proximos_passos">
+          <option value="">— Selecionar —</option>
+          <option>Envio de proposta</option>
+          <option>Segunda reunião técnica</option>
+          <option>Auditoria à conta existente</option>
+          <option>Pedido de acesso às contas</option>
+          <option>A confirmar</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Notas livres da call <span class="hint">(observações, contexto extra, gut feeling)</span></label>
+        <textarea name="notas" style="min-height: 100px;" placeholder="Escreve aqui qualquer contexto extra que queiras registar..."></textarea>
+      </div>
+    </div>
+
+    <div class="submit-area">
+      <button type="submit" class="btn" id="submitBtn">Enviar resumo da discovery call →</button>
+      <div class="success-msg" id="successMsg">
+        <h3>Enviado com sucesso ✓</h3>
+        <p>O resumo foi enviado. Bom follow-up com a Luiza!</p>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<script>
+  const form = document.getElementById('discoveryForm');
+  const btn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'A enviar...';
+
+    // Collect checkbox groups manually
+    const checkboxGroups = {};
+    form.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+      if (!checkboxGroups[cb.name]) checkboxGroups[cb.name] = [];
+      checkboxGroups[cb.name].push(cb.value);
+    });
+
+    const formData = new FormData(form);
+
+    // Remove individual checkbox entries and add joined strings
+    ['plataformas', 'mercados', 'idiomas', 'tracking'].forEach(name => {
+      // FormData may have multiple entries; delete all then add joined
+      // (FormData doesn't have delete-by-name for multi, so we use object approach)
+    });
+
+    const data = {};
+    for (let [key, value] of formData.entries()) {
+      if (['plataformas', 'mercados', 'idiomas', 'tracking'].includes(key)) continue;
+      data[key] = value;
+    }
+    Object.assign(data, Object.fromEntries(
+      Object.entries(checkboxGroups).map(([k, v]) => [k, v.join(', ')])
+    ));
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (json.success) {
+        btn.style.display = 'none';
+        successMsg.style.display = 'block';
+        form.querySelectorAll('select, textarea').forEach(el => el.disabled = true);
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Erro — tentar novamente';
+        alert('Erro ao enviar. Verifica a chave Web3Forms.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Erro — tentar novamente';
+    }
+  });
+</script>
+</body>
+</html>
