@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── PT: Home ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ── PT: Serviços ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/servicos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/servicos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/services.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/google-ads</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/google-ads.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/meta-ads</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/meta-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/meta-ads.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/auditoria</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/auditoria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/audit.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/estrategia</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/estrategia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/strategy.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/landing-pages</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/landing-pages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/landing-pages.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/relatorios</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/relatorios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/reports.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── PT: Ferramentas ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/calculadora</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/calculadora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/calculator.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/precos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/precos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/pricing.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/contatos</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/contatos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/contact.html"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── EN: Home ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── EN: Services ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/servicos"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/google-ads.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/google-ads.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/google-ads"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/meta-ads.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/meta-ads.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/meta-ads"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/audit.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/auditoria"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/strategy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/estrategia"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/landing-pages.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/landing-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/landing-pages"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/reports.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/reports.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/relatorios"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/calculator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/calculadora"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://payoffmarketing.pt/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://payoffmarketing.pt/contatos"/>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── Blog ── -->
+  <url>
+    <loc>https://payoffmarketing.pt/blog/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/landing-pages-campanhas-trafego-pago</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/google-ads-vs-meta-ads-qual-escolher-2026</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/quality-score-google-ads-o-que-e-como-melhorar</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/performance-max-google-ads-2026-guia-pratico</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/como-reduzir-cpa-google-ads</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/quanto-investir-google-ads-guia-pme</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/quanto-investir-meta-ads-guia-pme</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/quanto-investir-linkedin-ads-guia-pme</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/segmentacao-linkedin-ads-guia-completo</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/copy-anuncios-linkedin-ads-guia-completo</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/linkedin-lead-gen-forms-vs-landing-page</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/tipos-correspondencia-palavras-chave-google-ads</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/segmentacao-audiencias-meta-ads-guia-completo</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/como-medir-conversoes-trafego-pago</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/como-escrever-anuncios-pesquisa-google-ads-rsas</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/google-ads-pesquisa-ia-chatgpt-o-que-muda-ppc</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/advantage-plus-shopping-vs-campanhas-manuais-meta-ads</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/estrategias-licitacao-inteligente-google-ads</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://payoffmarketing.pt/blog/palavras-chave-negativas-google-ads</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Nota: privacidade.html e en/privacy.html (noindex) excluídos intencionalmente -->
+
+</urlset>

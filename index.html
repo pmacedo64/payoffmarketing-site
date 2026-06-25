@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- GTM Consent Mode v2 — defaults denied antes do GTM carregar -->
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      analytics_storage:'denied',
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      wait_for_update:300
+    });
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSST');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
+  <title>Payoff Marketing — Agência de Gestão de Tráfego Pago</title>
+  <meta name="description" content="A Payoff Marketing é uma agência especializada em gestão de tráfego pago. Criamos e otimizamos campanhas online no Google Ads e Meta Ads para PMEs que querem crescer." />
+  <meta name="keywords" content="gestão de tráfego pago, marketing digital, campanhas online, agência Payoff Marketing, Google Ads, Meta Ads, PPC, leads" />
+  <link rel="canonical" href="https://payoffmarketing.pt/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Payoff Marketing — Agência de Gestão de Tráfego Pago" />
+  <meta property="og:description" content="Campanhas online que convertem. Gerimos o seu tráfego pago para que se possa focar no negócio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://payoffmarketing.pt/" />
+  <meta property="og:image" content="https://payoffmarketing.pt/img/logo.webp" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Hero: stacking order ──
+       0: hero bg (radial gradient)
+       1: .hero__slides + .hero__tint (DOM order decide entre eles)
+       2: canvas trail (acima do tint)
+       3: .container com o texto
+    ── */
+    .hero { isolation: isolate; }
+    .hero canvas  { z-index: 2 !important; }
+    .hero .container { position: relative; z-index: 3; }
+
+    /* ── Slideshow ── */
+    .hero__slides {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Tint azul sobre os slides — integra as imagens na paleta do site */
+    .hero__tint {
+      position: absolute;
+      inset: 0;
+      z-index: 1;  /* mesmo z-index: fica acima dos slides pelo DOM order */
+      background: linear-gradient(
+        160deg,
+        rgba(11,23,38,.55) 0%,
+        rgba(59,130,246,.12) 50%,
+        rgba(9,20,34,.65) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      opacity: 0;
+      will-change: opacity, transform;
+      /* desatura levemente para fundir com o tema escuro */
+      filter: saturate(.55) brightness(.85);
+      /* screen: áreas escuras da imagem tornam-se transparentes,
+         áreas claras/brilhantes brilham sobre o fundo */
+      mix-blend-mode: screen;
+      animation: kb 18s ease-in-out infinite both;
+    }
+
+    /* Imagens e posições individuais */
+    .hero__slide:nth-child(1) {
+      background-image: url('img/hero-roi.webp');
+      background-position: center 40%;
+      animation-delay: 0s;
+    }
+    .hero__slide:nth-child(2) {
+      background-image: url('img/hero-lp.webp');
+      background-position: center 30%;
+      animation-delay: 6s;
+    }
+    .hero__slide:nth-child(3) {
+      background-image: url('img/hero-digital.webp');
+      background-position: center 45%;
+      animation-delay: 12s;
+    }
+
+    @keyframes kb {
+      0%   { opacity: 0;    transform: scale(1.00); }
+      6%   { opacity: .55; }
+      50%  { opacity: .55;  transform: scale(1.07); }
+      60%  { opacity: 0;    transform: scale(1.09); }
+      100% { opacity: 0;    transform: scale(1.09); }
+    }
+
+    /* ── Text entrance animations ── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__badge {
+      opacity: 0;
+      animation: fade-up .6s cubic-bezier(.22,1,.36,1) forwards .15s;
+    }
+
+    /* Wrap each h1 line */
+    .hero__line {
+      display: inline-block;
+      opacity: 0;
+      animation: fade-up .75s cubic-bezier(.22,1,.36,1) forwards;
+    }
+    #hero-headline .hero__line:nth-child(1) { animation-delay: .3s; }
+    #hero-headline .hero__line:nth-child(2) { animation-delay: .55s; }
+    #hero-headline .hero__line:nth-child(3) { animation-delay: .8s; }
+
+    .hero > .container > p {
+      opacity: 0;
+      color: #ffffff;
+      animation: fade-up .65s cubic-bezier(.22,1,.36,1) forwards 1.05s;
+    }
+    #hero-headline {
+      text-shadow: 0 2px 18px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.5);
+    }
+    .hero__ctas {
+      opacity: 0;
+      animation: fade-up .65s cubic-bezier(.22,1,.36,1) forwards 1.25s;
+    }
+
+    /* ── H1 badge: forçar uma linha em qualquer ecrã ── */
+    h1.hero__badge {
+      white-space: nowrap;
+      max-width: none;          /* sobrepõe .hero h1 { max-width: 18ch } */
+      margin-inline: auto;      /* garante centrado como bloco */
+      display: table;           /* shrink-wrap + centrado sem depender de inline-block */
+      /* escala a fonte para caber sem quebrar linha:
+         mín ~8px (ecrãs <350px), máx .8125rem (13px normal) */
+      font-size: clamp(0.5rem, 2.4vw, 0.8125rem);
+    }
+
+    /* ── H2 tagline: repor o tamanho visual do H1 original ── */
+    .hero #hero-headline {
+      font-size: clamp(1.75rem, 5vw, 2.8125rem); /* ~45px no máximo */
+      max-width: 16ch;
+      margin-inline: auto;
+      margin-bottom: 1.25rem;
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@id": "https://payoffmarketing.pt/#organization",
+        "name": "Payoff Marketing",
+        "url": "https://payoffmarketing.pt",
+        "logo": "https://payoffmarketing.pt/img/logo.webp",
+        "description": "Agência especializada em gestão de tráfego pago. Criamos e otimizamos campanhas no Google Ads e Meta Ads para PMEs que querem crescer.",
+        "telephone": "+351914541365",
+        "email": "ola@payoffmarketing.pt",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua de Lisboa 1",
+          "addressLocality": "Estoril",
+          "postalCode": "2765-240",
+          "addressCountry": "PT"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Portugal"
+        },
+        "serviceType": ["Gestão de Google Ads", "Gestão de Meta Ads", "Tráfego Pago", "Lead Generation", "PPC"],
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://payoffmarketing.pt/#website",
+        "url": "https://payoffmarketing.pt",
+        "name": "Payoff Marketing",
+        "publisher": { "@id": "https://payoffmarketing.pt/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <style>
+    #pm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:#161b22;border-top:1px solid #30363d;
+      font-family:Inter,system-ui,sans-serif;font-size:.875rem;color:#e6edf3;
+      box-shadow:0 -4px 24px rgba(0,0,0,.4);}
+    #pm-bar{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.75rem;padding:1rem 1.5rem;}
+    #pm-bar p{margin:0;max-width:65ch;line-height:1.5;color:#8b949e;}
+    #pm-bar strong{display:block;margin-bottom:.2rem;color:#e6edf3;}
+    #pm-actions{display:flex;gap:.5rem;flex-shrink:0;flex-wrap:wrap;}
+    .pm-btn{padding:.45rem 1rem;border-radius:8px;font-size:.8125rem;
+      font-weight:600;cursor:pointer;border:1px solid transparent;
+      white-space:nowrap;transition:opacity .15s;}
+    .pm-btn:hover{opacity:.85;}
+    .pm-btn--ghost{background:transparent;border-color:#30363d;color:#8b949e;}
+    .pm-btn--reject{background:#21262d;border-color:#30363d;color:#e6edf3;}
+    .pm-btn--accept{background:#3b82f6;color:#fff;}
+    #pm-panel{display:none;padding:0 1.5rem 1.25rem;border-top:1px solid #21262d;}
+    #pm-panel.open{display:block;}
+    #pm-panel h3{font-size:.9375rem;margin:.75rem 0 1rem;color:#e6edf3;}
+    .pm-pref{display:flex;align-items:flex-start;justify-content:space-between;
+      gap:1rem;padding:.6rem 0;border-top:1px solid #21262d;}
+    .pm-pref strong{font-size:.8125rem;color:#e6edf3;}
+    .pm-pref p{font-size:.75rem;color:#8b949e;margin:.15rem 0 0;}
+    .pm-always{font-size:.75rem;color:#3b82f6;font-weight:600;white-space:nowrap;padding-top:.1rem;}
+    .pm-switch{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0;}
+    .pm-switch input{opacity:0;width:0;height:0;}
+    .pm-slider{position:absolute;inset:0;background:#30363d;border-radius:11px;
+      cursor:pointer;transition:background .2s;}
+    .pm-slider::before{content:'';position:absolute;left:3px;top:3px;
+      width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s;}
+    .pm-switch input:checked+.pm-slider{background:#3b82f6;}
+    .pm-switch input:checked+.pm-slider::before{transform:translateX(18px);}
+    #pm-panel-actions{margin-top:1rem;text-align:right;}
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header>
+    <nav class="navbar" aria-label="Navegação principal">
+      <div class="container navbar__inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Payoff Marketing — Página inicial"><img src="img/logo.webp" alt="Payoff Marketing" /></a>
+
+        <!-- Hambúrguer (mobile) -->
+        <button
+          class="navbar__toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          onclick="toggleMenu(this)"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Links -->
+        <ul class="navbar__menu" id="main-menu" role="list">
+          <li><a href="index.html"    class="active">Home</a></li>
+          <li class="navbar__dropdown">
+            <button class="navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true" onclick="toggleDropdown(this)">Serviços <span class="chevron" aria-hidden="true">▾</span></button>
+            <ul class="navbar__dropdown-menu" role="list">
+              <li><a href="servicos.html">Todos os Serviços</a></li>
+              <li><a href="google-ads.html">Google Ads</a></li>
+              <li><a href="meta-ads.html">Meta Ads</a></li>
+              <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+              <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+              <li><a href="landing-pages.html">Landing Pages</a></li>
+              <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="calculadora.html">Calculadora ROI</a></li>
+          <li><a href="contatos.html" class="navbar__cta">Falar Connosco</a></li>
+        </ul>
+
+      <div class="lang-switch" aria-label="Language switcher">
+        <a href="en/index.html" class="lang-switch__btn" lang="en">EN</a>
+        <span class="lang-switch__sep">|</span>
+        <span class="lang-switch__btn lang-switch__btn--active" aria-current="true">PT</span>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-titulo">
+
+      <!-- Fundo: slideshow com Ken Burns + tint azul -->
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide"></div>
+        <div class="hero__slide"></div>
+        <div class="hero__slide"></div>
+      </div>
+      <div class="hero__tint" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <h1 class="hero__badge" id="hero-titulo">Agência de Tráfego Pago — Google Ads e Meta Ads</h1>
+
+        <h2 id="hero-headline">
+          <span class="hero__line">Mais leads</span><br>
+          <span class="hero__line">Menos desperdício</span><br>
+          <span class="hero__line"><span style="color:var(--cor-primaria)">Resultados reais</span></span>
+        </h2>
+
+        <p>
+          Gerimos as suas campanhas no Google Ads e Meta Ads com foco num único
+          objetivo: trazer clientes qualificados ao menor custo possível —
+          para PMEs em todo o território nacional.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="contatos.html" class="btn btn--primary">Quero Mais Leads →</a>
+          <a href="servicos.html" class="btn btn--ghost">Ver Serviços</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         MÉTRICAS
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-label="Resultados da agência">
+      <div class="container">
+        <div class="stats-grid">
+
+          <div>
+            <div class="stat__num">+120</div>
+            <div class="stat__label">Clientes ativos</div>
+          </div>
+
+          <div>
+            <div class="stat__num">€4M+</div>
+            <div class="stat__label">Em budget gerido</div>
+          </div>
+
+          <div>
+            <div class="stat__num">3.8×</div>
+            <div class="stat__label">ROAS médio entregue</div>
+          </div>
+
+          <div>
+            <div class="stat__num">98%</div>
+            <div class="stat__label">Taxa de retenção</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SERVIÇOS (prévia)
+    ══════════════════════════════════════ -->
+    <section class="section" aria-labelledby="servicos-titulo">
+      <div class="container">
+
+        <div class="section__header">
+          <h2 id="servicos-titulo">O que fazemos por si</h2>
+          <p>
+            Da estratégia à otimização diária — tratamos de tudo para que as suas
+            campanhas trabalhem 24 horas por dia
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- Card 1 — Google Ads -->
+          <article class="card" aria-labelledby="card1-titulo">
+            <a href="google-ads.html" class="card__link" aria-label="Google Ads — ver página"></a>
+            <div class="card__icon" aria-hidden="true">
+              <!-- Ícone: lupa / pesquisa -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <h3 id="card1-titulo">Google Ads</h3>
+            <p>
+              Campanhas de pesquisa, display e Shopping otimizadas para gerar
+              leads e vendas com o menor CPA do mercado.
+            </p>
+          </article>
+
+          <!-- Card 2 — Meta Ads -->
+          <article class="card" aria-labelledby="card2-titulo">
+            <a href="meta-ads.html" class="card__link" aria-label="Meta Ads — ver página"></a>
+            <div class="card__icon" aria-hidden="true">
+              <!-- Ícone: target -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3 id="card2-titulo">Meta Ads</h3>
+            <p>
+              Facebook e Instagram com segmentação cirúrgica, criativos testados
+              e funis que convertem frios em clientes.
+            </p>
+          </article>
+
+          <!-- Card 3 — Relatórios -->
+          <article class="card" aria-labelledby="card3-titulo">
+            <a href="relatorios.html" class="card__link" aria-label="Relatórios Transparentes — ver página"></a>
+            <div class="card__icon" aria-hidden="true">
+              <!-- Ícone: gráfico de barras -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3 id="card3-titulo">Relatórios Transparentes</h3>
+            <p>
+              Dashboard em tempo real e relatório mensal com métricas que importam:
+              custo por lead, ROAS e evolução mês a mês.
+            </p>
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:2.5rem;">
+          <a href="servicos.html" class="btn btn--ghost">Ver todos os serviços →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="cta-titulo">
+      <div class="container" style="text-align:center;">
+        <h2 id="cta-titulo">Pronto para crescer?</h2>
+        <p style="max-width:48ch; margin-inline:auto; margin-top:.75rem; margin-bottom:2rem;">
+          Fale connosco hoje. Fazemos uma análise gratuita das suas campanhas
+          atuais e mostramos onde está a perder dinheiro.
+        </p>
+        <a href="contatos.html" class="btn btn--primary">Análise Gratuita →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="img/logo.webp" alt="Payoff Marketing" /></div>
+          <p>Agência especializada em tráfego pago. Gerimos campanhas de Google Ads e Meta Ads para gerar leads qualificados ao menor custo por aquisição.</p>
+          <a href="https://www.google.com/partners/agency?id=6240939795" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:1rem;">
+            <img src="img/Partner-RGB.webp" alt="Google Partner — Payoff Marketing" width="120" height="120" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <p class="footer__nav-title">Serviços</p>
+          <ul>
+            <li><a href="google-ads.html">Google Ads</a></li>
+            <li><a href="meta-ads.html">Meta Ads</a></li>
+            <li><a href="auditoria.html">Auditoria de Campanhas</a></li>
+            <li><a href="estrategia.html">Estratégia de Tráfego</a></li>
+            <li><a href="landing-pages.html">Landing Pages</a></li>
+            <li><a href="relatorios.html">Relatórios &amp; Dashboard</a></li>
+            <li><a href="calculadora.html">Calculadora ROI</a></li>
+            <li><a href="precos.html">Preços</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <p class="footer__nav-title">Contacto</p>
+          <ul>
+            <li><a href="mailto:ola@payoffmarketing.pt">ola@payoffmarketing.pt</a></li>
+            <li><a href="tel:+351914541365">+351 914 541 365</a></li>
+            <li>Rua de Lisboa 1<br>2765-240 Estoril</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© <span id="ano"></span> Payoff Marketing. Todos os direitos reservados.</p>
+        <a href="blog/index.html" class="footer__privacy">Blog</a>
+        <a href="privacidade.html" class="footer__privacy">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       JAVASCRIPT — mínimo
+  ══════════════════════════════════════ -->
+  <script>
+    /* Ano dinâmico no footer */
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    /* Toggle menu mobile */
+    function toggleMenu(btn) {
+      var menu = document.getElementById('main-menu');
+      var open  = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    }
+  </script>
+
+
+  <!-- ── dropdown inline ── -->
+  <script>/* ============================================================
+   Elo — dropdown.js
+   Controla o dropdown de Serviços na navbar
+   ============================================================ */
+
+(function () {
+  /* Abre / fecha o dropdown clicado */
+  window.toggleDropdown = function (btn) {
+    var dropdown = btn.closest('.navbar__dropdown');
+    var isOpen   = dropdown.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    /* Fecha outros dropdowns eventualmente abertos */
+    document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+      if (d !== dropdown) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      }
+    });
+  };
+
+  /* Fecha ao clicar fora */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar__dropdown')) {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  /* Fecha com a tecla Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.navbar__dropdown.open').forEach(function (d) {
+        d.classList.remove('open');
+        d.querySelector('.navbar__dropdown-toggle')
+         .setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();</script>
+  <!-- ── trail inline ── -->
+  <script>/* trail.js — mouse trail for .hero and .page-hero sections */
+(function () {
+  var LIFE  = 650;
+  var MAX_R = 5;
+  var MAX_A = 0.22;
+
+  function initTrail(section) {
+    var canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;';
+    section.insertBefore(canvas, section.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var pts = [];
+    var raf = null;
+
+    function resize() {
+      canvas.width  = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    section.addEventListener('mousemove', function (e) {
+      var r = section.getBoundingClientRect();
+      pts.push({
+        x: e.clientX - r.left,
+        y: e.clientY - r.top,
+        radius: 2 + Math.random() * (MAX_R - 2),
+        born: performance.now()
+      });
+      if (!raf) tick();
+    });
+
+    function tick() {
+      var now = performance.now();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts = pts.filter(function (p) { return now - p.born < LIFE; });
+      pts.forEach(function (p) {
+        var progress = (now - p.born) / LIFE;
+        var alpha    = MAX_A * (1 - progress);
+        var radius   = p.radius * (1 - progress * 0.5);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+      });
+      raf = pts.length > 0 ? requestAnimationFrame(tick) : null;
+    }
+  }
+
+  document.querySelectorAll('.hero, .page-hero').forEach(initTrail);
+})();</script>
+
+  <!-- ── Cookie Banner nativo ── -->
+  <div id="pm-consent" role="dialog" aria-modal="true" aria-label="Preferências de cookies" hidden>
+    <div id="pm-bar">
+      <div>
+        <strong>Usamos cookies</strong>
+        <p>Utilizamos cookies para analisar tráfego e personalizar anúncios. Pode aceitar, rejeitar ou gerir as preferências.</p>
+      </div>
+      <div id="pm-actions">
+        <button class="pm-btn pm-btn--ghost" onclick="pmTogglePanel()">Personalizar</button>
+        <button class="pm-btn pm-btn--reject" onclick="pmSave(false,false)">Rejeitar tudo</button>
+        <button class="pm-btn pm-btn--accept" onclick="pmSave(true,true)">Aceitar tudo</button>
+      </div>
+    </div>
+    <div id="pm-panel" role="region" aria-label="Personalizar cookies">
+      <h3>Gerir preferências</h3>
+      <div class="pm-pref">
+        <div><strong>Cookies necessários</strong><p>Essenciais para o funcionamento do site. Não podem ser desativados.</p></div>
+        <span class="pm-always">Sempre ativo</span>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies analíticos</strong><p>Permitem medir o tráfego e melhorar o desempenho do site (Google Analytics).</p></div>
+        <label class="pm-switch" aria-label="Cookies analíticos"><input type="checkbox" id="pm-analytics"><span class="pm-slider"></span></label>
+      </div>
+      <div class="pm-pref">
+        <div><strong>Cookies de marketing</strong><p>Usados para apresentar anúncios relevantes (Google Ads, Meta Pixel).</p></div>
+        <label class="pm-switch" aria-label="Cookies de marketing"><input type="checkbox" id="pm-marketing"><span class="pm-slider"></span></label>
+      </div>
+      <div id="pm-panel-actions">
+        <button class="pm-btn pm-btn--accept" onclick="pmSavePanel()">Guardar preferências</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var KEY='pm_consent';
+    function gtag(){dataLayer.push(arguments);}
+    function applyConsent(a,m){
+      gtag('consent','update',{
+        analytics_storage:a?'granted':'denied',
+        ad_storage:m?'granted':'denied',
+        ad_user_data:m?'granted':'denied',
+        ad_personalization:m?'granted':'denied'
+      });
+    }
+    var saved=localStorage.getItem(KEY);
+    if(saved){var c=JSON.parse(saved);applyConsent(c.analytics,c.marketing);return;}
+    var banner=document.getElementById('pm-consent');
+    banner.removeAttribute('hidden');
+    window.pmTogglePanel=function(){document.getElementById('pm-panel').classList.toggle('open');};
+    window.pmSave=function(a,m){
+      localStorage.setItem(KEY,JSON.stringify({analytics:a,marketing:m}));
+      applyConsent(a,m);
+      banner.setAttribute('hidden','');
+    };
+    window.pmSavePanel=function(){
+      pmSave(document.getElementById('pm-analytics').checked,
+             document.getElementById('pm-marketing').checked);
+    };
+  })();
+  </script>
+</body>
+</html>
